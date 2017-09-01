@@ -1,0 +1,30 @@
+{
+  "name": "profile-builder",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "animated": "^0.2.0",
+    "bootstrap": "^4.0.0-beta",
+    "firebase": "^4.3.0",
+    "popper.js": "^1.12.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "1.0.11",
+    "react-tabs": "^1.1.0",
+    "react-transition-group": "^2.2.0",
+    "tooltip.js": "^1.1.5"
+  },
+  "optionalDependencies": {
+    "jquery": ">=3.0.0",
+    "popper.js": "^1.11.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "firebase deploy"
+  }
+}
