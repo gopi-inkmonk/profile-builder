@@ -35,12 +35,14 @@ export function resetPassword(email) {
 }
 
 export function saveEmailUser(user) {
-  console.log(user);
+  var userAuth = firebaseAuth().currentUser;
+
   return ref
     .child(`users/${user.uid}/`)
     .set({
       email: user.email,
       uid: user.uid,
+      emailVerified: user.emailVerified,
     })
     .then(() => {
       var user = firebaseAuth().currentUser;

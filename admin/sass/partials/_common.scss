@@ -1,0 +1,90 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+@import "partials/constants";
+
+body {
+  font-family: $sans-serif-font;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+* {
+  @include transition-property(all);
+  @include transition-duration(.5s);
+}
+
+.btn {
+  @include border-radius(25px);
+  border: none;
+  padding: 14px 15px;
+  min-width: 175px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.btn-primary {
+    background: $primary-color;
+
+    &:hover {
+      background: $primary-dark-color;
+    }
+  }
+}
+
+.nav {
+  & a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #a2a5a8;
+    text-transform: uppercase;
+    min-height: 15px;
+    border-bottom: 2px solid #fff;
+
+    &:hover {
+      color: $primary-color;
+    }
+    &.active {
+      color: $primary-color;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}
+
+.react-tabs {
+  & ul.react-tabs__tab-list {
+    & li.react-tabs__tab {
+      font-size: 13px;
+      font-weight: bold;
+      color: #a2a5a8;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 0 0 25px;
+      cursor: pointer;
+      border-bottom: 2px solid #fff;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.react-tabs__tab--selected {
+        color: $primary-color;
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+
+  & .react-tabs__tab-panel {
+    & .react-tabs__tab-panel--selected {
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}

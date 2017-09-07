@@ -1,7 +1,5 @@
 {
   "rules": {
-    ".write": "auth !== null",
-
     "users": {
       "$uid": {
         ".write": "auth !== null && auth.uid === $uid",
@@ -11,6 +9,9 @@
           ".validate": "!root.child('usernames').child(newData.val()).exists() || root.child('usernames').child(newData.val()).val() == $uid"
         }
       }
+    },
+    "usernames": {
+      ".write": "auth !== null"
     }
   }
 }
