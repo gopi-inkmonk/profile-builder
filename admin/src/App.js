@@ -80,6 +80,12 @@ class App extends Component {
                   component={Login}
                 />
                 <PublicOnlyRoute
+                  path="/login"
+                  exact
+                  authed={this.state.authed}
+                  component={Login}
+                />
+                <PublicOnlyRoute
                   path="/register"
                   exact
                   authed={this.state.authed}

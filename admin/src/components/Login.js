@@ -94,7 +94,7 @@ export default class Login extends Component {
           />
         </div>
 
-        <div className="col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-4">
+        <div className="col-sm-6 col-md-4">
           <Paper zDepth={1} className="simpleFormWrapper">
             <div className="formTitle">
               <h2>Sign in</h2>
@@ -127,7 +127,7 @@ export default class Login extends Component {
                 </div>
 
                 <FlatButton
-                  label="Create an account using email"
+                  label="Create an account"
                   fullWidth={true}
                   href="/register"
                 />
