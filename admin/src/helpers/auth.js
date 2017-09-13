@@ -7,21 +7,6 @@ export function auth(email, pw) {
     .then(saveEmailUser);
 }
 
-export function saveUsername(Username, user) {
-  // const uid = firebase.auth().getUid();
-  const uid = firebaseAuth().currentUser.uid;
-  console.log(uid);
-  const updates = {};
-
-  updates[`users/${uid}/username`] = Username;
-  updates[`users/${uid}/SignupOn`] = firebase.database.ServerValue.TIMESTAMP;
-  updates[`usernames/${Username}`] = uid;
-
-  return ref.child('/').update(updates).then(() => {
-    window.location.href = '/home';
-  });
-}
-
 export function logout() {
   return firebaseAuth().signOut();
 }
@@ -58,4 +43,62 @@ export function saveEmailUser(user) {
         }
       );
     });
+}
+
+// Forms for profile
+export function saveUsername(Username, user) {
+  const uid = firebaseAuth().currentUser.uid;
+  console.log(uid);
+  const updates = {};
+
+  updates[`users/${uid}/username`] = Username;
+  updates[`users/${uid}/SignupOn`] = firebase.database.ServerValue.TIMESTAMP;
+  updates[`usernames/${Username}`] = uid;
+
+  return ref.child('/').update(updates).then(() => {
+    window.location.href = '/home';
+  });
+}
+
+export function saveName(name) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates['name'] = name;
+
+  return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+    console.log('Name successfully saved');
+  });
+}
+export function saveWho(who) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates['who'] = who;
+
+  return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+    console.log('Who successfully saved');
+  });
+}
+export function saveShortDesc(shortDesc) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates['shortDesc'] = shortDesc;
+
+  return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+    console.log('Who successfully saved');
+  });
+}
+export function saveContact(email, phone, social) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates['email'] = email;
+  updates['phone'] = phone;
+  updates['social'] = social;
+
+  return ref.child(`/profiles/${uid}/contact`).update(updates).then(() => {
+    console.log('Who successfully saved');
+  });
 }
