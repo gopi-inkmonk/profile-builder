@@ -102,3 +102,14 @@ export function saveContact(email, phone, social) {
     console.log('Who successfully saved');
   });
 }
+
+export function saveStory(story) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates['story'] = story;
+
+  return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+    console.log('Who successfully saved');
+  });
+}

@@ -200,3 +200,12 @@ h1 {
 .simpleForm .simpleFormWrapper > *:last-child {
   padding-bottom: 30px;
 }
+
+/* line 50, ../../sass/admin.scss */
+.colField {
+  display: flex;
+}
+/* line 53, ../../sass/admin.scss */
+.colField li {
+  flex: 1;
+}
