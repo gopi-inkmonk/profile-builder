@@ -10,7 +10,7 @@ export default class GetName extends Component {
   };
 
   componentDidUpdate() {
-    if (this.props.name !== this.state.name) {
+    if (this.props.name !== null && this.state.name == null) {
       this.setState({ name: this.props.name });
     }
   }
@@ -34,7 +34,8 @@ export default class GetName extends Component {
   };
 
   render() {
-    if (this.state.name == null) {
+    console.log('props :', this.props.name, 'state :', this.state.name);
+    if (this.props.name == null) {
       return <div>Loading...</div>;
     }
     return (
@@ -44,7 +45,7 @@ export default class GetName extends Component {
             floatingLabelText="Please enter your name"
             fullWidth={true}
             type="text"
-            defaultValue={this.state.name}
+            defaultValue={this.props.name}
             errorText={this.state.errorTextforname}
             onChange={e => this.setState({ name: e.target.value })}
           />

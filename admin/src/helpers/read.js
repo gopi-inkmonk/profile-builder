@@ -8,6 +8,6 @@ export function getProfileData(fn) {
   return proRef.once('value').then(function(Name) {
     const NameVal = Name.val();
     console.log(NameVal);
-    fn(NameVal || '');
+    fn(NameVal);
   });
 }
