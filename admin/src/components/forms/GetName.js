@@ -9,6 +9,12 @@ export default class GetName extends Component {
     errorTextforname: null,
   };
 
+  componentDidUpdate() {
+    if (this.props.name !== this.state.name) {
+      this.setState({ name: this.props.name });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -28,6 +34,9 @@ export default class GetName extends Component {
   };
 
   render() {
+    if (this.state.name == null) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -35,6 +44,7 @@ export default class GetName extends Component {
             floatingLabelText="Please enter your name"
             fullWidth={true}
             type="text"
+            defaultValue={this.state.name}
             errorText={this.state.errorTextforname}
             onChange={e => this.setState({ name: e.target.value })}
           />
