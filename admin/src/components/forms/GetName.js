@@ -9,9 +9,9 @@ export default class GetName extends Component {
     errorTextforname: null,
   };
 
-  componentDidUpdate() {
-    if (this.props.name !== null && this.state.name == null) {
-      this.setState({ name: this.props.name });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.name !== this.state.name) {
+      this.setState({ name: nextProps.name });
     }
   }
 

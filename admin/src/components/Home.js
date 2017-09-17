@@ -28,7 +28,10 @@ export default class Home extends Component {
     console.log('getProfileData', data);
     this.setState({
       name: data.name || '',
-      who: data.who,
+      who: data.who || '',
+      shortDesc: data.shortDesc || '',
+      contact: data.contact || '',
+      story: data.story || '',
     });
   };
 
@@ -73,17 +76,17 @@ export default class Home extends Component {
         <Route
           exact
           path={`${match.url}/desc`}
-          render={() => <GetShortDesc who={this.state.shortDesc} />}
+          render={() => <GetShortDesc shortDesc={this.state.shortDesc} />}
         />
         <Route
           exact
           path={`${match.url}/contact`}
-          render={() => <GetContact who={this.state.contact} />}
+          render={() => <GetContact contact={this.state.contact} />}
         />
         <Route
           exact
           path={`${match.url}/story`}
-          render={() => <GetStory who={this.state.story} />}
+          render={() => <GetStory story={this.state.story} />}
         />
       </div>
     );

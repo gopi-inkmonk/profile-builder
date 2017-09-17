@@ -9,6 +9,12 @@ export default class GetShortDesc extends Component {
     errorTextforshortDesc: null,
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.shortDesc !== this.state.shortDesc) {
+      this.setState({ shortDesc: nextProps.shortDesc });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -30,6 +36,15 @@ export default class GetShortDesc extends Component {
   };
 
   render() {
+    console.log(
+      'props :',
+      this.props.shortDesc,
+      'state :',
+      this.state.shortDesc
+    );
+    if (this.props.shortDesc == null) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -37,8 +52,9 @@ export default class GetShortDesc extends Component {
             floatingLabelText="Please enter few lines about you"
             fullWidth={true}
             multiLine={true}
-            rows={2}
+            rows={4}
             type="text"
+            defaultValue={this.props.shortDesc}
             errorText={this.state.errorTextforshortDesc}
             onChange={e => this.setState({ shortDesc: e.target.value })}
           />

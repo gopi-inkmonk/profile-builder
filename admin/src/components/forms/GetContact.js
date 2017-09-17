@@ -13,6 +13,12 @@ export default class GetContact extends Component {
     errorTextforsocial: null,
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.contact !== this.state.contact) {
+      this.setState({ contact: nextProps.contact });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -50,6 +56,10 @@ export default class GetContact extends Component {
   };
 
   render() {
+    console.log('props :', this.props.contact, 'state :', this.state.contact);
+    if (this.props.contact == null) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -57,6 +67,7 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your email"
             fullWidth={true}
             type="email"
+            defaultValue={this.props.contact.email}
             errorText={this.state.errorTextforemail}
             onChange={e => this.setState({ email: e.target.value })}
           />
@@ -64,13 +75,15 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your phone number"
             fullWidth={true}
             type="tel"
+            defaultValue={this.props.contact.phone}
             errorText={this.state.errorTextforphone}
             onChange={e => this.setState({ phone: e.target.value })}
           />
           <TextField
             floatingLabelText="Please enter your social id"
             fullWidth={true}
-            type="text"
+            type="url"
+            defaultValue={this.props.contact.social}
             errorText={this.state.errorTextforsocial}
             onChange={e => this.setState({ social: e.target.value })}
           />
