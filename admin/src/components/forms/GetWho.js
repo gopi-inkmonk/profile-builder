@@ -19,18 +19,13 @@ export default class GetWho extends Component {
   state = {
     who: null,
     errorTextforwho: null,
-    whoField: null,
+    whoField: '',
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      chipData: [
-        { key: 0, label: 'Angular' },
-        { key: 1, label: 'JQuery' },
-        { key: 2, label: 'Polymer' },
-        { key: 3, label: 'ReactJS' },
-      ],
+      chipData: [],
     };
     this.styles = {
       chip: {
@@ -58,8 +53,8 @@ export default class GetWho extends Component {
   renderChip(data) {
     return (
       <Chip
-        key={data.key}
-        onRequestDelete={() => this.handleRequestDelete(data.key)}
+        key={data.label}
+        onRequestDelete={() => this.handleRequestDelete(data.label)}
         style={this.styles.chip}
       >
         {data.label}
@@ -68,20 +63,41 @@ export default class GetWho extends Component {
   }
 
   handleUpdateInput = value => {
-    this.setState({
-      whoField: value,
-    });
+    const isPresent = whoList.includes(value);
+    console.warn('got value', value, isPresent);
+    if (isPresent) {
+      this.setState({
+        whoField: '',
+        chipData: [...this.state.chipData, { label: value }],
+      });
+    } else {
+      this.setState({
+        whoField: value,
+      });
+    }
   };
 
   handleSubmit = e => {
     e.preventDefault();
+    const { whoField } = this.state;
+
+    if (whoField) {
+      this.setState({
+        whoField: '',
+        chipData: [...this.state.chipData, { label: whoField }],
+      });
+    } else {
+      console.log(
+        'whoField submitting',
+        // this.state.whoField,
+        this.state.chipData
+      );
+    }
 
     // if (this.state.values.length === 0) {
     //   this.setState({ errorTextforwho: 'Please enter your user who' });
     //   return;
     // }
-
-    console.log('whoField submitting', this.state.whoField);
 
     // saveWho(this.state.values).catch(error => {
     //   const errorCode = error.code;
@@ -94,7 +110,7 @@ export default class GetWho extends Component {
   };
 
   render() {
-    const { values } = this.state;
+    const { chipData, values } = this.state;
     console.log('this.state.whoField', this.state.whoField);
     return (
       <div>
@@ -102,7 +118,10 @@ export default class GetWho extends Component {
           <AutoComplete
             floatingLabelText="Please enter your who"
             filter={AutoComplete.fuzzyFilter}
-            dataSource={whoList}
+            dataSource={whoList.filter(
+              x => !chipData.map(x => x.label).includes(x)
+            )}
+            searchText={this.state.whoField}
             // onUpdateInput={e => this.setState({ whoField: e.target.value })}
             onUpdateInput={this.handleUpdateInput}
           />
