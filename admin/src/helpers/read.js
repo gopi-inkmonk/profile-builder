@@ -7,7 +7,21 @@ export function getProfileData(fn) {
 
   return proRef.once('value').then(function(Name) {
     const NameVal = Name.val();
-    console.log(NameVal);
     fn(NameVal);
   });
+}
+
+export function getGlobalWho(fn) {
+  const proRef = ref.child(`global/who/`);
+
+  return proRef.once('value').then(function(Name) {
+    const NameVal = Name.val();
+    fn(NameVal);
+  });
+}
+
+export function getEmail(fn) {
+  const email = firebaseAuth().currentUser.email;
+
+  return email || '';
 }

@@ -6,18 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Chip from 'material-ui/Chip';
 import { saveWho } from '../../helpers/auth';
 
-const whoList = [
-  'UI/UX designer',
-  'Front end developer',
-  'Weekend Entrepreneur',
-  'Optimistic Fellow',
-  'Travel Photographer',
-  'Electronics enthusiastic',
-];
-
 export default class GetWho extends Component {
   state = {
-    who: null,
     errorTextforwho: null,
     whoField: '',
   };
@@ -26,6 +16,7 @@ export default class GetWho extends Component {
     super(props);
     this.state = {
       chipData: [],
+      whoList: ['Designer'],
     };
     this.styles = {
       chip: {
@@ -37,6 +28,39 @@ export default class GetWho extends Component {
       },
     };
   }
+
+  componentWillMount() {
+    this.setChipData(this.props);
+    this.setWhoList(this.props);
+  }
+
+  componentDidMount() {
+    this.setChipData(this.props);
+    this.setWhoList(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.globalWhoList !== this.state.whoList) {
+      this.setWhoList(nextProps);
+    }
+    if (nextProps.who !== null) {
+      if (nextProps.who.length > 0 && nextProps.who !== this.props.who) {
+        this.setChipData(nextProps);
+      }
+    }
+  }
+  setWhoList = props => {
+    if (props.globalWhoList) {
+      this.setState({
+        whoList: props.globalWhoList.map(item => item.label),
+      });
+    }
+  };
+  setChipData = props => {
+    if (props.who) {
+      this.setState({ chipData: props.who });
+    }
+  };
 
   handleRequestDelete = key => {
     if (key === 3) {
@@ -63,8 +87,7 @@ export default class GetWho extends Component {
   }
 
   handleUpdateInput = value => {
-    const isPresent = whoList.includes(value);
-    console.warn('got value', value, isPresent);
+    const isPresent = this.state.whoList.includes(value);
     if (isPresent) {
       this.setState({
         whoField: '',
@@ -87,42 +110,39 @@ export default class GetWho extends Component {
         chipData: [...this.state.chipData, { label: whoField }],
       });
     } else {
-      console.log(
-        'whoField submitting',
-        // this.state.whoField,
-        this.state.chipData
-      );
+      saveWho(this.state.chipData)
+        .then(() => {
+          console.log('this.props.getGlobalWho() called successfully');
+          this.props.getGlobalWho();
+        })
+        .catch(error => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          console.log(errorCode, errorMessage);
+
+          this.setState({ errorTextforwho: errorMessage });
+        });
     }
-
-    // if (this.state.values.length === 0) {
-    //   this.setState({ errorTextforwho: 'Please enter your user who' });
-    //   return;
-    // }
-
-    // saveWho(this.state.values).catch(error => {
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    //
-    //   console.log(errorCode, errorMessage);
-    //
-    //   this.setState({ errorTextforwho: errorMessage });
-    // });
   };
 
   render() {
     const { chipData, values } = this.state;
-    console.log('this.state.whoField', this.state.whoField);
+
+    const { isLoaded } = this.props;
+    if (isLoaded == null) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <AutoComplete
             floatingLabelText="Please enter your who"
             filter={AutoComplete.fuzzyFilter}
-            dataSource={whoList.filter(
+            dataSource={this.state.whoList.filter(
               x => !chipData.map(x => x.label).includes(x)
             )}
             searchText={this.state.whoField}
-            // onUpdateInput={e => this.setState({ whoField: e.target.value })}
             onUpdateInput={this.handleUpdateInput}
           />
           <div style={this.styles.wrapper}>

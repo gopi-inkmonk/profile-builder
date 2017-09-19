@@ -9,38 +9,51 @@ import GetShortDesc from './forms/GetShortDesc';
 import GetContact from './forms/GetContact';
 import GetStory from './forms/GetStory';
 
-import { getProfileData } from '../helpers/read';
+import { getProfileData, getGlobalWho, getEmail } from '../helpers/read';
 
 export default class Home extends Component {
   state = {
+    isLoaded: false,
     name: null,
     who: null,
+    globalWhoList: null,
     shortDesc: null,
     contact: null,
     story: null,
+    email: null,
   };
 
   componentWillMount() {
     getProfileData(this.getProfileData);
+    getGlobalWho(this.getGlobalWho);
   }
 
   getProfileData = data => {
-    console.log('getProfileData', data);
+    if (data) {
+      this.setState({
+        isLoaded: true,
+        name: data.name || '',
+        who: data.who || '',
+        shortDesc: data.shortDesc || '',
+        contact: data.contact || '',
+        story: data.story || '',
+      });
+    }
+  };
+
+  getGlobalWho = data => {
     this.setState({
-      name: data.name || '',
-      who: data.who || '',
-      shortDesc: data.shortDesc || '',
-      contact: data.contact || '',
-      story: data.story || '',
+      globalWhoList: data || [],
     });
   };
 
   render() {
     const { match } = this.props;
+    const { isLoaded } = this.state;
 
     return (
       <div>
-        Home
+        Welcome {this.state.name}, {getEmail()} {' '}
         <button onClick={logout}>Logout</button>
         <nav className="nav">
           <NavLink
@@ -66,27 +79,42 @@ export default class Home extends Component {
         <Route
           exact
           path={`${match.url}/name`}
-          render={() => <GetName name={this.state.name} />}
+          render={() => <GetName name={this.state.name} isLoaded={isLoaded} />}
         />
         <Route
           exact
           path={`${match.url}/who`}
-          render={() => <GetWho who={this.state.who} />}
+          render={() =>
+            <GetWho
+              who={this.state.who}
+              globalWhoList={this.state.globalWhoList}
+              isLoaded={isLoaded}
+              getGlobalWho={() => {
+                getProfileData(this.getProfileData);
+                getGlobalWho(this.getGlobalWho);
+              }}
+            />}
         />
         <Route
           exact
           path={`${match.url}/desc`}
-          render={() => <GetShortDesc shortDesc={this.state.shortDesc} />}
+          render={() =>
+            <GetShortDesc
+              shortDesc={this.state.shortDesc}
+              isLoaded={isLoaded}
+            />}
         />
         <Route
           exact
           path={`${match.url}/contact`}
-          render={() => <GetContact contact={this.state.contact} />}
+          render={() =>
+            <GetContact contact={this.state.contact} isLoaded={isLoaded} />}
         />
         <Route
           exact
           path={`${match.url}/story`}
-          render={() => <GetStory story={this.state.story} />}
+          render={() =>
+            <GetStory story={this.state.story} isLoaded={isLoaded} />}
         />
       </div>
     );

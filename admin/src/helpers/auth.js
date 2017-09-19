@@ -74,9 +74,10 @@ export function saveWho(who) {
   const uid = firebaseAuth().currentUser.uid;
   const updates = {};
 
-  updates['who'] = who;
+  updates[`profiles/${uid}/who`] = who;
+  updates['global/who'] = who;
 
-  return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+  return ref.child(`/`).update(updates).then(() => {
     console.log('Who successfully saved');
   });
 }

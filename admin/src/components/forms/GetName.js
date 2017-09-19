@@ -34,8 +34,8 @@ export default class GetName extends Component {
   };
 
   render() {
-    console.log('props :', this.props.name, 'state :', this.state.name);
-    if (this.props.name == null) {
+    const { isLoaded } = this.props;
+    if (isLoaded == null) {
       return <div>Loading...</div>;
     }
     return (

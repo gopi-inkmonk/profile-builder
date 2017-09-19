@@ -56,10 +56,12 @@ export default class GetContact extends Component {
   };
 
   render() {
-    console.log('props :', this.props.contact, 'state :', this.state.contact);
-    if (this.props.contact == null) {
+    const { isLoaded } = this.props;
+    if (isLoaded == null) {
       return <div>Loading...</div>;
     }
+
+    const contact = this.props.contact || { email: '', phone: '', social: '' };
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -67,7 +69,7 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your email"
             fullWidth={true}
             type="email"
-            defaultValue={this.props.contact.email}
+            defaultValue={contact.email}
             errorText={this.state.errorTextforemail}
             onChange={e => this.setState({ email: e.target.value })}
           />
@@ -75,7 +77,7 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your phone number"
             fullWidth={true}
             type="tel"
-            defaultValue={this.props.contact.phone}
+            defaultValue={contact.phone}
             errorText={this.state.errorTextforphone}
             onChange={e => this.setState({ phone: e.target.value })}
           />
@@ -83,7 +85,7 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your social id"
             fullWidth={true}
             type="url"
-            defaultValue={this.props.contact.social}
+            defaultValue={contact.social}
             errorText={this.state.errorTextforsocial}
             onChange={e => this.setState({ social: e.target.value })}
           />

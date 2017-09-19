@@ -2,19 +2,25 @@
   "rules": {
     "users": {
       "$uid": {
-        // ".write": "auth !== null && auth.uid === $uid",
-        ".write": "auth != null  && (!data.exists() || !newData.exists())",
+        ".write": "auth !== null && auth.uid === $uid",
+        // ".write": "auth != null  && (!data.exists() || !newData.exists())",
         ".read": "auth !== null && auth.provider === 'password'",
         "username": {
-          ".validate": "!root.child('usernames').child(newData.val()).exists() || root.child('usernames').child(newData.val()).val() == $uid"
+          // ".validate": "!root.child('usernames').child(newData.val()).exists() || root.child('usernames').child(newData.val()).val() == $uid"
         }
       }
     },
     "usernames": {
-      ".write": "auth != null  && (!data.exists() || !newData.exists())"
+      ".write": "auth != null"
+      // ".write": "auth != null  && (!data.exists() || !newData.exists())"
     },
     "profiles": {
-      ".write": "auth !== null"
+      ".write": "auth !== null",
+      ".read": "auth !== null"
+    },
+    "global":{
+      ".write": "auth !== null",
+      ".read": "auth !== null"
     }
   }
 }
