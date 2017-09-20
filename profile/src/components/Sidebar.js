@@ -83,7 +83,11 @@ class Sidebar extends Component {
             path={`/profile/work-experience`}
             render={() => <WorkExperience />}
           />
-          <img className="profilePic" src="/images/blank.gif" />
+          <img
+            className="profilePic"
+            src="/images/blank.gif"
+            style={{ backgroundImage: `url("${this.props.DPImage}")` }}
+          />
         </div>
 
         <dl>

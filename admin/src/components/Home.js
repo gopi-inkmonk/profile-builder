@@ -8,6 +8,7 @@ import GetWho from './forms/GetWho';
 import GetShortDesc from './forms/GetShortDesc';
 import GetContact from './forms/GetContact';
 import GetStory from './forms/GetStory';
+import GetDP from './forms/GetDP';
 import Username from './Username';
 
 import {
@@ -76,12 +77,11 @@ export default class Home extends Component {
           >
             User Name
           </NavLink>
-          <NavLink
-            to={`${match.url}/name`}
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to={`${match.url}/name`} className="nav-link">
             Name
+          </NavLink>
+          <NavLink to={`${match.url}/dp`} className="nav-link">
+            DP
           </NavLink>
           <NavLink to={`${match.url}/who`} className="nav-link">
             Who
@@ -106,6 +106,11 @@ export default class Home extends Component {
           exact
           path={`${match.url}/name`}
           render={() => <GetName name={this.state.name} isLoaded={isLoaded} />}
+        />
+        <Route
+          exact
+          path={`${match.url}/dp`}
+          render={() => <GetDP isLoaded={isLoaded} />}
         />
         <Route
           exact

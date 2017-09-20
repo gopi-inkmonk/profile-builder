@@ -84,7 +84,7 @@ export default class GetContact extends Component {
           <TextField
             floatingLabelText="Please enter your social id"
             fullWidth={true}
-            type="url"
+            type="text"
             defaultValue={contact.social}
             errorText={this.state.errorTextforsocial}
             onChange={e => this.setState({ social: e.target.value })}

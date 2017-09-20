@@ -5,7 +5,7 @@ import Story from './components/Story';
 import Sidebar from './components/Sidebar';
 import firebase from 'firebase';
 import { firebaseAuth } from './config/Fire';
-import { getProfileData } from './helpers/read';
+import { getProfileData, getDP } from './helpers/read';
 
 class App extends Component {
   state = {
@@ -13,6 +13,7 @@ class App extends Component {
     notFOund: false,
     isLoaded: false,
     data: null,
+    DPImage: '',
   };
   componentWillMount() {
     const { username } = this.props.match.params;
@@ -33,10 +34,15 @@ class App extends Component {
         }
         this.setState({ notFOund: true, isLoaded: true });
       });
+
+    getDP(username).then(url => {
+      console.log(url);
+      this.setState({ DPImage: url });
+    });
   }
   render() {
     const { sidebarWidth, ChildComponent, ...rest } = this.props;
-    const { notFOund, isLoaded, data } = this.state;
+    const { notFOund, isLoaded, data, DPImage } = this.state;
     const { username } = this.props.match.params;
 
     if (!isLoaded) {
@@ -52,6 +58,7 @@ class App extends Component {
     return (
       <div>
         <Sidebar
+          DPImage={DPImage}
           imgStyle={{ width: sidebarWidth }}
           {...rest}
           contact={data.contact}
