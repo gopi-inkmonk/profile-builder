@@ -343,38 +343,43 @@ body {
   line-height: 21px;
 }
 /* line 174, ../../sass/profile.scss */
-#profile .sidebar > dl > dt {
+#profile .sidebar > dl > span {
+  display: inline-block;
+  width: 100%;
+}
+/* line 178, ../../sass/profile.scss */
+#profile .sidebar > dl > span:last-child dd {
+  margin-bottom: 0;
+}
+/* line 183, ../../sass/profile.scss */
+#profile .sidebar > dl dt {
   color: #fff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 180, ../../sass/profile.scss */
-#profile .sidebar > dl > dd {
+/* line 189, ../../sass/profile.scss */
+#profile .sidebar > dl dd {
   color: #fff;
   margin: 0 0 15px;
 }
-/* line 185, ../../sass/profile.scss */
-#profile .sidebar > dl > dd.social a {
+/* line 194, ../../sass/profile.scss */
+#profile .sidebar > dl dd.social a {
   color: #fff;
   padding-right: 15px;
   font-size: 16px;
   padding-right: 15px;
 }
-/* line 193, ../../sass/profile.scss */
-#profile .sidebar > dl > dd a {
+/* line 202, ../../sass/profile.scss */
+#profile .sidebar > dl dd a {
   color: #fff;
 }
-/* line 196, ../../sass/profile.scss */
-#profile .sidebar > dl > dd a:hover {
+/* line 205, ../../sass/profile.scss */
+#profile .sidebar > dl dd a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 201, ../../sass/profile.scss */
-#profile .sidebar > dl > dd:last-child {
-  margin-bottom: 0;
-}
-/* line 207, ../../sass/profile.scss */
+/* line 212, ../../sass/profile.scss */
 #profile .ProgressBar {
   width: 100%;
   height: 5px;
@@ -382,7 +387,7 @@ body {
   display: inline-block;
   position: relative;
 }
-/* line 214, ../../sass/profile.scss */
+/* line 219, ../../sass/profile.scss */
 #profile .ProgressBar > span {
   background: #2d343b;
   position: absolute;
@@ -390,7 +395,7 @@ body {
   top: 0;
   bottom: 0;
 }
-/* line 222, ../../sass/profile.scss */
+/* line 227, ../../sass/profile.scss */
 #profile .contentWrapper {
   flex: 1;
   padding: 25px;
@@ -400,16 +405,16 @@ body {
   flex-direction: column;
   box-sizing: content-box;
 }
-/* line 231, ../../sass/profile.scss */
+/* line 236, ../../sass/profile.scss */
 #profile .contentWrapper.home {
   justify-content: space-between;
 }
-/* line 236, ../../sass/profile.scss */
+/* line 241, ../../sass/profile.scss */
 #profile .contentWrapper.story .nav {
   position: fixed;
   z-index: 1000;
 }
-/* line 240, ../../sass/profile.scss */
+/* line 245, ../../sass/profile.scss */
 #profile .contentWrapper.story .nav + .menuMask {
   position: fixed;
   z-index: 1;
@@ -424,24 +429,30 @@ body {
   background-image: -webkit-linear-gradient(top, #ffffff 40%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to bottom, #ffffff 40%, rgba(255, 255, 255, 0) 100%);
 }
-/* line 250, ../../sass/profile.scss */
+/* line 255, ../../sass/profile.scss */
 #profile .contentWrapper.story .content {
   margin-top: 100px;
   margin-bottom: 100px;
   padding-left: 95px;
 }
-/* line 257, ../../sass/profile.scss */
+/* line 262, ../../sass/profile.scss */
 #profile .contentWrapper .content {
   padding-left: 210px;
 }
-/* line 261, ../../sass/profile.scss */
+/* line 266, ../../sass/profile.scss */
 #profile .contentWrapper .short-desc {
   color: #68717c;
   line-height: 21px;
   margin: -10px 0 25px;
   display: inline-block;
 }
-/* line 267, ../../sass/profile.scss */
+/* line 272, ../../sass/profile.scss */
+#profile .contentWrapper .short-desc > span {
+  margin-right: 15px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+/* line 278, ../../sass/profile.scss */
 #profile .contentWrapper p {
   font-family: "Roboto Slab", serif;
   font-size: 20px;
@@ -450,7 +461,7 @@ body {
   margin: 0 0 15px;
 }
 
-/* line 278, ../../sass/profile.scss */
+/* line 289, ../../sass/profile.scss */
 dl.timeline dt {
   width: 50px;
   text-align: right;
@@ -460,7 +471,7 @@ dl.timeline dt {
   color: #2d343b;
   line-height: 24px;
 }
-/* line 287, ../../sass/profile.scss */
+/* line 298, ../../sass/profile.scss */
 dl.timeline dd {
   margin-left: 75px;
   margin-bottom: 15px;
@@ -470,7 +481,7 @@ dl.timeline dd {
   position: relative;
   padding-left: 25px;
 }
-/* line 296, ../../sass/profile.scss */
+/* line 307, ../../sass/profile.scss */
 dl.timeline dd:before {
   content: "\f10c";
   position: absolute;
@@ -484,7 +495,7 @@ dl.timeline dd:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 311, ../../sass/profile.scss */
+/* line 322, ../../sass/profile.scss */
 h1 {
   font-family: "Roboto Slab", serif;
   font-size: 35px;
@@ -493,13 +504,13 @@ h1 {
   margin: 0 0 15px;
 }
 
-/* line 319, ../../sass/profile.scss */
+/* line 330, ../../sass/profile.scss */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
 
-/* line 324, ../../sass/profile.scss */
+/* line 335, ../../sass/profile.scss */
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 250ms ease-in;

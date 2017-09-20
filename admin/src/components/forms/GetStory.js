@@ -110,6 +110,7 @@ export default class GetStory extends Component {
               type="number"
               min="1900"
               max="9999"
+              defaultValue={this.state.list.year}
               errorText={this.state.errorTextforYear}
               value={item.year || ''}
               onChange={this.handleChange.bind(this, i, 'year')}
@@ -133,6 +134,7 @@ export default class GetStory extends Component {
             <TextField
               floatingLabelText="Story"
               fullWidth={true}
+              defaultValue={this.state.list.story}
               errorText={this.state.errorTextforStory}
               value={item.story || ''}
               onChange={this.handleChange.bind(this, i, 'story')}
@@ -154,6 +156,11 @@ export default class GetStory extends Component {
   }
 
   render() {
+    const { isLoaded } = this.props;
+    if (isLoaded == null) {
+      return <div>Loading...</div>;
+    }
+    console.log(this.props.story);
     return (
       <form onSubmit={this.handleSubmit}>
         {this.createUI()}

@@ -171,13 +171,22 @@ body {
     & > dl {
       line-height: 21px;
 
-      & > dt {
+      & > span {
+        display: inline-block;
+        width: 100%;
+
+        &:last-child dd {
+          margin-bottom: 0;
+        }
+      }
+
+      & dt {
         color: #fff;
         font-size: 12px;
         text-transform: uppercase;
         font-weight: bold;
       }
-      & > dd {
+      & dd {
         color: #fff;
         margin: 0 0 15px;
 
@@ -196,10 +205,6 @@ body {
           &:hover {
             @include opacity(0.8);
           }
-        }
-
-        &:last-child {
-          margin-bottom: 0;
         }
       }
     }
@@ -263,6 +268,12 @@ body {
       line-height: 21px;
       margin: -10px 0 25px;
       display: inline-block;
+
+      & > span {
+        margin-right: 15px;
+        margin-bottom: 5px;
+        display: inline-block;
+      }
     }
     & p {
       font-family: $serif-font;

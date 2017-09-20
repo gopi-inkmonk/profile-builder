@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './stylesheets/profile.css';
-import App from './App';
+import AppRoutes from './AppRoutes';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppRoutes />, document.getElementById('root'));
 registerServiceWorker();

@@ -8,8 +8,14 @@ import GetWho from './forms/GetWho';
 import GetShortDesc from './forms/GetShortDesc';
 import GetContact from './forms/GetContact';
 import GetStory from './forms/GetStory';
+import Username from './Username';
 
-import { getProfileData, getGlobalWho, getEmail } from '../helpers/read';
+import {
+  getProfileData,
+  getGlobalWho,
+  getEmail,
+  getUserName,
+} from '../helpers/read';
 
 export default class Home extends Component {
   state = {
@@ -21,11 +27,13 @@ export default class Home extends Component {
     contact: null,
     story: null,
     email: null,
+    username: null,
   };
 
   componentWillMount() {
     getProfileData(this.getProfileData);
     getGlobalWho(this.getGlobalWho);
+    getUserName(this.getUserName);
   }
 
   getProfileData = data => {
@@ -47,15 +55,27 @@ export default class Home extends Component {
     });
   };
 
+  getUserName = data => {
+    this.setState({
+      username: data || '',
+    });
+  };
+
   render() {
     const { match } = this.props;
     const { isLoaded } = this.state;
-
     return (
       <div>
         Welcome {this.state.name}, {getEmail()} {' '}
         <button onClick={logout}>Logout</button>
         <nav className="nav">
+          <NavLink
+            to={`${match.url}/username`}
+            className="nav-link"
+            activeClassName="active"
+          >
+            User Name
+          </NavLink>
           <NavLink
             to={`${match.url}/name`}
             className="nav-link"
@@ -76,6 +96,12 @@ export default class Home extends Component {
             Story
           </NavLink>
         </nav>
+        <Route
+          exact
+          path={`${match.url}/username`}
+          render={() =>
+            <Username username={this.state.username} isLoaded={isLoaded} />}
+        />
         <Route
           exact
           path={`${match.url}/name`}

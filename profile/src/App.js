@@ -1,39 +1,63 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Story from './components/Story';
 import Sidebar from './components/Sidebar';
 import firebase from 'firebase';
 import { firebaseAuth } from './config/Fire';
+import { getProfileData } from './helpers/read';
 
 class App extends Component {
+  state = {
+    name: null,
+    notFOund: false,
+    isLoaded: false,
+    data: null,
+  };
+  componentWillMount() {
+    const { username } = this.props.match.params;
+    getProfileData(username)
+      .then(data => {
+        if (data) {
+          this.setState({
+            isLoaded: true,
+            data,
+          });
+        }
+      })
+      .catch(err => {
+        if (err === 'USER_DOES_NOT_HAVE_PROFILE_DATA') {
+          console.log('USER_DOES_NOT_HAVE_PROFILE_DATA');
+        } else {
+          console.log('USER_DOES_NOT_HAVE_PROFILE_DATA : dfdfdf');
+        }
+        this.setState({ notFOund: true, isLoaded: true });
+      });
+  }
   render() {
-    return (
-      <Router>
-        <div id="profile">
-          <Route
-            exact
-            path="/"
-            render={() =>
-              <div>
-                <Sidebar imgStyle={{ width: 411 }} />
-                <Home />
-              </div>}
-          />
+    const { sidebarWidth, ChildComponent, ...rest } = this.props;
+    const { notFOund, isLoaded, data } = this.state;
+    const { username } = this.props.match.params;
 
-          <Route
-            path="/profile"
-            render={props => {
-              return (
-                <div>
-                  <Sidebar imgStyle={{ width: 316 }} />
-                  <Story {...props} />
-                </div>
-              );
-            }}
-          />
+    if (!isLoaded) {
+      return <div>Loading...</div>;
+    }
+    if (notFOund) {
+      return (
+        <div>
+          user: {username} not found
         </div>
-      </Router>
+      );
+    }
+    return (
+      <div>
+        <Sidebar
+          imgStyle={{ width: sidebarWidth }}
+          {...rest}
+          contact={data.contact}
+        />
+        <ChildComponent {...rest} data={data} />
+      </div>
     );
   }
 }

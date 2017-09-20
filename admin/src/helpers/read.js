@@ -25,3 +25,27 @@ export function getEmail(fn) {
 
   return email || '';
 }
+
+export function getUserName(fn) {
+  const uid = firebaseAuth().currentUser.uid;
+  const proRef = ref.child(`users/${uid}/username`);
+
+  return proRef.once('value').then(function(Name) {
+    const NameVal = Name.val();
+    fn(NameVal);
+  });
+}
+
+export function checkUsername(username, fn) {
+  const uid = firebaseAuth().currentUser.uid;
+  const proRef = ref.child(`users/${uid}/username`);
+  const nameVal = username;
+
+  console.log('checkUsername', nameVal);
+
+  return proRef.equalTo(nameVal).once('value').then(function(Name) {
+    console.log('getUserName', Name);
+    const NameVal = Name.val();
+    fn(NameVal);
+  });
+}

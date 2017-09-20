@@ -68,10 +68,11 @@ class WorkExperience extends Component {
 
 class Sidebar extends Component {
   render() {
+    const { match, contact } = this.props;
     return (
       <div className="sidebar">
         <div className="home-menu">
-          <Link to={'/'} className="initial">
+          <Link to={`/${match.params.username}`} className="initial">
             G
           </Link>
         </div>
@@ -86,14 +87,25 @@ class Sidebar extends Component {
         </div>
 
         <dl>
-          <dt>Email </dt>
-          <dd>
-            <a href="mailto: hello@gopiraja.com">hello@gopiraja.com</a>
-          </dd>
-          <dt>Phone </dt>
-          <dd>
-            <a href="tel: +91 95000 91308">+91 95000 91308</a>
-          </dd>
+          {contact.email &&
+            <span>
+              <dt>Email </dt>
+              <dd>
+                <a href="mailto: hello@gopiraja.com">
+                  {contact.email}
+                </a>
+              </dd>
+            </span>}
+
+          {contact.phone &&
+            <span>
+              <dt>Phone </dt>
+              <dd>
+                <a href="tel: +91 95000 91308">
+                  {contact.phone}
+                </a>
+              </dd>
+            </span>}
 
           <dt>Find me on </dt>
           <dd className="social">
