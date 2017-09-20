@@ -15,6 +15,12 @@ export default class GetShortDesc extends Component {
     }
   }
 
+  componentWillMount() {
+    if (this.props.shortDesc !== this.state.shortDesc) {
+      this.setState({ shortDesc: this.props.shortDesc });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -55,7 +61,7 @@ export default class GetShortDesc extends Component {
             multiLine={true}
             rows={4}
             type="text"
-            defaultValue={this.props.shortDesc}
+            defaultValue={this.state.shortDesc}
             errorText={this.state.errorTextforshortDesc}
             onChange={e => this.setState({ shortDesc: e.target.value })}
           />

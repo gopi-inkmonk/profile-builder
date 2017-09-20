@@ -31,7 +31,7 @@ body {
     background: $primary-color;
 
     &:hover {
-      background: $primary-dark-color;
+      @include opacity(.8);
     }
   }
 }

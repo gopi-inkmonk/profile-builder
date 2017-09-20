@@ -50,14 +50,43 @@ export function saveUsername(Username, user) {
   const uid = firebaseAuth().currentUser.uid;
   console.log(uid);
   const updates = {};
+  const CurrentUserName = `users/${uid}/username`;
+
+  // I need to remove existing username record from /usernames
+  // and I need to check if the new entry already have it and allow to write only if not
 
   updates[`users/${uid}/username`] = Username;
   updates[`users/${uid}/SignupOn`] = firebase.database.ServerValue.TIMESTAMP;
   updates[`usernames/${Username}`] = uid;
 
-  return ref.child('/').update(updates).then(() => {
-    window.location.href = '/home';
+  return ref.child(CurrentUserName).once('value').then(function(Name) {
+    const CurrentUserNameVal = Name.val();
+    const CurrentUserNamePath = `usernames/${CurrentUserNameVal}`;
+
+    console.log(CurrentUserNamePath);
+
+    return ref.child(CurrentUserNamePath).set(null).then(() => {
+      console.log('Current username deleted and procedd to save new name');
+      return ref.child('/').update(updates).then(() => {
+        console.log('user name saved successfully');
+      });
+    });
   });
+
+  // return ref.child(CurrentUserName).once('value').then(function(Name) {
+  //   const CurrentUserNameVal = Name.val();
+  //   const isExist = `usernames/${CurrentUserNameVal}`;
+  //   if (isExist.exists()) {
+  //     console.log('exists true');
+  //   } else {
+  //     console.log('exists false');
+  //   }
+  //   console.log(CurrentUserName, CurrentUserNameVal, isExist);
+  // });
+
+  // return ref.child('/').update(updates).then(() => {
+  //   console.log('user name saved successfully');
+  // });
 }
 
 export function saveName(name) {
@@ -111,6 +140,17 @@ export function saveStory(story) {
   updates['story'] = story;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
+    console.log('Who successfully saved');
+  });
+}
+
+export function saveTheme(ThemeColor) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates[`profiles/${uid}/themeColor`] = ThemeColor;
+
+  return ref.child(`/`).update(updates).then(() => {
     console.log('Who successfully saved');
   });
 }

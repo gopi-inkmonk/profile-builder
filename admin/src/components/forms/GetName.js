@@ -15,6 +15,12 @@ export default class GetName extends Component {
     }
   }
 
+  componentWillMount() {
+    if (this.props.name !== this.state.name) {
+      this.setState({ name: this.props.name });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -45,7 +51,7 @@ export default class GetName extends Component {
             floatingLabelText="Please enter your name"
             fullWidth={true}
             type="text"
-            defaultValue={this.props.name}
+            defaultValue={this.state.name}
             errorText={this.state.errorTextforname}
             onChange={e => this.setState({ name: e.target.value })}
           />

@@ -5,7 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
 import { saveUsername } from '../helpers/auth';
-import { checkUsername } from '../helpers/read';
 
 export default class Username extends Component {
   // handleSubmit = e => {
@@ -24,7 +23,13 @@ export default class Username extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.username !== this.state.username) {
-      this.setState({ name: nextProps.username });
+      this.setState({ username: nextProps.username });
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.username !== this.state.username) {
+      this.setState({ username: this.props.username });
     }
   }
 
@@ -36,25 +41,34 @@ export default class Username extends Component {
       return;
     }
 
-    checkUsername(this.state.username).then(() => {
-      console.log(this.state.username);
-    });
+    // const re = /[0-9A-F:]+/g;
+    const re = /[0-9A-F]+/g;
+    // const re = /[0-9a-fA-F]+/g;
+    // const re = /[a-fA-F]+/g;
+    if (!re.test(e.key)) {
+      console.log(re);
+      this.setState({
+        errorTextforUsername:
+          'Please avoid using space or special characters in username',
+      });
+      return;
+    }
 
-    // saveUsername(this.state.username).catch(error => {
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    //
-    //   console.log(errorCode, errorMessage);
-    //
-    //   if (errorCode === 'PERMISSION_DENIED') {
-    //     this.setState({
-    //       errorTextforUsername:
-    //         'User name is taken. Please choose another name',
-    //     });
-    //   } else {
-    //     this.setState({ errorTextforUsername: errorMessage });
-    //   }
-    // });
+    saveUsername(this.state.username).catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      console.log(errorCode, errorMessage);
+
+      if (errorCode === 'PERMISSION_DENIED') {
+        this.setState({
+          errorTextforUsername:
+            'User name is taken. Please choose another name',
+        });
+      } else {
+        this.setState({ errorTextforUsername: errorMessage });
+      }
+    });
   };
 
   render() {
@@ -71,7 +85,7 @@ export default class Username extends Component {
                 floatingLabelText="User Name"
                 fullWidth={true}
                 type="text"
-                defaultValue={this.props.username}
+                defaultValue={this.state.username}
                 errorText={this.state.errorTextforUsername}
                 onChange={e => this.setState({ username: e.target.value })}
               />

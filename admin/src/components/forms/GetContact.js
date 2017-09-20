@@ -19,6 +19,12 @@ export default class GetContact extends Component {
     }
   }
 
+  componentWillMount() {
+    if (this.props.contact !== this.state.contact) {
+      this.setState({ contact: this.props.contact });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 

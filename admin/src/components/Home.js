@@ -9,6 +9,7 @@ import GetShortDesc from './forms/GetShortDesc';
 import GetContact from './forms/GetContact';
 import GetStory from './forms/GetStory';
 import GetDP from './forms/GetDP';
+import GetTheme from './forms/GetTheme';
 import Username from './Username';
 
 import {
@@ -95,6 +96,9 @@ export default class Home extends Component {
           <NavLink to={`${match.url}/story`} className="nav-link">
             Story
           </NavLink>
+          <NavLink to={`${match.url}/theme`} className="nav-link">
+            Theme
+          </NavLink>
         </nav>
         <Route
           exact
@@ -146,6 +150,12 @@ export default class Home extends Component {
           path={`${match.url}/story`}
           render={() =>
             <GetStory story={this.state.story} isLoaded={isLoaded} />}
+        />
+        <Route
+          exact
+          path={`${match.url}/theme`}
+          render={() =>
+            <GetTheme story={this.state.story} isLoaded={isLoaded} />}
         />
       </div>
     );

@@ -68,9 +68,9 @@ class WorkExperience extends Component {
 
 class Sidebar extends Component {
   render() {
-    const { match, contact } = this.props;
+    const { match, contact, themeColor } = this.props;
     return (
-      <div className="sidebar">
+      <div className="sidebar" style={{ backgroundColor: `#${themeColor}` }}>
         <div className="home-menu">
           <Link to={`/${match.params.username}`} className="initial">
             G

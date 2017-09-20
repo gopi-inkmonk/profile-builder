@@ -37,7 +37,11 @@ class Home extends Component {
             {data.shortDesc}
           </p>
 
-          <Link to={`${match.url}/profile/story`} className="btn btn-primary">
+          <Link
+            to={`${match.url}/profile/story`}
+            className="btn btn-primary"
+            style={{ backgroundColor: `#${data.themeColor}` }}
+          >
             See More <FontAwesome name="arrow-down" />
           </Link>
         </div>

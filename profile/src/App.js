@@ -59,6 +59,7 @@ class App extends Component {
       <div>
         <Sidebar
           DPImage={DPImage}
+          themeColor={data.themeColor}
           imgStyle={{ width: sidebarWidth }}
           {...rest}
           contact={data.contact}

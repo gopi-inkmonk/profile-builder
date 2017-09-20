@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { ref, firebaseAuth } from '../config/Fire';
+import { ref, firebaseAuth, storageRef } from '../config/Fire';
 
 export function getProfileData(fn) {
   const uid = firebaseAuth().currentUser.uid;
@@ -36,16 +36,18 @@ export function getUserName(fn) {
   });
 }
 
-export function checkUsername(username, fn) {
+export function getDP(fn) {
   const uid = firebaseAuth().currentUser.uid;
-  const proRef = ref.child(`users/${uid}/username`);
-  const nameVal = username;
+  const DPRef = storageRef.child(`dp/${uid}`);
 
-  console.log('checkUsername', nameVal);
+  // return new Promise((resolve, reject) => {
+  //   unRef.once('value').then(function(Name) {
+  //     const uid = Name.val();
+  //     const DPRef = storageRef.child(`dp/${uid}`);
+  //   });
+  // });
 
-  return proRef.equalTo(nameVal).once('value').then(function(Name) {
-    console.log('getUserName', Name);
-    const NameVal = Name.val();
-    fn(NameVal);
+  return DPRef.getDownloadURL().then(function(url) {
+    return url;
   });
 }

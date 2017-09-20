@@ -67,6 +67,7 @@ body {
       bottom: 0;
       margin: auto;
       left: 52%;
+      background-color: #ffffff;
 
       & > .infographic,
       & > .profilePic {
@@ -270,7 +271,7 @@ body {
       display: inline-block;
 
       & > span {
-        margin-right: 15px;
+        margin-right: 10px;
         margin-bottom: 5px;
         display: inline-block;
       }
