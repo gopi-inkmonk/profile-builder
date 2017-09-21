@@ -46,7 +46,11 @@ class App extends Component {
     const { username } = this.props.match.params;
 
     if (!isLoaded) {
-      return <div>Loading...</div>;
+      return (
+        <div className="loader">
+          <span className="brand">Itsmybio.me</span>
+        </div>
+      );
     }
     if (notFOund) {
       return (

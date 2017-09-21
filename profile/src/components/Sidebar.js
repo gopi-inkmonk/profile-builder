@@ -73,7 +73,7 @@ class Sidebar extends Component {
       <div className="sidebar" style={{ backgroundColor: `#${themeColor}` }}>
         <div className="home-menu">
           <Link to={`/${match.params.username}`} className="initial">
-            G
+            Itsmybio.me
           </Link>
         </div>
 

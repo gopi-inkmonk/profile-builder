@@ -107,6 +107,10 @@
     & .contentWrapper {
       margin-left: 350px;
 
+      & .content {
+        padding-left: 245px;
+      }
+
       &.story {
         & .content {
           padding-left: 130px;

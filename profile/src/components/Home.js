@@ -48,22 +48,26 @@ class Home extends Component {
 
         <nav className="nav">
           <Link to={`${match.url}/profile/story`} className="nav-link">
-            Story
+            <FontAwesome name="book" />
+            <span>Story</span>
           </Link>
           <Link
             to={`${match.url}/profile/work-experience`}
             className="nav-link"
           >
-            Work Experiance
+            <FontAwesome name="briefcase" />
+            <span>Work Experience</span>
           </Link>
           <Link
             to={`${match.url}/profile/academic-qualification`}
             className="nav-link"
           >
-            Acadamic Qualification
+            <FontAwesome name="mortar-board" />
+            <span>Academic Qualification</span>
           </Link>
           <Link to={`${match.url}/profile/projects`} className="nav-link">
-            Projects
+            <FontAwesome name="black-tie" />
+            <span>Projects</span>
           </Link>
         </nav>
       </div>
