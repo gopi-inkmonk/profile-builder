@@ -51,7 +51,7 @@ export default class GetName extends Component {
             floatingLabelText="Please enter your name"
             fullWidth={true}
             type="text"
-            defaultValue={this.state.name}
+            value={this.state.name}
             errorText={this.state.errorTextforname}
             onChange={e => this.setState({ name: e.target.value })}
           />

@@ -5,9 +5,11 @@ import { saveContact } from '../../helpers/auth';
 
 export default class GetContact extends Component {
   state = {
-    email: null,
-    phone: null,
-    social: null,
+    contact: {
+      email: null,
+      phone: null,
+      social: null,
+    },
     errorTextforemail: null,
     errorTextforphone: null,
     errorTextforsocial: null,
@@ -67,7 +69,7 @@ export default class GetContact extends Component {
       return <div>Loading...</div>;
     }
 
-    const contact = this.props.contact || { email: '', phone: '', social: '' };
+    const contact = this.state.contact || { email: '', phone: '', social: '' };
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -75,25 +77,40 @@ export default class GetContact extends Component {
             floatingLabelText="Please enter your email"
             fullWidth={true}
             type="email"
-            defaultValue={contact.email}
+            value={contact.email}
             errorText={this.state.errorTextforemail}
-            onChange={e => this.setState({ email: e.target.value })}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, email: value },
+              }));
+            }}
           />
           <TextField
             floatingLabelText="Please enter your phone number"
             fullWidth={true}
             type="tel"
-            defaultValue={contact.phone}
+            value={contact.phone}
             errorText={this.state.errorTextforphone}
-            onChange={e => this.setState({ phone: e.target.value })}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, phone: value },
+              }));
+            }}
           />
           <TextField
             floatingLabelText="Please enter your social id"
             fullWidth={true}
             type="text"
-            defaultValue={contact.social}
+            value={contact.social}
             errorText={this.state.errorTextforsocial}
-            onChange={e => this.setState({ social: e.target.value })}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, social: value },
+              }));
+            }}
           />
           <RaisedButton label="Save" primary={true} type="submit" />
         </form>

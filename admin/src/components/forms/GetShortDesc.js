@@ -61,7 +61,7 @@ export default class GetShortDesc extends Component {
             multiLine={true}
             rows={4}
             type="text"
-            defaultValue={this.state.shortDesc}
+            value={this.state.shortDesc || ''}
             errorText={this.state.errorTextforshortDesc}
             onChange={e => this.setState({ shortDesc: e.target.value })}
           />

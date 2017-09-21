@@ -21,6 +21,19 @@ export default class GetStory extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  componentWillMount() {
+    this.setStory(this.props);
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setStory(nextProps);
+  }
+  setStory = props => {
+    if (props.story) {
+      this.setState({
+        list: props.story,
+      });
+    }
+  };
 
   storyTypeChange(i, key, event, index, value) {
     this.setValue(i, key, value);

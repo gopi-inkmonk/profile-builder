@@ -17,7 +17,7 @@ export default class Username extends Component {
   state = {
     registerError: null,
     loginMessage: null,
-    username: null,
+    username: '',
     errorTextforUsername: null,
   };
 
@@ -33,6 +33,12 @@ export default class Username extends Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.username !== this.state.username) {
+      this.setState({ username: this.props.username });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -42,10 +48,11 @@ export default class Username extends Component {
     }
 
     // const re = /[0-9A-F:]+/g;
-    const re = /[0-9A-F]+/g;
+    const re = /^[\w\-]+$/;
+    console.log('re', re, e.key, re.test(e.key));
     // const re = /[0-9a-fA-F]+/g;
     // const re = /[a-fA-F]+/g;
-    if (!re.test(e.key)) {
+    if (!re.test(this.state.username)) {
       console.log(re);
       this.setState({
         errorTextforUsername:
@@ -85,7 +92,7 @@ export default class Username extends Component {
                 floatingLabelText="User Name"
                 fullWidth={true}
                 type="text"
-                defaultValue={this.state.username}
+                value={this.state.username || ''}
                 errorText={this.state.errorTextforUsername}
                 onChange={e => this.setState({ username: e.target.value })}
               />

@@ -52,25 +52,39 @@ export function saveUsername(Username, user) {
   const updates = {};
   const CurrentUserName = `users/${uid}/username`;
 
-  // I need to remove existing username record from /usernames
-  // and I need to check if the new entry already have it and allow to write only if not
+  const unRef = ref.child(`usernames/${Username}/`);
+  return unRef.once('value').then(Name => {
+    const targetUID = Name.val();
+    if (!targetUID) {
+      // no user exist with this username
+      // I need to remove existing username record from /usernames
+      // and I need to check if the new entry already have it and allow to write only if not
 
-  updates[`users/${uid}/username`] = Username;
-  updates[`users/${uid}/SignupOn`] = firebase.database.ServerValue.TIMESTAMP;
-  updates[`usernames/${Username}`] = uid;
+      updates[`users/${uid}/username`] = Username;
+      updates[`users/${uid}/SignupOn`] =
+        firebase.database.ServerValue.TIMESTAMP;
+      updates[`usernames/${Username}`] = uid;
 
-  return ref.child(CurrentUserName).once('value').then(function(Name) {
-    const CurrentUserNameVal = Name.val();
-    const CurrentUserNamePath = `usernames/${CurrentUserNameVal}`;
+      return ref.child(CurrentUserName).once('value').then(function(Name) {
+        const CurrentUserNameVal = Name.val();
+        const CurrentUserNamePath = `usernames/${CurrentUserNameVal}`;
 
-    console.log(CurrentUserNamePath);
+        console.log(CurrentUserNamePath);
 
-    return ref.child(CurrentUserNamePath).set(null).then(() => {
-      console.log('Current username deleted and procedd to save new name');
-      return ref.child('/').update(updates).then(() => {
-        console.log('user name saved successfully');
+        return ref.child(CurrentUserNamePath).set(null).then(() => {
+          console.log('Current username deleted and procedd to save new name');
+          return ref.child('/').update(updates).then(() => {
+            console.log('user name saved successfully');
+          });
+        });
       });
-    });
+    } else if (targetUID !== uid) {
+      // throw error that some other user has this username
+      console.error('throw error that some other user has this username');
+    } else {
+      // You already own this username. No need to submit.
+      console.error('You already own this username. No need to submit.');
+    }
   });
 
   // return ref.child(CurrentUserName).once('value').then(function(Name) {

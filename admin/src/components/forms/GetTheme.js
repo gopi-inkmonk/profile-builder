@@ -58,6 +58,8 @@ export default class GetTheme extends Component {
             />
           </RadioButtonGroup>
 
+          <TextField type="color" />
+
           <span
             style={{
               width: 15,
