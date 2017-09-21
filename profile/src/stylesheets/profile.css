@@ -68,13 +68,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 9, ../../sass/partials/_common.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 14, ../../sass/partials/_common.scss */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 17px;
+  background: #fff;
 }
 
-/* line 15, ../../sass/partials/_common.scss */
+/* line 21, ../../sass/partials/_common.scss */
 * {
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -84,9 +91,12 @@ body {
   -o-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 20, ../../sass/partials/_common.scss */
+/* line 27, ../../sass/partials/_common.scss */
 .btn {
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -99,17 +109,17 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-/* line 30, ../../sass/partials/_common.scss */
+/* line 37, ../../sass/partials/_common.scss */
 .btn.btn-primary {
   background: #2d343b;
 }
-/* line 33, ../../sass/partials/_common.scss */
+/* line 40, ../../sass/partials/_common.scss */
 .btn.btn-primary:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 40, ../../sass/partials/_common.scss */
+/* line 47, ../../sass/partials/_common.scss */
 .nav a {
   font-size: 13px;
   font-weight: bold;
@@ -118,17 +128,21 @@ body {
   min-height: 15px;
   border-bottom: 2px solid #fff;
 }
-/* line 48, ../../sass/partials/_common.scss */
+/* line 56, ../../sass/partials/_common.scss */
+.nav a > span.fa {
+  margin-right: 5px;
+}
+/* line 61, ../../sass/partials/_common.scss */
 .nav a:hover {
   color: #2d343b;
 }
-/* line 51, ../../sass/partials/_common.scss */
+/* line 64, ../../sass/partials/_common.scss */
 .nav a.active {
   color: #2d343b;
   border-bottom: 2px solid #2d343b;
 }
 
-/* line 60, ../../sass/partials/_common.scss */
+/* line 73, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab {
   font-size: 13px;
   font-weight: bold;
@@ -140,50 +154,39 @@ body {
   cursor: pointer;
   border-bottom: 2px solid #fff;
 }
-/* line 71, ../../sass/partials/_common.scss */
+/* line 84, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab:hover {
   color: #2d343b;
 }
-/* line 75, ../../sass/partials/_common.scss */
+/* line 88, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab.react-tabs__tab--selected {
   color: #2d343b;
   border-bottom: 2px solid #2d343b;
 }
 
-/* line 88, ../../sass/partials/_common.scss */
+/* line 101, ../../sass/partials/_common.scss */
 .hide {
   display: none !important;
 }
 
-/* line 6, ../../sass/profile.scss */
-html,
-body {
-  height: 100%;
-}
-
-/* line 11, ../../sass/profile.scss */
-body {
-  background: #fff;
-}
-
-/* line 15, ../../sass/profile.scss */
+/* line 105, ../../sass/partials/_common.scss */
 #root,
 #root > div,
 #root > div > div {
   height: 100%;
 }
 
-/* line 21, ../../sass/profile.scss */
+/* line 111, ../../sass/partials/_common.scss */
 #profile {
   min-height: 100%;
 }
-/* line 24, ../../sass/profile.scss */
+/* line 114, ../../sass/partials/_common.scss */
 #profile > div {
   min-height: 100%;
   display: flex;
   flex-direction: row;
 }
-/* line 30, ../../sass/profile.scss */
+/* line 120, ../../sass/partials/_common.scss */
 #profile .sidebar {
   padding: 25px;
   background: #2d343b;
@@ -198,26 +201,26 @@ body {
   left: 0;
   z-index: 10001;
 }
-/* line 44, ../../sass/profile.scss */
+/* line 134, ../../sass/partials/_common.scss */
 #profile .sidebar .home-menu {
   justify-content: space-between;
   display: flex;
 }
-/* line 48, ../../sass/profile.scss */
+/* line 138, ../../sass/partials/_common.scss */
 #profile .sidebar .home-menu a {
   color: #fff;
 }
-/* line 51, ../../sass/profile.scss */
+/* line 141, ../../sass/partials/_common.scss */
 #profile .sidebar .home-menu a:nth-child(2n) {
   padding: 10px;
 }
-/* line 55, ../../sass/profile.scss */
+/* line 145, ../../sass/partials/_common.scss */
 #profile .sidebar .home-menu .initial {
   font-size: 45px;
   font-weight: bolder;
   color: rgba(0, 0, 0, 0.2);
 }
-/* line 61, ../../sass/profile.scss */
+/* line 151, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper {
   -moz-box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.05);
@@ -231,7 +234,7 @@ body {
   left: 52%;
   background-color: #ffffff;
 }
-/* line 72, ../../sass/profile.scss */
+/* line 162, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic, #profile .sidebar > .profilePicWrapper > .profilePic {
   position: absolute;
   top: 0;
@@ -241,27 +244,27 @@ body {
   width: 100%;
   height: 100%;
 }
-/* line 83, ../../sass/profile.scss */
+/* line 173, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic {
   background: #fff;
   z-index: 2;
   overflow: auto;
 }
-/* line 88, ../../sass/profile.scss */
+/* line 178, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .total-exp {
   flex-direction: column;
   display: flex;
   align-items: center;
   padding: 30px;
 }
-/* line 94, ../../sass/profile.scss */
+/* line 184, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .total-exp .job-exp {
   font-weight: bolder;
   font-size: 25px;
   color: #e83435;
   margin: 10px 0 0;
 }
-/* line 101, ../../sass/profile.scss */
+/* line 191, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-wrapper {
   background: #f4f7f8;
   -moz-box-shadow: inset 0 6px 5px 0 rgba(0, 0, 0, 0.02);
@@ -273,7 +276,7 @@ body {
   flex-wrap: wrap;
   position: relative;
 }
-/* line 110, ../../sass/profile.scss */
+/* line 200, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-wrapper:before {
   content: "";
   width: 15px;
@@ -290,7 +293,7 @@ body {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 124, ../../sass/profile.scss */
+/* line 214, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-wrapper > .job {
   flex-direction: column;
   display: flex;
@@ -298,7 +301,7 @@ body {
   min-width: 45%;
   padding: 15px;
 }
-/* line 132, ../../sass/profile.scss */
+/* line 222, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-title {
   font-weight: bold;
   font-size: 13px;
@@ -306,82 +309,82 @@ body {
   margin-bottom: 5px;
   text-transform: uppercase;
 }
-/* line 139, ../../sass/profile.scss */
+/* line 229, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-duration {
   color: #68717c;
   margin-bottom: 5px;
 }
-/* line 143, ../../sass/profile.scss */
+/* line 233, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .job-exp {
   font-size: 20px;
   color: #68717c;
   margin-bottom: 5px;
 }
-/* line 148, ../../sass/profile.scss */
+/* line 238, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .skills {
   padding: 30px;
 }
-/* line 151, ../../sass/profile.scss */
+/* line 241, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .skills .job-title {
   margin-bottom: 15px;
   display: inline-block;
 }
-/* line 156, ../../sass/profile.scss */
+/* line 246, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .skills > .skill {
   margin: 0 0 15px;
 }
-/* line 159, ../../sass/profile.scss */
+/* line 249, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .infographic .skills > .skill > span {
   color: #68717c;
 }
-/* line 166, ../../sass/profile.scss */
+/* line 256, ../../sass/partials/_common.scss */
 #profile .sidebar > .profilePicWrapper > .profilePic {
   background: url("/images/Photo.png") no-repeat top center;
   background-size: cover;
   z-index: 1;
 }
-/* line 172, ../../sass/profile.scss */
+/* line 262, ../../sass/partials/_common.scss */
 #profile .sidebar > dl {
   line-height: 21px;
 }
-/* line 175, ../../sass/profile.scss */
+/* line 265, ../../sass/partials/_common.scss */
 #profile .sidebar > dl > span {
   display: inline-block;
   width: 100%;
 }
-/* line 179, ../../sass/profile.scss */
+/* line 269, ../../sass/partials/_common.scss */
 #profile .sidebar > dl > span:last-child dd {
   margin-bottom: 0;
 }
-/* line 184, ../../sass/profile.scss */
+/* line 274, ../../sass/partials/_common.scss */
 #profile .sidebar > dl dt {
   color: #fff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 190, ../../sass/profile.scss */
+/* line 280, ../../sass/partials/_common.scss */
 #profile .sidebar > dl dd {
   color: #fff;
   margin: 0 0 15px;
 }
-/* line 195, ../../sass/profile.scss */
+/* line 285, ../../sass/partials/_common.scss */
 #profile .sidebar > dl dd.social a {
   color: #fff;
   padding-right: 15px;
   font-size: 16px;
   padding-right: 15px;
 }
-/* line 203, ../../sass/profile.scss */
+/* line 293, ../../sass/partials/_common.scss */
 #profile .sidebar > dl dd a {
   color: #fff;
 }
-/* line 206, ../../sass/profile.scss */
+/* line 296, ../../sass/partials/_common.scss */
 #profile .sidebar > dl dd a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 213, ../../sass/profile.scss */
+/* line 303, ../../sass/partials/_common.scss */
 #profile .ProgressBar {
   width: 100%;
   height: 5px;
@@ -389,7 +392,7 @@ body {
   display: inline-block;
   position: relative;
 }
-/* line 220, ../../sass/profile.scss */
+/* line 310, ../../sass/partials/_common.scss */
 #profile .ProgressBar > span {
   background: #2d343b;
   position: absolute;
@@ -397,7 +400,7 @@ body {
   top: 0;
   bottom: 0;
 }
-/* line 228, ../../sass/profile.scss */
+/* line 318, ../../sass/partials/_common.scss */
 #profile .contentWrapper {
   flex: 1;
   padding: 25px;
@@ -407,16 +410,16 @@ body {
   flex-direction: column;
   box-sizing: content-box;
 }
-/* line 237, ../../sass/profile.scss */
+/* line 327, ../../sass/partials/_common.scss */
 #profile .contentWrapper.home {
   justify-content: space-between;
 }
-/* line 242, ../../sass/profile.scss */
+/* line 332, ../../sass/partials/_common.scss */
 #profile .contentWrapper.story .nav {
   position: fixed;
   z-index: 1000;
 }
-/* line 246, ../../sass/profile.scss */
+/* line 336, ../../sass/partials/_common.scss */
 #profile .contentWrapper.story .nav + .menuMask {
   position: fixed;
   z-index: 1;
@@ -431,39 +434,39 @@ body {
   background-image: -webkit-linear-gradient(top, #ffffff 40%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to bottom, #ffffff 40%, rgba(255, 255, 255, 0) 100%);
 }
-/* line 256, ../../sass/profile.scss */
+/* line 346, ../../sass/partials/_common.scss */
 #profile .contentWrapper.story .content {
   margin-top: 100px;
   margin-bottom: 100px;
   padding-left: 95px;
 }
-/* line 263, ../../sass/profile.scss */
+/* line 353, ../../sass/partials/_common.scss */
 #profile .contentWrapper .content {
   padding-left: 210px;
 }
-/* line 267, ../../sass/profile.scss */
+/* line 357, ../../sass/partials/_common.scss */
 #profile .contentWrapper .short-desc {
   color: #68717c;
   line-height: 21px;
   margin: -10px 0 25px;
   display: inline-block;
 }
-/* line 273, ../../sass/profile.scss */
+/* line 363, ../../sass/partials/_common.scss */
 #profile .contentWrapper .short-desc > span {
   margin-right: 10px;
   margin-bottom: 5px;
   display: inline-block;
 }
-/* line 279, ../../sass/profile.scss */
+/* line 369, ../../sass/partials/_common.scss */
 #profile .contentWrapper p {
   font-family: "Roboto Slab", serif;
   font-size: 20px;
   color: #68717c;
   line-height: 30px;
-  margin: 0 0 15px;
+  margin: 0 0 25px;
 }
 
-/* line 290, ../../sass/profile.scss */
+/* line 380, ../../sass/partials/_common.scss */
 dl.timeline dt {
   width: 50px;
   text-align: right;
@@ -473,7 +476,7 @@ dl.timeline dt {
   color: #2d343b;
   line-height: 24px;
 }
-/* line 299, ../../sass/profile.scss */
+/* line 389, ../../sass/partials/_common.scss */
 dl.timeline dd {
   margin-left: 75px;
   margin-bottom: 15px;
@@ -483,7 +486,7 @@ dl.timeline dd {
   position: relative;
   padding-left: 25px;
 }
-/* line 308, ../../sass/profile.scss */
+/* line 398, ../../sass/partials/_common.scss */
 dl.timeline dd:before {
   content: "\f10c";
   position: absolute;
@@ -497,7 +500,7 @@ dl.timeline dd:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 323, ../../sass/profile.scss */
+/* line 413, ../../sass/partials/_common.scss */
 h1 {
   font-family: "Roboto Slab", serif;
   font-size: 35px;
@@ -506,14 +509,119 @@ h1 {
   margin: 0 0 15px;
 }
 
-/* line 331, ../../sass/profile.scss */
+/* line 421, ../../sass/partials/_common.scss */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
 
-/* line 336, ../../sass/profile.scss */
+/* line 426, ../../sass/partials/_common.scss */
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 250ms ease-in;
+}
+
+@media (max-width: 768px) {
+  /* line 12, ../../sass/partials/_responsive.scss */
+  .btn {
+    display: block;
+  }
+
+  /* line 16, ../../sass/partials/_responsive.scss */
+  #profile > div {
+    flex-direction: column;
+  }
+  /* line 19, ../../sass/partials/_responsive.scss */
+  #profile > div .sidebar {
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  /* line 28, ../../sass/partials/_responsive.scss */
+  #profile > div .sidebar .home-menu, #profile > div .sidebar dl {
+    display: none;
+  }
+  /* line 33, ../../sass/partials/_responsive.scss */
+  #profile > div .sidebar > .profilePicWrapper {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-height: none;
+    z-index: 1;
+    margin: 0;
+    height: 500px;
+    width: auto !important;
+  }
+  /* line 45, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper {
+    margin-left: 0;
+    position: relative;
+    z-index: 9;
+    background: #fff;
+    margin-top: 500px;
+    display: inline-block;
+    width: 100%;
+    max-width: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 56, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper .content {
+    padding-left: 0;
+  }
+  /* line 59, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper .content + .nav {
+    display: none;
+  }
+  /* line 65, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .nav {
+    position: relative;
+    display: flex;
+  }
+  /* line 69, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .nav a {
+    flex: 1;
+    text-align: center;
+  }
+  /* line 74, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .nav a.active > span {
+    display: inline-block;
+  }
+  /* line 79, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .nav a > span {
+    display: none;
+  }
+  /* line 82, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .nav a > span.fa {
+    display: block;
+  }
+  /* line 88, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .menuMask {
+    display: none;
+  }
+  /* line 91, ../../sass/partials/_responsive.scss */
+  #profile > div .contentWrapper.story .content {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 992px) {
+  /* line 104, ../../sass/partials/_responsive.scss */
+  #profile .sidebar {
+    width: 350px;
+  }
+  /* line 107, ../../sass/partials/_responsive.scss */
+  #profile .contentWrapper {
+    margin-left: 350px;
+  }
+  /* line 111, ../../sass/partials/_responsive.scss */
+  #profile .contentWrapper.story .content {
+    padding-left: 130px;
+  }
 }

@@ -162,22 +162,27 @@ class Story extends Component {
             className="nav-link"
             activeClassName="active"
           >
-            Story
+            <FontAwesome name="book" />
+            <span>Story</span>
           </NavLink>
           <NavLink to={`${match.url}/work-experience`} className="nav-link">
-            Work Experience
+            <FontAwesome name="briefcase" />
+            <span>Work Experience</span>
           </NavLink>
           <NavLink
             to={`${match.url}/academic-qualification`}
             className="nav-link"
           >
-            Academic Qualification
+            <FontAwesome name="mortar-board" />
+            <span>Academic Qualification</span>
           </NavLink>
           <NavLink to={`${match.url}/projects`} className="nav-link">
-            Projects
+            <FontAwesome name="black-tie" />
+            <span>Projects</span>
           </NavLink>
           <Link to={`/${match.params.username}`} className="nav-link">
-            <FontAwesome name="arrow-up" /> Home
+            <FontAwesome name="arrow-up" />
+            <span>Home</span>
           </Link>
         </nav>
         <span className="menuMask" />
