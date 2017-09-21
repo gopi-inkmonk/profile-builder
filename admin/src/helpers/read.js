@@ -36,7 +36,7 @@ export function getUserName(fn) {
   });
 }
 
-export function getDP(fn) {
+export function getDP() {
   const uid = firebaseAuth().currentUser.uid;
   const DPRef = storageRef.child(`dp/${uid}`);
 
@@ -47,7 +47,5 @@ export function getDP(fn) {
   //   });
   // });
 
-  return DPRef.getDownloadURL().then(function(url) {
-    return url;
-  });
+  return DPRef.getDownloadURL();
 }

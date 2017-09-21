@@ -130,7 +130,7 @@ export default class GetWho extends Component {
     const { chipData, values } = this.state;
 
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
     return (

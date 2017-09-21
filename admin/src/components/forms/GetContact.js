@@ -30,19 +30,19 @@ export default class GetContact extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    if (!this.state.email) {
+    if (!this.state.contact.email) {
       this.setState({
         errorTextforemail: 'Please enter your user contact',
       });
       return;
     }
-    if (!this.state.phone) {
+    if (!this.state.contact.phone) {
       this.setState({
         errorTextforphone: 'Please enter your user contact',
       });
       return;
     }
-    if (!this.state.social) {
+    if (!this.state.contact.social) {
       this.setState({
         errorTextforsocial: 'Please enter your user contact',
       });
@@ -50,9 +50,9 @@ export default class GetContact extends Component {
     }
 
     saveContact(
-      this.state.email,
-      this.state.phone,
-      this.state.social
+      this.state.contact.email,
+      this.state.contact.phone,
+      this.state.contact.social
     ).catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -65,7 +65,7 @@ export default class GetContact extends Component {
 
   render() {
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
 

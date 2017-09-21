@@ -30,9 +30,16 @@ export default class GetDP extends Component {
   }
 
   componentWillMount() {
-    getDP().then(url => {
-      this.setState({ DPImage: url });
-    });
+    console.log(this.state.DPImage);
+
+    getDP()
+      .then(url => {
+        console.log(url.length);
+        if (url.length > 0) {
+          this.setState({ DPImage: url });
+        }
+      })
+      .catch(() => {});
   }
 
   componentWillUnmount() {
@@ -56,13 +63,9 @@ export default class GetDP extends Component {
   }
 
   handleChange = e => {
-    this.setState({ files: e.target.files });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    const { files } = this.state;
+    const files = e.target.files;
     const uid = firebase.auth().currentUser.uid;
+
     if (files.length === 0) {
       console.error('no file selected');
       return null;
@@ -87,6 +90,14 @@ export default class GetDP extends Component {
       });
     };
 
+    const complete = () => {
+      console.log('Upload complete');
+
+      getDP().then(url => {
+        this.setState({ DPImage: url });
+      });
+    };
+
     // Update progress bar
     task.on(
       'state_changed',
@@ -94,15 +105,14 @@ export default class GetDP extends Component {
       function error(err) {
         console.log('Error Upload');
       },
-      function complete() {
-        console.log('Upload complete');
-      }
+      complete
     );
   };
 
   render() {
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
 
@@ -123,29 +133,26 @@ export default class GetDP extends Component {
     };
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          {this.state.uploadStarted &&
-            <div>
-              <LinearProgress
-                mode="determinate"
-                value={this.state.uploadingStatus}
-              />
-            </div>}
-
-          <RaisedButton
-            label="Choose an Image"
-            labelPosition="before"
-            style={styles.uploadButton}
-            containerElement="label"
-          >
-            <input
-              type="file"
-              style={styles.uploadInput}
-              onChange={this.handleChange}
+        {this.state.uploadStarted &&
+          <div>
+            <LinearProgress
+              mode="determinate"
+              value={this.state.uploadingStatus}
             />
-          </RaisedButton>
-          <RaisedButton label="Save" primary={true} type="submit" />
-        </form>
+          </div>}
+
+        <RaisedButton
+          label={'Choose an Image'}
+          labelPosition="before"
+          style={styles.uploadButton}
+          containerElement="label"
+        >
+          <input
+            type="file"
+            style={styles.uploadInput}
+            onChange={this.handleChange}
+          />
+        </RaisedButton>
 
         {this.state.DPImage &&
           <div>

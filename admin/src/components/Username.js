@@ -7,13 +7,6 @@ import FontAwesome from 'react-fontawesome';
 import { saveUsername } from '../helpers/auth';
 
 export default class Username extends Component {
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   auth(this.email.value, this.pw.value).catch(e =>
-  //     this.setState(setErrorMsg(e))
-  //   );
-  // };
-
   state = {
     registerError: null,
     loginMessage: null,
@@ -47,13 +40,8 @@ export default class Username extends Component {
       return;
     }
 
-    // const re = /[0-9A-F:]+/g;
     const re = /^[\w\-]+$/;
-    console.log('re', re, e.key, re.test(e.key));
-    // const re = /[0-9a-fA-F]+/g;
-    // const re = /[a-fA-F]+/g;
     if (!re.test(this.state.username)) {
-      console.log(re);
       this.setState({
         errorTextforUsername:
           'Please avoid using space or special characters in username',
@@ -80,7 +68,8 @@ export default class Username extends Component {
 
   render() {
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    console.log(isLoaded);
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
     return (

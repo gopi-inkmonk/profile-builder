@@ -48,6 +48,10 @@ export default class Home extends Component {
         contact: data.contact || '',
         story: data.story || '',
       });
+    } else {
+      this.setState({
+        isLoaded: true,
+      });
     }
   };
 

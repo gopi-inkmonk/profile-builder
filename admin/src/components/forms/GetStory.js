@@ -170,7 +170,7 @@ export default class GetStory extends Component {
 
   render() {
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
     console.log(this.props.story);

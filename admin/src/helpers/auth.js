@@ -31,7 +31,6 @@ export function saveEmailUser(user) {
     })
     .then(() => {
       var user = firebaseAuth().currentUser;
-      window.location.href = '/register/username';
 
       user.sendEmailVerification().then(
         function() {

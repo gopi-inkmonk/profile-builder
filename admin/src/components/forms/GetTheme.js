@@ -35,7 +35,7 @@ export default class GetTheme extends Component {
     };
 
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
     return (

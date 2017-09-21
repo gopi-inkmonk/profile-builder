@@ -49,7 +49,7 @@ export default class GetShortDesc extends Component {
       this.state.shortDesc
     );
     const { isLoaded } = this.props;
-    if (isLoaded == null) {
+    if (isLoaded == false) {
       return <div>Loading...</div>;
     }
     return (
