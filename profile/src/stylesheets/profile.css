@@ -445,20 +445,24 @@ body {
 #profile .contentWrapper .content {
   padding-left: 210px;
 }
-/* line 359, ../../sass/partials/_common.scss */
+/* line 358, ../../sass/partials/_common.scss */
+#profile .contentWrapper .content p {
+  white-space: pre-wrap;
+}
+/* line 363, ../../sass/partials/_common.scss */
 #profile .contentWrapper .short-desc {
   color: #68717c;
   line-height: 21px;
   margin: -10px 0 25px;
   display: inline-block;
 }
-/* line 365, ../../sass/partials/_common.scss */
+/* line 369, ../../sass/partials/_common.scss */
 #profile .contentWrapper .short-desc > span {
   margin-right: 10px;
   margin-bottom: 5px;
   display: inline-block;
 }
-/* line 371, ../../sass/partials/_common.scss */
+/* line 375, ../../sass/partials/_common.scss */
 #profile .contentWrapper p {
   font-family: "Roboto Slab", serif;
   font-size: 20px;
@@ -467,7 +471,7 @@ body {
   margin: 0 0 25px;
 }
 
-/* line 382, ../../sass/partials/_common.scss */
+/* line 386, ../../sass/partials/_common.scss */
 dl.timeline dt {
   width: 50px;
   text-align: right;
@@ -477,7 +481,7 @@ dl.timeline dt {
   color: #2d343b;
   line-height: 24px;
 }
-/* line 391, ../../sass/partials/_common.scss */
+/* line 395, ../../sass/partials/_common.scss */
 dl.timeline dd {
   margin-left: 75px;
   margin-bottom: 15px;
@@ -487,7 +491,7 @@ dl.timeline dd {
   position: relative;
   padding-left: 25px;
 }
-/* line 400, ../../sass/partials/_common.scss */
+/* line 404, ../../sass/partials/_common.scss */
 dl.timeline dd:before {
   content: "\f10c";
   position: absolute;
@@ -501,7 +505,7 @@ dl.timeline dd:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 415, ../../sass/partials/_common.scss */
+/* line 419, ../../sass/partials/_common.scss */
 h1 {
   font-family: "Roboto Slab", serif;
   font-size: 35px;
@@ -510,19 +514,19 @@ h1 {
   margin: 0 0 15px;
 }
 
-/* line 423, ../../sass/partials/_common.scss */
+/* line 427, ../../sass/partials/_common.scss */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
 
-/* line 428, ../../sass/partials/_common.scss */
+/* line 432, ../../sass/partials/_common.scss */
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 250ms ease-in;
 }
 
-/* line 433, ../../sass/partials/_common.scss */
+/* line 437, ../../sass/partials/_common.scss */
 .loader {
   display: flex;
   flex: 1;
@@ -530,7 +534,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-/* line 440, ../../sass/partials/_common.scss */
+/* line 444, ../../sass/partials/_common.scss */
 .loader > .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;

@@ -354,6 +354,10 @@ body {
 
     & .content {
       padding-left: 210px;
+
+      & p {
+        white-space: pre-wrap;
+      }
     }
 
     & .short-desc {
