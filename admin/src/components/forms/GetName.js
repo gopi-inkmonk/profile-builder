@@ -56,7 +56,12 @@ export default class GetName extends Component {
             errorText={this.state.errorTextforname}
             onChange={e => this.setState({ name: e.target.value })}
           />
-          <RaisedButton label="Save" primary={true} type="submit" />
+          <RaisedButton
+            label="Save"
+            primary={true}
+            type="submit"
+            fullWidth={true}
+          />
         </form>
       </div>
     );

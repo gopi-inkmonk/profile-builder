@@ -57,37 +57,10 @@ export default class GetStory extends Component {
     });
   }
 
-  // handleSubmit(event) {
-  //   console.log('this will be submitted: ', this.state);
-  //   // alert('A name was submitted: ' + this.state.value);
-  //   event.preventDefault();
-  // }
-
   handleSubmit(event) {
     event.preventDefault();
 
     console.log(this.state.list.year);
-
-    // if (!this.state.list.year) {
-    //   this.setState({
-    //     errorTextforYear: 'Please enter your user contact',
-    //   });
-    //   return;
-    // }
-    //
-    // if (!this.state.list.type) {
-    //   this.setState({
-    //     errorTextforType: 'Please enter your user contact',
-    //   });
-    //   return;
-    // }
-    //
-    // if (!this.state.list.story) {
-    //   this.setState({
-    //     errorTextforStory: 'Please enter your user contact',
-    //   });
-    //   return;
-    // }
 
     console.log('this will be submitted: ', this.state.list);
 
@@ -117,7 +90,7 @@ export default class GetStory extends Component {
     return this.state.list.map((item, i) => {
       return (
         <div key={i} className="row">
-          <div className="col-sm-2">
+          <div className="col-sm-6 col-md-2">
             <TextField
               floatingLabelText="Year"
               fullWidth={true}
@@ -130,7 +103,7 @@ export default class GetStory extends Component {
               onChange={this.handleChange.bind(this, i, 'year')}
             />
           </div>
-          <div className="col-sm-2">
+          <div className="col-sm-6 col-md-2">
             <SelectField
               floatingLabelText="Select type"
               style={{ width: '100%' }}
@@ -144,7 +117,7 @@ export default class GetStory extends Component {
               <MenuItem value="Project" primaryText="Project" />
             </SelectField>
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-12 col-md-6">
             <TextField
               floatingLabelText="Story"
               fullWidth={true}
@@ -154,13 +127,11 @@ export default class GetStory extends Component {
               onChange={this.handleChange.bind(this, i, 'story')}
             />
           </div>
-          <div
-            className="col-sm-2"
-            style={{ display: 'flex', alignItems: 'flex-end' }}
-          >
+          <div className="col-sm-12 col-md-2 storyCTA">
             <RaisedButton
               label="Remove"
               type="button"
+              fullWidth={true}
               onClick={this.removeClick.bind(this, i)}
             />
           </div>
@@ -178,8 +149,19 @@ export default class GetStory extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         {this.createUI()}
-        <RaisedButton label="add more" onClick={this.addClick.bind(this)} />
-        <RaisedButton label="Save" primary={true} type="submit" />
+        <div style={{ display: 'flex' }}>
+          <div>
+            <RaisedButton label="add more" onClick={this.addClick.bind(this)} />
+          </div>
+          <div style={{ flex: 1 }}>
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </div>
+        </div>
       </form>
     );
   }

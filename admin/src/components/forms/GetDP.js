@@ -145,6 +145,7 @@ export default class GetDP extends Component {
         <RaisedButton
           label={'Choose an Image'}
           labelPosition="before"
+          fullWidth={true}
           style={styles.uploadButton}
           containerElement="label"
         >
@@ -156,8 +157,8 @@ export default class GetDP extends Component {
         </RaisedButton>
 
         {this.state.DPImage &&
-          <div>
-            <img src={this.state.DPImage} />
+          <div style={{ marginTop: 25 }}>
+            <img src={this.state.DPImage} className="img-responsive" />
           </div>}
       </div>
     );

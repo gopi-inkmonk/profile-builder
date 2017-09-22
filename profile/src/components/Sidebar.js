@@ -71,7 +71,7 @@ class Sidebar extends Component {
   render() {
     const { match, contact, themeColor } = this.props;
     return (
-      <div className="sidebar" style={{ backgroundColor: `#${themeColor}` }}>
+      <div className="sidebar" style={{ backgroundColor: `${themeColor}` }}>
         <div className="home-menu">
           <Link to={`/${match.params.username}`} className="initial">
             Itsmybio.me

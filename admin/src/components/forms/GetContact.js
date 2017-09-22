@@ -209,6 +209,7 @@ export default class GetContact extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <h3>Contact</h3>
           <TextField
             floatingLabelText="Please enter your email"
             fullWidth={true}
@@ -235,6 +236,127 @@ export default class GetContact extends Component {
               }));
             }}
           />
+
+          <hr />
+          <h3>Social Links</h3>
+          <TextField
+            floatingLabelText="Please enter your facebook account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.facebook}
+            errorText={this.state.errorTextforfacebook}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, facebook: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your twitter account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.twitter}
+            errorText={this.state.errorTextfortwitter}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, twitter: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your linkedin account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.linkedin}
+            errorText={this.state.errorTextforlinkedin}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, linkedin: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your google+ account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.google}
+            errorText={this.state.errorTextforgoogle}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, google: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your instagram account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.instagram}
+            errorText={this.state.errorTextforinstagram}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, instagram: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your medium account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.medium}
+            errorText={this.state.errorTextformedium}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, medium: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your quora account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.quora}
+            errorText={this.state.errorTextforquora}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, quora: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your stackoverflow account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.stackoverflow}
+            errorText={this.state.errorTextforstackoverflow}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, stackoverflow: value },
+              }));
+            }}
+          />
+          <TextField
+            floatingLabelText="Please enter your fivehundredpx account URL"
+            fullWidth={true}
+            type="url"
+            value={contact.fivehundredpx}
+            errorText={this.state.errorTextforfivehundredpx}
+            onChange={e => {
+              const { value } = e.target;
+              this.setState(prevState => ({
+                contact: { ...prevState.contact, fivehundredpx: value },
+              }));
+            }}
+          />
+
           <TextField
             floatingLabelText="Please enter your angel list account URL"
             fullWidth={true}
@@ -300,19 +422,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your facebook account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.facebook}
-            errorText={this.state.errorTextforfacebook}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, facebook: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your fitbit account URL"
             fullWidth={true}
@@ -443,19 +553,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your instagram account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.instagram}
-            errorText={this.state.errorTextforinstagram}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, instagram: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your kickstarter account URL"
             fullWidth={true}
@@ -482,32 +580,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your linkedin account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.linkedin}
-            errorText={this.state.errorTextforlinkedin}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, linkedin: value },
-              }));
-            }}
-          />
-          <TextField
-            floatingLabelText="Please enter your medium account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.medium}
-            errorText={this.state.errorTextformedium}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, medium: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your pinterest account URL"
             fullWidth={true}
@@ -547,19 +620,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your quora account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.quora}
-            errorText={this.state.errorTextforquora}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, quora: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your reddit account URL"
             fullWidth={true}
@@ -638,19 +699,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your stackoverflow account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.stackoverflow}
-            errorText={this.state.errorTextforstackoverflow}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, stackoverflow: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your strava account URL"
             fullWidth={true}
@@ -690,19 +739,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your twitter account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.twitter}
-            errorText={this.state.errorTextfortwitter}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, twitter: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your upwork account URL"
             fullWidth={true}
@@ -833,19 +870,7 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your fivehundredpx account URL"
-            fullWidth={true}
-            type="url"
-            value={contact.fivehundredpx}
-            errorText={this.state.errorTextforfivehundredpx}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, fivehundredpx: value },
-              }));
-            }}
-          />
+
           <TextField
             floatingLabelText="Please enter your care.com account URL"
             fullWidth={true}
@@ -859,20 +884,13 @@ export default class GetContact extends Component {
               }));
             }}
           />
-          <TextField
-            floatingLabelText="Please enter your google+ account URL"
+
+          <RaisedButton
+            label="Save"
+            primary={true}
+            type="submit"
             fullWidth={true}
-            type="url"
-            value={contact.google}
-            errorText={this.state.errorTextforgoogle}
-            onChange={e => {
-              const { value } = e.target;
-              this.setState(prevState => ({
-                contact: { ...prevState.contact, google: value },
-              }));
-            }}
           />
-          <RaisedButton label="Save" primary={true} type="submit" />
         </form>
       </div>
     );

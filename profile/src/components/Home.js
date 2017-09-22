@@ -41,7 +41,7 @@ class Home extends Component {
           <Link
             to={`${match.url}/profile/story`}
             className="btn btn-primary"
-            style={{ backgroundColor: `#${data.themeColor}` }}
+            style={{ backgroundColor: `${data.themeColor}` }}
           >
             See More <FontAwesome name="arrow-down" />
           </Link>

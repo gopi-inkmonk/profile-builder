@@ -66,7 +66,12 @@ export default class GetShortDesc extends Component {
             errorText={this.state.errorTextforshortDesc}
             onChange={e => this.setState({ shortDesc: e.target.value })}
           />
-          <RaisedButton label="Save" primary={true} type="submit" />
+          <RaisedButton
+            label="Save"
+            primary={true}
+            type="submit"
+            fullWidth={true}
+          />
         </form>
       </div>
     );

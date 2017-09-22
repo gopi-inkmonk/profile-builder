@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  background: #fff;
+  background: #f5f7fa;
 }
 
 #root,
@@ -31,8 +31,19 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 0 45px;
 
   & .simpleFormWrapper {
+    & hr {
+      margin: 30px -30px;
+    }
+
+    & h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
     & > * {
       padding: 0 30px;
 
@@ -73,5 +84,55 @@ h1 {
     font-family: $brand-font;
     font-size: 30px;
     margin-bottom: 15px;
+  }
+}
+
+.appHeader {
+  background: #fff;
+  margin-bottom: 25px;
+
+  & .container {
+    align-items: center;
+    display: flex;
+
+    & > span {
+      flex: 1;
+      padding: 15px;
+
+      &:last-child {
+        text-align: right;
+        padding: 0;
+      }
+
+      & > a {
+        margin: 0;
+        cursor: pointer;
+        padding: 15px;
+        display: inline-block;
+
+        &:hover {
+          background: rgba(#f5f7fa, 0.5);
+        }
+      }
+    }
+  }
+
+  .storyCTA {
+    display: 'flex';
+    align-items: 'flex-end';
+  }
+
+  & .brand {
+    font-family: $brand-font;
+    font-size: 30px;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .storyCTA {
+    margin-bottom: 30px;
   }
 }

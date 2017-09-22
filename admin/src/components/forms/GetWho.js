@@ -140,6 +140,7 @@ export default class GetWho extends Component {
           <AutoComplete
             floatingLabelText="Please enter your who"
             filter={AutoComplete.fuzzyFilter}
+            fullWidth={true}
             dataSource={this.state.whoList.filter(
               x => !chipData.map(x => x.label).includes(x)
             )}
@@ -150,7 +151,12 @@ export default class GetWho extends Component {
             {this.state.chipData.map(this.renderChip, this)}
           </div>
 
-          <RaisedButton label="Save" primary={true} type="submit" />
+          <RaisedButton
+            label="Save"
+            primary={true}
+            type="submit"
+            fullWidth={true}
+          />
         </form>
       </div>
     );

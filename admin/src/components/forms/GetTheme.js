@@ -8,8 +8,21 @@ import Loader from '../Loader';
 
 export default class GetTheme extends Component {
   state = {
-    ThemeColor: 'eb3c3c',
+    ThemeColor: null,
+    errorTextforThemeColor: null,
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.theme !== this.state.ThemeColor) {
+      this.setState({ ThemeColor: nextProps.contact });
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.theme !== this.state.ThemeColor) {
+      this.setState({ ThemeColor: this.props.theme });
+    }
+  }
 
   handleChange = e => {
     console.log('e', e.target.value);
@@ -19,6 +32,13 @@ export default class GetTheme extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    if (!this.state.ThemeColor) {
+      this.setState({
+        errorTextforThemeColor: 'Please choose your theme color',
+      });
+      return;
+    }
 
     saveTheme(this.state.ThemeColor).then(() => {
       console.log('Theme changed');
@@ -42,24 +62,29 @@ export default class GetTheme extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <RadioButtonGroup
-            name="shipSpeed"
-            defaultSelected="eb3c3c"
-            onChange={this.handleChange}
-          >
+          <h3>Picked colors</h3>
+          <RadioButtonGroup name="color" onChange={this.handleChange}>
             <RadioButton
-              value="eb3c3c"
+              value="#eb3c3c"
               label="Red"
               style={styles.radioButton}
             />
             <RadioButton
-              value="9966c3"
+              value="#9966c3"
               label="Violet"
               style={styles.radioButton}
             />
           </RadioButtonGroup>
 
-          <TextField type="color" />
+          <h3>Custom Color</h3>
+          <TextField
+            type="color"
+            fullWidth={true}
+            value={this.state.ThemeColor}
+            name="customColor"
+            onChange={this.handleChange}
+            errorText={this.state.errorTextforThemeColor}
+          />
 
           <span
             style={{
@@ -70,7 +95,12 @@ export default class GetTheme extends Component {
             }}
           />
 
-          <RaisedButton label="Save" primary={true} type="submit" />
+          <RaisedButton
+            label="Save"
+            primary={true}
+            type="submit"
+            fullWidth={true}
+          />
         </form>
       </div>
     );

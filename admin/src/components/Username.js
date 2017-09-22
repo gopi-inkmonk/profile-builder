@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -74,28 +73,27 @@ export default class Username extends Component {
       return <Loader />;
     }
     return (
-      <div className="simpleForm">
-        <div className="col-sm-4 col-sm-offset-4">
-          <Paper zDepth={1} className="simpleFormWrapper">
-            <form onSubmit={this.handleSubmit}>
-              <TextField
-                floatingLabelText="User Name"
-                fullWidth={true}
-                type="text"
-                value={this.state.username || ''}
-                errorText={this.state.errorTextforUsername}
-                onChange={e => this.setState({ username: e.target.value })}
-              />
+      <form onSubmit={this.handleSubmit}>
+        <TextField
+          floatingLabelText="User Name"
+          fullWidth={true}
+          type="text"
+          value={this.state.username || ''}
+          errorText={this.state.errorTextforUsername}
+          onChange={e => this.setState({ username: e.target.value })}
+        />
 
-              <div className="formCTA">
-                <div className="submitCTA">
-                  <RaisedButton label="Save" primary={true} type="submit" />
-                </div>
-              </div>
-            </form>
-          </Paper>
+        <div className="formCTA">
+          <div className="submitCTA">
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </div>
         </div>
-      </div>
+      </form>
     );
   }
 }

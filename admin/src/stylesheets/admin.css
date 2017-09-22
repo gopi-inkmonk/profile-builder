@@ -108,26 +108,78 @@ body {
   background: #ca2e2e;
 }
 
-/* line 40, ../../sass/partials/_common.scss */
-.nav a {
+/* line 39, ../../sass/partials/_common.scss */
+.nav.progressNav {
+  margin-bottom: 25px;
+}
+/* line 42, ../../sass/partials/_common.scss */
+.nav.progressNav a {
   font-size: 13px;
   font-weight: bold;
   color: #a2a5a8;
+  flex: 1;
   text-transform: uppercase;
-  min-height: 15px;
-  border-bottom: 2px solid #fff;
+  position: relative;
+  padding: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
 }
-/* line 48, ../../sass/partials/_common.scss */
-.nav a:hover {
+/* line 52, ../../sass/partials/_common.scss */
+.nav.progressNav a:after, .nav.progressNav a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* line 61, ../../sass/partials/_common.scss */
+.nav.progressNav a:before {
+  width: 10px;
+  height: 10px;
+  top: 0;
+  background: black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 68, ../../sass/partials/_common.scss */
+.nav.progressNav a:after {
+  width: 100%;
+  top: 4px;
+  height: 1px;
+  background: black;
+}
+/* line 75, ../../sass/partials/_common.scss */
+.nav.progressNav a > .progressTitle {
+  display: none;
+  margin: 20px 0 0;
+}
+/* line 80, ../../sass/partials/_common.scss */
+.nav.progressNav a:hover {
   color: #eb3c3c;
 }
-/* line 51, ../../sass/partials/_common.scss */
-.nav a.active {
+/* line 83, ../../sass/partials/_common.scss */
+.nav.progressNav a.active {
   color: #eb3c3c;
-  border-bottom: 2px solid #eb3c3c;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 87, ../../sass/partials/_common.scss */
+.nav.progressNav a.active:before {
+  background: #eb3c3c;
+}
+/* line 91, ../../sass/partials/_common.scss */
+.nav.progressNav a.active:after {
+  width: 100%;
+  height: 1px;
+  background: #eb3c3c;
+}
+/* line 97, ../../sass/partials/_common.scss */
+.nav.progressNav a.active > .progressTitle {
+  display: block;
 }
 
-/* line 60, ../../sass/partials/_common.scss */
+/* line 106, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab {
   font-size: 13px;
   font-weight: bold;
@@ -139,17 +191,22 @@ body {
   cursor: pointer;
   border-bottom: 2px solid #fff;
 }
-/* line 71, ../../sass/partials/_common.scss */
+/* line 117, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab:hover {
   color: #eb3c3c;
 }
-/* line 75, ../../sass/partials/_common.scss */
+/* line 121, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab.react-tabs__tab--selected {
   color: #eb3c3c;
   border-bottom: 2px solid #eb3c3c;
 }
 
-/* line 88, ../../sass/partials/_common.scss */
+/* line 134, ../../sass/partials/_common.scss */
+.img-responsive {
+  max-width: 100%;
+}
+
+/* line 138, ../../sass/partials/_common.scss */
 .hide {
   display: none !important;
 }
@@ -162,7 +219,7 @@ body {
 
 /* line 11, ../../sass/admin.scss */
 body {
-  background: #fff;
+  background: #f5f7fa;
 }
 
 /* line 15, ../../sass/admin.scss */
@@ -187,30 +244,41 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 0 45px;
 }
-/* line 36, ../../sass/admin.scss */
+/* line 37, ../../sass/admin.scss */
+.simpleForm .simpleFormWrapper hr {
+  margin: 30px -30px;
+}
+/* line 41, ../../sass/admin.scss */
+.simpleForm .simpleFormWrapper h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 47, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > * {
   padding: 0 30px;
 }
-/* line 39, ../../sass/admin.scss */
+/* line 50, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > *:first-child {
   padding-top: 30px;
 }
-/* line 43, ../../sass/admin.scss */
+/* line 54, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > *:last-child {
   padding-bottom: 30px;
 }
 
-/* line 50, ../../sass/admin.scss */
+/* line 61, ../../sass/admin.scss */
 .colField {
   display: flex;
 }
-/* line 53, ../../sass/admin.scss */
+/* line 64, ../../sass/admin.scss */
 .colField li {
   flex: 1;
 }
 
-/* line 58, ../../sass/admin.scss */
+/* line 69, ../../sass/admin.scss */
 .loader {
   position: fixed;
   left: 0;
@@ -225,9 +293,61 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-/* line 72, ../../sass/admin.scss */
+/* line 83, ../../sass/admin.scss */
 .loader > .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
   margin-bottom: 15px;
+}
+
+/* line 90, ../../sass/admin.scss */
+.appHeader {
+  background: #fff;
+  margin-bottom: 25px;
+}
+/* line 94, ../../sass/admin.scss */
+.appHeader .container {
+  align-items: center;
+  display: flex;
+}
+/* line 98, ../../sass/admin.scss */
+.appHeader .container > span {
+  flex: 1;
+  padding: 15px;
+}
+/* line 102, ../../sass/admin.scss */
+.appHeader .container > span:last-child {
+  text-align: right;
+  padding: 0;
+}
+/* line 107, ../../sass/admin.scss */
+.appHeader .container > span > a {
+  margin: 0;
+  cursor: pointer;
+  padding: 15px;
+  display: inline-block;
+}
+/* line 113, ../../sass/admin.scss */
+.appHeader .container > span > a:hover {
+  background: rgba(245, 247, 250, 0.5);
+}
+/* line 120, ../../sass/admin.scss */
+.appHeader .storyCTA {
+  display: 'flex';
+  align-items: 'flex-end';
+}
+/* line 125, ../../sass/admin.scss */
+.appHeader .brand {
+  font-family: "Yesteryear", cursive;
+  font-size: 30px;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* line 135, ../../sass/admin.scss */
+  .storyCTA {
+    margin-bottom: 30px;
+  }
 }

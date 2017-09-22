@@ -74,6 +74,7 @@ export function saveUsername(Username, user) {
           console.log('Current username deleted and procedd to save new name');
           return ref.child('/').update(updates).then(() => {
             console.log('user name saved successfully');
+            alert('Successfully saved');
           });
         });
       });
@@ -109,7 +110,7 @@ export function saveName(name) {
   updates['name'] = name;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
-    console.log('Name successfully saved');
+    alert('Successfully saved');
   });
 }
 export function saveWho(who) {
@@ -120,7 +121,7 @@ export function saveWho(who) {
   updates['global/who'] = who;
 
   return ref.child(`/`).update(updates).then(() => {
-    console.log('Who successfully saved');
+    alert('Successfully saved');
   });
 }
 export function saveShortDesc(shortDesc) {
@@ -130,7 +131,7 @@ export function saveShortDesc(shortDesc) {
   updates['shortDesc'] = shortDesc;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
-    console.log('Who successfully saved');
+    alert('Successfully saved');
   });
 }
 export function saveContact(
@@ -242,7 +243,7 @@ export function saveContact(
   updates['google'] = google;
 
   return ref.child(`/profiles/${uid}/contact`).update(updates).then(() => {
-    console.log('Who successfully saved');
+    alert('Successfully saved');
   });
 }
 
@@ -264,6 +265,6 @@ export function saveTheme(ThemeColor) {
   updates[`profiles/${uid}/themeColor`] = ThemeColor;
 
   return ref.child(`/`).update(updates).then(() => {
-    console.log('Who successfully saved');
+    alert('Successfully saved');
   });
 }
