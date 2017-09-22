@@ -468,3 +468,40 @@ h1 {
     margin-bottom: 15px;
   }
 }
+
+.notFound {
+  display: flex;
+  flex: 1;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+
+  & > span {
+    font-size: 16px;
+
+    &.foundMsg {
+      text-align: center;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 224px;
+        height: 144px;
+        background: url('../assets/notfound.jpg') no-repeat center center;
+        margin: 0 0 25px;
+      }
+    }
+    &.heading {
+      font-family: $serif-font;
+      font-size: 30px;
+      line-height: 33px;
+      margin: 9px 0 15px;
+    }
+    &.message {
+      margin: 0 0 30px;
+    }
+    & strong {
+      font-weight: bolder;
+    }
+  }
+}

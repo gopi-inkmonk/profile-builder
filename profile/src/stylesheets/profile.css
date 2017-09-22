@@ -562,6 +562,47 @@ h1 {
   margin-bottom: 15px;
 }
 
+/* line 472, ../../sass/partials/_common.scss */
+.notFound {
+  display: flex;
+  flex: 1;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+}
+/* line 479, ../../sass/partials/_common.scss */
+.notFound > span {
+  font-size: 16px;
+}
+/* line 482, ../../sass/partials/_common.scss */
+.notFound > span.foundMsg {
+  text-align: center;
+}
+/* line 485, ../../sass/partials/_common.scss */
+.notFound > span.foundMsg:before {
+  content: "";
+  display: block;
+  width: 224px;
+  height: 144px;
+  background: url("../assets/notfound.jpg") no-repeat center center;
+  margin: 0 0 25px;
+}
+/* line 494, ../../sass/partials/_common.scss */
+.notFound > span.heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  line-height: 33px;
+  margin: 9px 0 15px;
+}
+/* line 500, ../../sass/partials/_common.scss */
+.notFound > span.message {
+  margin: 0 0 30px;
+}
+/* line 503, ../../sass/partials/_common.scss */
+.notFound > span strong {
+  font-weight: bolder;
+}
+
 @media (max-width: 768px) {
   /* line 12, ../../sass/partials/_responsive.scss */
   .btn {

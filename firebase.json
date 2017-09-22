@@ -3,12 +3,12 @@
     "public": "final-build",
     "rewrites": [
       {
-        "source": "admin/**",
-        "destination": "/admin/index.html"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "admin/**",
+        "destination": "/admin/index.html"
       }
     ]
   }

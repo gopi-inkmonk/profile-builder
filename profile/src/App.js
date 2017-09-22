@@ -54,8 +54,18 @@ class App extends Component {
     }
     if (notFOund) {
       return (
-        <div>
-          user: {username} not found
+        <div className="notFound">
+          <span className="foundMsg">The profile</span>
+          <span className="heading">
+            {username}
+          </span>
+          <span className="message">
+            you are looking for is <strong>not found</strong>
+          </span>
+
+          <a className="btn btn-primary" href="/">
+            Go home
+          </a>
         </div>
       );
     }

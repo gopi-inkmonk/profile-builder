@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import Home from './components/Home';
 import Story from './components/Story';
 import Sidebar from './components/Sidebar';
@@ -13,6 +19,13 @@ class AppRoutes extends Component {
       <Router>
         <div id="profile">
           <Switch>
+            <Redirect from="/admin" to="/admin" />
+            <Route
+              exact
+              path="/admin"
+              render={props =>
+                <App sidebarWidth={411} {...props} ChildComponent={Home} />}
+            />
             <Route
               exact
               path="/:username"
