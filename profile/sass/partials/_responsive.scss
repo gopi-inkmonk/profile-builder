@@ -56,6 +56,10 @@
         & .content {
           padding-left: 0;
 
+          & .social-profiles {
+            display: block;
+          }
+
           & + .nav {
             display: none;
           }

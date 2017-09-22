@@ -4,6 +4,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import { saveTheme } from '../../helpers/auth';
+import Loader from '../Loader';
 
 export default class GetTheme extends Component {
   state = {
@@ -36,7 +37,7 @@ export default class GetTheme extends Component {
 
     const { isLoaded } = this.props;
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     return (
       <div>

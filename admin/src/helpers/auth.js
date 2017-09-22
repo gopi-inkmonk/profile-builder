@@ -133,13 +133,113 @@ export function saveShortDesc(shortDesc) {
     console.log('Who successfully saved');
   });
 }
-export function saveContact(email, phone, social) {
+export function saveContact(
+  email,
+  phone,
+  angellist,
+  behance,
+  blogger,
+  dribbble,
+  etsy,
+  facebook,
+  fitbit,
+  fiverr,
+  flickr,
+  foursquare,
+  github,
+  gofundme,
+  goodreads,
+  Highbrow,
+  imdb,
+  indiegogo,
+  instagram,
+  kickstarter,
+  lastfm,
+  linkedin,
+  medium,
+  pinterest,
+  pocket,
+  producthunt,
+  quora,
+  reddit,
+  skillshare,
+  slideshare,
+  snapchat,
+  soundcloud,
+  spotify,
+  stackoverflow,
+  strava,
+  tumblr,
+  twitch,
+  twitter,
+  upwork,
+  vk,
+  vsco,
+  vimeo,
+  vine,
+  weibo,
+  wikipedia,
+  wordpress,
+  xing,
+  yelp,
+  fivehundredpx,
+  care,
+  google
+) {
   const uid = firebaseAuth().currentUser.uid;
   const updates = {};
 
   updates['email'] = email;
   updates['phone'] = phone;
-  updates['social'] = social;
+  updates['angellist'] = angellist;
+  updates['behance'] = behance;
+  updates['blogger'] = blogger;
+  updates['dribbble'] = dribbble;
+  updates['etsy'] = etsy;
+  updates['facebook'] = facebook;
+  updates['fitbit'] = fitbit;
+  updates['fiverr'] = fiverr;
+  updates['flickr'] = flickr;
+  updates['foursquare'] = foursquare;
+  updates['github'] = github;
+  updates['gofundme'] = gofundme;
+  updates['goodreads'] = goodreads;
+  updates['Highbrow'] = Highbrow;
+  updates['imdb'] = imdb;
+  updates['indiegogo'] = indiegogo;
+  updates['instagram'] = instagram;
+  updates['kickstarter'] = kickstarter;
+  updates['lastfm'] = lastfm;
+  updates['linkedin'] = linkedin;
+  updates['medium'] = medium;
+  updates['pinterest'] = pinterest;
+  updates['pocket'] = pocket;
+  updates['producthunt'] = producthunt;
+  updates['quora'] = quora;
+  updates['reddit'] = reddit;
+  updates['skillshare'] = skillshare;
+  updates['slideshare'] = slideshare;
+  updates['snapchat'] = snapchat;
+  updates['soundcloud'] = soundcloud;
+  updates['spotify'] = spotify;
+  updates['stackoverflow'] = stackoverflow;
+  updates['strava'] = strava;
+  updates['tumblr'] = tumblr;
+  updates['twitch'] = twitch;
+  updates['twitter'] = twitter;
+  updates['upwork'] = upwork;
+  updates['vk'] = vk;
+  updates['vsco'] = vsco;
+  updates['vimeo'] = vimeo;
+  updates['vine'] = vine;
+  updates['weibo'] = weibo;
+  updates['wikipedia'] = wikipedia;
+  updates['wordpress'] = wordpress;
+  updates['xing'] = xing;
+  updates['yelp'] = yelp;
+  updates['fivehundredpx'] = fivehundredpx;
+  updates['care'] = care;
+  updates['google'] = google;
 
   return ref.child(`/profiles/${uid}/contact`).update(updates).then(() => {
     console.log('Who successfully saved');

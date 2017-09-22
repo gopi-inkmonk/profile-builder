@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { saveName } from '../../helpers/auth';
+import Loader from '../Loader';
 
 export default class GetName extends Component {
   state = {
@@ -42,7 +43,7 @@ export default class GetName extends Component {
   render() {
     const { isLoaded } = this.props;
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     return (
       <div>

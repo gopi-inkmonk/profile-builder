@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getProfileData } from '../helpers/read';
+import Contact from './Contact';
 
 class Home extends Component {
   state = {
@@ -44,6 +45,8 @@ class Home extends Component {
           >
             See More <FontAwesome name="arrow-down" />
           </Link>
+
+          <Contact contact={data.contact} />
         </div>
 
         <nav className="nav">

@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { saveStory } from '../../helpers/auth';
+import Loader from '../Loader';
 
 const defaultStory = { year: null, type: null, story: null };
 
@@ -171,7 +172,7 @@ export default class GetStory extends Component {
   render() {
     const { isLoaded } = this.props;
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     console.log(this.props.story);
     return (

@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
 import { saveUsername } from '../helpers/auth';
+import Loader from './Loader';
 
 export default class Username extends Component {
   state = {
@@ -70,7 +71,7 @@ export default class Username extends Component {
     const { isLoaded } = this.props;
     console.log(isLoaded);
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     return (
       <div className="simpleForm">

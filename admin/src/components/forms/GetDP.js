@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import LinearProgress from 'material-ui/LinearProgress';
 import { saveName } from '../../helpers/auth';
 import { getDP } from '../../helpers/read';
+import Loader from '../Loader';
 
 export default class GetDP extends Component {
   state = {
@@ -113,7 +114,7 @@ export default class GetDP extends Component {
     const { isLoaded } = this.props;
 
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
 
     const styles = {

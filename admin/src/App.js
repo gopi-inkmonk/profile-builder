@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Username from './components/Username';
 import Home from './components/Home';
+import Loader from './components/Loader';
 
 const PrivateRoute = ({ component: Component, authed, ...rest }) =>
   <Route
@@ -68,7 +69,7 @@ class App extends Component {
 
   render() {
     return this.state.loading === true
-      ? <div>Loading...</div>
+      ? <Loader />
       : <BrowserRouter>
           <MuiThemeProvider>
             <div>

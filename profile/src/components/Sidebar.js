@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Contact from './Contact';
 
 class ProgressBar extends Component {
   render() {
@@ -90,40 +91,7 @@ class Sidebar extends Component {
           />
         </div>
 
-        <dl>
-          {contact.email &&
-            <span>
-              <dt>Email </dt>
-              <dd>
-                <a href="mailto: hello@gopiraja.com">
-                  {contact.email}
-                </a>
-              </dd>
-            </span>}
-
-          {contact.phone &&
-            <span>
-              <dt>Phone </dt>
-              <dd>
-                <a href="tel: +91 95000 91308">
-                  {contact.phone}
-                </a>
-              </dd>
-            </span>}
-
-          <dt>Find me on </dt>
-          <dd className="social">
-            <a href="/" target="_blank">
-              <span className="fa fa-facebook" />
-            </a>
-            <a href="/" target="_blank">
-              <span className="fa fa-linkedin" />
-            </a>
-            <a href="/" target="_blank">
-              <span className="fa fa-dribbble" />
-            </a>
-          </dd>
-        </dl>
+        <Contact contact={contact} />
       </div>
     );
   }

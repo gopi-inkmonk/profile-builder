@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { saveShortDesc } from '../../helpers/auth';
+import Loader from '../Loader';
 
 export default class GetShortDesc extends Component {
   state = {
@@ -50,7 +51,7 @@ export default class GetShortDesc extends Component {
     );
     const { isLoaded } = this.props;
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     return (
       <div>

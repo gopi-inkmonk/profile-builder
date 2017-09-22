@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import Chip from 'material-ui/Chip';
 import { saveWho } from '../../helpers/auth';
+import Loader from '../Loader';
 
 export default class GetWho extends Component {
   state = {
@@ -131,7 +132,7 @@ export default class GetWho extends Component {
 
     const { isLoaded } = this.props;
     if (isLoaded == false) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
     return (
       <div>
