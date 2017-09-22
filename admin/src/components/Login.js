@@ -85,20 +85,14 @@ export default class Login extends Component {
         >
           {errorMessage}
         </Dialog>
-        <div className="text-center">
-          <img
-            src="/assets/images/startupmafia-logocircle.svg"
-            alt="Startup Mafia"
-            className="brand"
-            width="50"
-          />
+        <div className="text-center" style={{ padding: 30 }}>
+          <span className="brand">Itsmybio.me</span>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <Paper zDepth={1} className="simpleFormWrapper">
             <div className="formTitle">
-              <h2>Sign in</h2>
-              <span>to continue to StartupMafia.club</span>
+              <h2>Sign in to continue</h2>
             </div>
 
             <form onSubmit={this.handleSubmit}>
@@ -117,20 +111,44 @@ export default class Login extends Component {
                 onChange={e => this.setState({ password: e.target.value })}
               />
 
-              <div className="text-right fp">
-                <a href="/forgot-password">Forgot password?</a>
-              </div>
-
               <div className="formCTA">
                 <div className="submitCTA">
-                  <RaisedButton label="Sign In" primary={true} type="submit" />
+                  <RaisedButton
+                    label="Sign In"
+                    primary={true}
+                    type="submit"
+                    fullWidth={true}
+                  />
                 </div>
 
-                <FlatButton
-                  label="Create an account"
-                  fullWidth={true}
-                  href="/register"
-                />
+                <div
+                  style={{
+                    display: 'flex',
+                  }}
+                >
+                  <div
+                    style={{
+                      flex: 1,
+                    }}
+                  >
+                    <FlatButton
+                      label="Forgot password?"
+                      fullWidth={true}
+                      href="/forgot-password"
+                    />
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                    }}
+                  >
+                    <FlatButton
+                      label="Create an account"
+                      fullWidth={true}
+                      href="/register"
+                    />
+                  </div>
+                </div>
               </div>
 
               {this.state.loginMessage &&

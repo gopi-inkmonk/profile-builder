@@ -64,14 +64,18 @@ export default class GetStory extends Component {
 
     console.log('this will be submitted: ', this.state.list);
 
-    saveStory(this.state.list).catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    saveStory(this.state.list)
+      .then(() => {
+        window.location.href = '/home/theme';
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
 
-      this.setState({ errorTextforcontact: errorMessage });
-    });
+        this.setState({ errorTextforcontact: errorMessage });
+      });
   }
 
   addClick() {

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { logout } from '../helpers/auth';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import Paper from 'material-ui/Paper';
@@ -124,7 +129,8 @@ export default class Home extends Component {
         </div>
 
         <div className="container simpleForm">
-          <div className="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-2">
+          <Redirect from="/home" to="/home/username" />
+          <div className="col-sm-8 col-md-6">
             <Paper zDepth={1} className="simpleFormWrapper">
               <Route
                 exact
@@ -186,7 +192,7 @@ export default class Home extends Component {
               />
             </Paper>
           </div>
-          <div className="col-sm-10 col-sm-offset-1">
+          <div className="col-sm-10">
             <Paper zDepth={1} className="simpleFormWrapper">
               <Route
                 exact

@@ -30,14 +30,18 @@ export default class GetName extends Component {
       return;
     }
 
-    saveName(this.state.name).catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    saveName(this.state.name)
+      .then(() => {
+        window.location.href = '/home/dp';
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
 
-      this.setState({ errorTextforname: errorMessage });
-    });
+        this.setState({ errorTextforname: errorMessage });
+      });
   };
 
   render() {

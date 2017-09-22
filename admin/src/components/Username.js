@@ -49,21 +49,25 @@ export default class Username extends Component {
       return;
     }
 
-    saveUsername(this.state.username).catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    saveUsername(this.state.username)
+      .then(() => {
+        window.location.href = '/home/name';
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
 
-      if (errorCode === 'PERMISSION_DENIED') {
-        this.setState({
-          errorTextforUsername:
-            'User name is taken. Please choose another name',
-        });
-      } else {
-        this.setState({ errorTextforUsername: errorMessage });
-      }
-    });
+        if (errorCode === 'PERMISSION_DENIED') {
+          this.setState({
+            errorTextforUsername:
+              'User name is taken. Please choose another name',
+          });
+        } else {
+          this.setState({ errorTextforUsername: errorMessage });
+        }
+      });
   };
 
   render() {

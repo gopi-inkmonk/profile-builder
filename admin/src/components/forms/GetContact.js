@@ -186,14 +186,18 @@ export default class GetContact extends Component {
       this.state.contact.fivehundredpx || null,
       this.state.contact.care || null,
       this.state.contact.google || null
-    ).catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    )
+      .then(() => {
+        window.location.href = '/home/story';
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
 
-      this.setState({ errorTextforcontact: errorMessage });
-    });
+        this.setState({ errorTextforcontact: errorMessage });
+      });
   };
 
   render() {
@@ -240,7 +244,7 @@ export default class GetContact extends Component {
           <hr />
           <h3>Social Links</h3>
           <TextField
-            floatingLabelText="Please enter your facebook account URL"
+            floatingLabelText="facebook account URL"
             fullWidth={true}
             type="url"
             value={contact.facebook}
@@ -253,7 +257,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your twitter account URL"
+            floatingLabelText="twitter account URL"
             fullWidth={true}
             type="url"
             value={contact.twitter}
@@ -266,7 +270,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your linkedin account URL"
+            floatingLabelText="linkedin account URL"
             fullWidth={true}
             type="url"
             value={contact.linkedin}
@@ -279,7 +283,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your google+ account URL"
+            floatingLabelText="google+ account URL"
             fullWidth={true}
             type="url"
             value={contact.google}
@@ -292,7 +296,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your instagram account URL"
+            floatingLabelText="instagram account URL"
             fullWidth={true}
             type="url"
             value={contact.instagram}
@@ -305,7 +309,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your medium account URL"
+            floatingLabelText="medium account URL"
             fullWidth={true}
             type="url"
             value={contact.medium}
@@ -318,7 +322,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your quora account URL"
+            floatingLabelText="quora account URL"
             fullWidth={true}
             type="url"
             value={contact.quora}
@@ -331,7 +335,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your stackoverflow account URL"
+            floatingLabelText="stackoverflow account URL"
             fullWidth={true}
             type="url"
             value={contact.stackoverflow}
@@ -344,7 +348,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your fivehundredpx account URL"
+            floatingLabelText="fivehundredpx account URL"
             fullWidth={true}
             type="url"
             value={contact.fivehundredpx}
@@ -358,7 +362,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your angel list account URL"
+            floatingLabelText="angel list account URL"
             fullWidth={true}
             type="url"
             value={contact.angellist}
@@ -371,7 +375,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your behance account URL"
+            floatingLabelText="behance account URL"
             fullWidth={true}
             type="url"
             value={contact.behance}
@@ -384,7 +388,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your blogger account URL"
+            floatingLabelText="blogger account URL"
             fullWidth={true}
             type="url"
             value={contact.blogger}
@@ -397,7 +401,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your dribbble account URL"
+            floatingLabelText="dribbble account URL"
             fullWidth={true}
             type="url"
             value={contact.dribbble}
@@ -410,7 +414,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your etsy account URL"
+            floatingLabelText="etsy account URL"
             fullWidth={true}
             type="url"
             value={contact.etsy}
@@ -424,7 +428,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your fitbit account URL"
+            floatingLabelText="fitbit account URL"
             fullWidth={true}
             type="url"
             value={contact.fitbit}
@@ -437,7 +441,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your fiverr account URL"
+            floatingLabelText="fiverr account URL"
             fullWidth={true}
             type="url"
             value={contact.fiverr}
@@ -450,7 +454,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your flickr account URL"
+            floatingLabelText="flickr account URL"
             fullWidth={true}
             type="url"
             value={contact.flickr}
@@ -463,7 +467,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your foursquare account URL"
+            floatingLabelText="foursquare account URL"
             fullWidth={true}
             type="url"
             value={contact.foursquare}
@@ -476,7 +480,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your github account URL"
+            floatingLabelText="github account URL"
             fullWidth={true}
             type="url"
             value={contact.github}
@@ -489,7 +493,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your gofundme account URL"
+            floatingLabelText="gofundme account URL"
             fullWidth={true}
             type="url"
             value={contact.gofundme}
@@ -502,7 +506,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your goodreads account URL"
+            floatingLabelText="goodreads account URL"
             fullWidth={true}
             type="url"
             value={contact.goodreads}
@@ -515,7 +519,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your Highbrow account URL"
+            floatingLabelText="Highbrow account URL"
             fullWidth={true}
             type="url"
             value={contact.Highbrow}
@@ -528,7 +532,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your imdb account URL"
+            floatingLabelText="imdb account URL"
             fullWidth={true}
             type="url"
             value={contact.imdb}
@@ -541,7 +545,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your indiegogo account URL"
+            floatingLabelText="indiegogo account URL"
             fullWidth={true}
             type="url"
             value={contact.indiegogo}
@@ -555,7 +559,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your kickstarter account URL"
+            floatingLabelText="kickstarter account URL"
             fullWidth={true}
             type="url"
             value={contact.kickstarter}
@@ -568,7 +572,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your lastfm account URL"
+            floatingLabelText="lastfm account URL"
             fullWidth={true}
             type="url"
             value={contact.lastfm}
@@ -582,7 +586,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your pinterest account URL"
+            floatingLabelText="pinterest account URL"
             fullWidth={true}
             type="url"
             value={contact.pinterest}
@@ -595,7 +599,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your pocket account URL"
+            floatingLabelText="pocket account URL"
             fullWidth={true}
             type="url"
             value={contact.pocket}
@@ -608,7 +612,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your producthunt account URL"
+            floatingLabelText="producthunt account URL"
             fullWidth={true}
             type="url"
             value={contact.producthunt}
@@ -622,7 +626,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your reddit account URL"
+            floatingLabelText="reddit account URL"
             fullWidth={true}
             type="url"
             value={contact.reddit}
@@ -635,7 +639,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your skillshare account URL"
+            floatingLabelText="skillshare account URL"
             fullWidth={true}
             type="url"
             value={contact.skillshare}
@@ -648,7 +652,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your slideshare account URL"
+            floatingLabelText="slideshare account URL"
             fullWidth={true}
             type="url"
             value={contact.slideshare}
@@ -661,7 +665,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your snapchat account URL"
+            floatingLabelText="snapchat account URL"
             fullWidth={true}
             type="url"
             value={contact.snapchat}
@@ -674,7 +678,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your soundcloud account URL"
+            floatingLabelText="soundcloud account URL"
             fullWidth={true}
             type="url"
             value={contact.soundcloud}
@@ -687,7 +691,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your spotify account URL"
+            floatingLabelText="spotify account URL"
             fullWidth={true}
             type="url"
             value={contact.spotify}
@@ -701,7 +705,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your strava account URL"
+            floatingLabelText="strava account URL"
             fullWidth={true}
             type="url"
             value={contact.strava}
@@ -714,7 +718,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your tumblr account URL"
+            floatingLabelText="tumblr account URL"
             fullWidth={true}
             type="url"
             value={contact.tumblr}
@@ -727,7 +731,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your twitch account URL"
+            floatingLabelText="twitch account URL"
             fullWidth={true}
             type="url"
             value={contact.twitch}
@@ -741,7 +745,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your upwork account URL"
+            floatingLabelText="upwork account URL"
             fullWidth={true}
             type="url"
             value={contact.upwork}
@@ -754,7 +758,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your vk account URL"
+            floatingLabelText="vk account URL"
             fullWidth={true}
             type="url"
             value={contact.vk}
@@ -767,7 +771,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your vsco account URL"
+            floatingLabelText="vsco account URL"
             fullWidth={true}
             type="url"
             value={contact.vsco}
@@ -780,7 +784,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your vimeo account URL"
+            floatingLabelText="vimeo account URL"
             fullWidth={true}
             type="url"
             value={contact.vimeo}
@@ -793,7 +797,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your vine account URL"
+            floatingLabelText="vine account URL"
             fullWidth={true}
             type="url"
             value={contact.vine}
@@ -806,7 +810,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your weibo account URL"
+            floatingLabelText="weibo account URL"
             fullWidth={true}
             type="url"
             value={contact.weibo}
@@ -819,7 +823,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your wikipedia account URL"
+            floatingLabelText="wikipedia account URL"
             fullWidth={true}
             type="url"
             value={contact.wikipedia}
@@ -832,7 +836,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your wordpress account URL"
+            floatingLabelText="wordpress account URL"
             fullWidth={true}
             type="url"
             value={contact.wordpress}
@@ -845,7 +849,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your xing account URL"
+            floatingLabelText="xing account URL"
             fullWidth={true}
             type="url"
             value={contact.xing}
@@ -858,7 +862,7 @@ export default class GetContact extends Component {
             }}
           />
           <TextField
-            floatingLabelText="Please enter your yelp account URL"
+            floatingLabelText="yelp account URL"
             fullWidth={true}
             type="url"
             value={contact.yelp}
@@ -872,7 +876,7 @@ export default class GetContact extends Component {
           />
 
           <TextField
-            floatingLabelText="Please enter your care.com account URL"
+            floatingLabelText="care.com account URL"
             fullWidth={true}
             type="url"
             value={contact.care}

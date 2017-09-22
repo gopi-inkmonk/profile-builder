@@ -244,7 +244,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 0 45px;
+  margin-bottom: 45px;
 }
 /* line 37, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper hr {
@@ -345,9 +345,23 @@ h1 {
   text-align: center;
 }
 
+/* line 134, ../../sass/admin.scss */
+.brand {
+  font-family: "Yesteryear", cursive;
+  font-size: 30px;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
-  /* line 135, ../../sass/admin.scss */
+  /* line 143, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
+  }
+
+  /* line 148, ../../sass/admin.scss */
+  .appHeader .container {
+    flex-direction: column;
   }
 }

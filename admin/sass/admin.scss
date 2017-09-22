@@ -31,7 +31,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 0 45px;
+  margin-bottom: 45px;
 
   & .simpleFormWrapper {
     & hr {
@@ -131,8 +131,22 @@ h1 {
   }
 }
 
+.brand {
+  font-family: $brand-font;
+  font-size: 30px;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .storyCTA {
     margin-bottom: 30px;
+  }
+
+  .appHeader {
+    & .container {
+      flex-direction: column;
+    }
   }
 }

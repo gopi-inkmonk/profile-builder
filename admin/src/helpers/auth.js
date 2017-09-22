@@ -81,9 +81,11 @@ export function saveUsername(Username, user) {
     } else if (targetUID !== uid) {
       // throw error that some other user has this username
       console.error('throw error that some other user has this username');
+      alert('User name not available. Please choose another user name');
     } else {
       // You already own this username. No need to submit.
       console.error('You already own this username. No need to submit.');
+      alert('You already own this user name.');
     }
   });
 
@@ -254,7 +256,7 @@ export function saveStory(story) {
   updates['story'] = story;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
-    console.log('Who successfully saved');
+    alert('Successfully saved');
   });
 }
 

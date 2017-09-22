@@ -116,6 +116,9 @@ export default class GetWho extends Component {
           console.log('this.props.getGlobalWho() called successfully');
           this.props.getGlobalWho();
         })
+        .then(() => {
+          window.location.href = '/home/desc';
+        })
         .catch(error => {
           const errorCode = error.code;
           const errorMessage = error.message;

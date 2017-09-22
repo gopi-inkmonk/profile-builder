@@ -32,14 +32,18 @@ export default class GetShortDesc extends Component {
       return;
     }
 
-    saveShortDesc(this.state.shortDesc).catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    saveShortDesc(this.state.shortDesc)
+      .then(() => {
+        window.location.href = '/home/contact';
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
+        console.log(errorCode, errorMessage);
 
-      this.setState({ errorTextforshortDesc: errorMessage });
-    });
+        this.setState({ errorTextforshortDesc: errorMessage });
+      });
   };
 
   render() {

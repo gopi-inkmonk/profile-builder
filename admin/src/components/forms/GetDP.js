@@ -92,10 +92,11 @@ export default class GetDP extends Component {
     };
 
     const complete = () => {
-      console.log('Upload complete');
+      alert('Upload complete');
 
       getDP().then(url => {
         this.setState({ DPImage: url });
+        window.location.href = '/home/who';
       });
     };
 
