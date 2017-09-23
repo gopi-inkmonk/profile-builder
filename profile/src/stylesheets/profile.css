@@ -624,10 +624,18 @@ h1 {
     right: 0;
   }
   /* line 28, ../../sass/partials/_responsive.scss */
-  #profile > div .sidebar .home-menu, #profile > div .sidebar dl {
+  #profile > div .sidebar dl {
     display: none;
   }
   /* line 33, ../../sass/partials/_responsive.scss */
+  #profile > div .sidebar .home-menu .initial {
+    position: absolute;
+    z-index: 9;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+  }
+  /* line 42, ../../sass/partials/_responsive.scss */
   #profile > div .sidebar > .profilePicWrapper {
     left: 0;
     position: fixed;
@@ -639,7 +647,7 @@ h1 {
     height: 500px;
     width: auto !important;
   }
-  /* line 45, ../../sass/partials/_responsive.scss */
+  /* line 54, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper {
     margin-left: 0;
     position: relative;
@@ -653,64 +661,64 @@ h1 {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 56, ../../sass/partials/_responsive.scss */
+  /* line 65, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper .content {
     padding-left: 0;
   }
-  /* line 59, ../../sass/partials/_responsive.scss */
+  /* line 68, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper .content .social-profiles {
     display: block;
   }
-  /* line 63, ../../sass/partials/_responsive.scss */
+  /* line 72, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper .content + .nav {
     display: none;
   }
-  /* line 69, ../../sass/partials/_responsive.scss */
+  /* line 78, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .nav {
     position: relative;
     display: flex;
   }
-  /* line 73, ../../sass/partials/_responsive.scss */
+  /* line 82, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .nav a {
     flex: 1;
     text-align: center;
   }
-  /* line 78, ../../sass/partials/_responsive.scss */
+  /* line 87, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .nav a.active > span {
     display: inline-block;
   }
-  /* line 83, ../../sass/partials/_responsive.scss */
+  /* line 92, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .nav a > span {
     display: none;
   }
-  /* line 86, ../../sass/partials/_responsive.scss */
+  /* line 95, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .nav a > span.fa {
     display: block;
   }
-  /* line 92, ../../sass/partials/_responsive.scss */
+  /* line 101, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .menuMask {
     display: none;
   }
-  /* line 95, ../../sass/partials/_responsive.scss */
+  /* line 104, ../../sass/partials/_responsive.scss */
   #profile > div .contentWrapper.story .content {
     padding-left: 0;
     margin-top: 30px;
   }
 }
 @media (max-width: 992px) {
-  /* line 108, ../../sass/partials/_responsive.scss */
+  /* line 117, ../../sass/partials/_responsive.scss */
   #profile .sidebar {
     width: 350px;
   }
-  /* line 111, ../../sass/partials/_responsive.scss */
+  /* line 120, ../../sass/partials/_responsive.scss */
   #profile .contentWrapper {
     margin-left: 350px;
   }
-  /* line 114, ../../sass/partials/_responsive.scss */
+  /* line 123, ../../sass/partials/_responsive.scss */
   #profile .contentWrapper .content {
     padding-left: 245px;
   }
-  /* line 119, ../../sass/partials/_responsive.scss */
+  /* line 128, ../../sass/partials/_responsive.scss */
   #profile .contentWrapper.story .content {
     padding-left: 130px;
   }

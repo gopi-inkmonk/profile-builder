@@ -25,9 +25,18 @@
         bottom: 0;
         right: 0;
 
-        & .home-menu,
         & dl {
           display: none;
+        }
+
+        & .home-menu {
+          & .initial {
+            position: absolute;
+            z-index: 9;
+            top: 15px;
+            left: 15px;
+            font-size: 20px;
+          }
         }
 
         & > .profilePicWrapper {

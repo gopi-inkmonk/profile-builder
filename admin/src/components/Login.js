@@ -46,7 +46,11 @@ export default class Login extends Component {
         this.setState({ errorTextforEmail: 'No account found for your email' });
         // alert('The password is too weak.');
       } else if (errorCode === 'auth/wrong-password') {
-        this.setState({ errorTextforPassword: errorMessage });
+        this.setState({
+          errorTextforPassword: errorMessage,
+          loginMessage: errorMessage,
+        });
+        console.log(errorMessage);
         // alert(errorMessage);
       } else {
         this.setState({ errorTextforEmail: errorMessage });
@@ -54,15 +58,15 @@ export default class Login extends Component {
       }
     });
   };
-  resetPassword = () => {
-    // console.log(this.email.value);
-    resetPassword(this.email.value)
-      .then(() =>
-        this.setState(
-          setErrorMsg(`Password reset email sent to ${this.email.value}.`)
+  resetPasswordCTA = () => {
+    resetPassword(this.state.email)
+      .then(
+        () => (
+          this.setState({ loginMessage: null, errorTextforPassword: null }),
+          alert(`Password reset email sent to ${this.state.email}.`)
         )
       )
-      .catch(error => this.setState(setErrorMsg(`Email address not found.`)));
+      .catch(error => this.setState(alert(`Email address not found.`)));
   };
   handleClose = () => {
     this.setState({ errorMessage: null });
@@ -101,14 +105,22 @@ export default class Login extends Component {
                 fullWidth={true}
                 type="email"
                 errorText={this.state.errorTextforEmail}
-                onChange={e => this.setState({ email: e.target.value })}
+                onChange={e =>
+                  this.setState({
+                    email: e.target.value,
+                    errorTextforEmail: null,
+                  })}
               />
               <TextField
                 floatingLabelText="Password"
                 type="password"
                 fullWidth={true}
                 errorText={this.state.errorTextforPassword}
-                onChange={e => this.setState({ password: e.target.value })}
+                onChange={e =>
+                  this.setState({
+                    password: e.target.value,
+                    errorTextforPassword: null,
+                  })}
               />
 
               <div className="formCTA">
@@ -121,33 +133,12 @@ export default class Login extends Component {
                   />
                 </div>
 
-                <div
-                  style={{
-                    display: 'flex',
-                  }}
-                >
-                  <div
-                    style={{
-                      flex: 1,
-                    }}
-                  >
-                    <FlatButton
-                      label="Forgot password?"
-                      fullWidth={true}
-                      href="/forgot-password"
-                    />
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                    }}
-                  >
-                    <FlatButton
-                      label="Create an account"
-                      fullWidth={true}
-                      href="/register"
-                    />
-                  </div>
+                <div>
+                  <FlatButton
+                    label="Create an account"
+                    fullWidth={true}
+                    href="/register"
+                  />
                 </div>
               </div>
 
@@ -160,13 +151,11 @@ export default class Login extends Component {
                   <span className="sr-only">Error:</span>
                   &nbsp;
                   {this.state.loginMessage}{' '}
-                  <a
-                    href=""
-                    onClick={this.resetPassword}
-                    className="alert-link"
-                  >
-                    Forgot Password?
-                  </a>
+                  <FlatButton
+                    label="Forgot password?"
+                    fullWidth={true}
+                    onClick={this.resetPasswordCTA}
+                  />
                 </div>}
             </form>
           </Paper>

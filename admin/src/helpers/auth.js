@@ -56,8 +56,6 @@ export function saveUsername(Username, user) {
     const targetUID = Name.val();
     if (!targetUID) {
       // no user exist with this username
-      // I need to remove existing username record from /usernames
-      // and I need to check if the new entry already have it and allow to write only if not
 
       updates[`users/${uid}/username`] = Username;
       updates[`users/${uid}/SignupOn`] =
@@ -88,21 +86,6 @@ export function saveUsername(Username, user) {
       alert('You already own this user name.');
     }
   });
-
-  // return ref.child(CurrentUserName).once('value').then(function(Name) {
-  //   const CurrentUserNameVal = Name.val();
-  //   const isExist = `usernames/${CurrentUserNameVal}`;
-  //   if (isExist.exists()) {
-  //     console.log('exists true');
-  //   } else {
-  //     console.log('exists false');
-  //   }
-  //   console.log(CurrentUserName, CurrentUserNameVal, isExist);
-  // });
-
-  // return ref.child('/').update(updates).then(() => {
-  //   console.log('user name saved successfully');
-  // });
 }
 
 export function saveName(name) {
