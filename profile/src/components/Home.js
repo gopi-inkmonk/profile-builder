@@ -38,41 +38,45 @@ class Home extends Component {
             {data.shortDesc}
           </p>
 
-          <Link
-            to={`${match.url}/profile/story`}
-            className="btn btn-primary"
-            style={{ backgroundColor: `${data.themeColor}` }}
-          >
-            See More <FontAwesome name="arrow-down" />
-          </Link>
+          {data.story &&
+            <Link
+              to={`${match.url}/profile/story`}
+              className="btn btn-primary"
+              style={{ backgroundColor: `${data.themeColor}` }}
+            >
+              See More <FontAwesome name="arrow-down" />
+            </Link>}
 
           <Contact contact={data.contact} />
         </div>
 
-        <nav className="nav">
-          <Link to={`${match.url}/profile/story`} className="nav-link">
-            <FontAwesome name="book" />
-            <span>Story</span>
-          </Link>
-          <Link
-            to={`${match.url}/profile/work-experience`}
-            className="nav-link"
-          >
-            <FontAwesome name="briefcase" />
-            <span>Work Experience</span>
-          </Link>
-          <Link
-            to={`${match.url}/profile/academic-qualification`}
-            className="nav-link"
-          >
-            <FontAwesome name="mortar-board" />
-            <span>Academic Qualification</span>
-          </Link>
-          <Link to={`${match.url}/profile/projects`} className="nav-link">
-            <FontAwesome name="black-tie" />
-            <span>Projects</span>
-          </Link>
-        </nav>
+        {!data.story && <div />}
+
+        {data.story &&
+          <nav className="nav">
+            <Link to={`${match.url}/profile/story`} className="nav-link">
+              <FontAwesome name="book" />
+              <span>Story</span>
+            </Link>
+            <Link
+              to={`${match.url}/profile/work-experience`}
+              className="nav-link"
+            >
+              <FontAwesome name="briefcase" />
+              <span>Work Experience</span>
+            </Link>
+            <Link
+              to={`${match.url}/profile/academic-qualification`}
+              className="nav-link"
+            >
+              <FontAwesome name="mortar-board" />
+              <span>Academic Qualification</span>
+            </Link>
+            <Link to={`${match.url}/profile/projects`} className="nav-link">
+              <FontAwesome name="black-tie" />
+              <span>Projects</span>
+            </Link>
+          </nav>}
       </div>
     );
   }

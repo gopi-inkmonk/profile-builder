@@ -129,7 +129,7 @@ export default class Home extends Component {
         </div>
 
         <div className="container simpleForm">
-          <Redirect from="/home" to="/home/username" />
+          {/* <Redirect exact from="/home" to="/home/username" /> */}
           <div className="col-sm-8 col-md-6">
             <Paper zDepth={1} className="simpleFormWrapper">
               <Route

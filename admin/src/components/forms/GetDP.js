@@ -105,7 +105,8 @@ export default class GetDP extends Component {
       'state_changed',
       progress,
       function error(err) {
-        console.log('Error Upload');
+        console.log('Error Upload', err.message);
+        alert('Upload failed, Please make sure file size is below 1MB');
       },
       complete
     );
@@ -156,6 +157,8 @@ export default class GetDP extends Component {
             onChange={this.handleChange}
           />
         </RaisedButton>
+
+        <p style={{ color: '#cccccc', marginTop: 10 }}>File size max 1MB</p>
 
         {this.state.DPImage &&
           <div style={{ marginTop: 25 }}>
