@@ -395,4 +395,15 @@ h1 {
   .appHeader .container {
     flex-direction: column;
   }
+  /* line 176, ../../sass/admin.scss */
+  .appHeader .container .domain, .appHeader .container .brand {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  /* line 184, ../../sass/admin.scss */
+  .appHeader .container .brand {
+    padding: 25px;
+  }
 }
