@@ -9,7 +9,7 @@ import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import Username from './components/Username';
-import Home from './components/Home';
+import Wizard from './components/Wizard';
 import Loader from './components/Loader';
 
 const PrivateRoute = ({ component: Component, authed, ...rest }) =>
@@ -34,7 +34,7 @@ const PublicOnlyRoute = ({ component: Component, authed, ...rest }) =>
         ? <Component {...props} />
         : <Redirect
             to={{
-              pathname: '/home',
+              pathname: '/wizard',
               state: { from: props.location },
             }}
           />}
@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return this.state.loading === true
       ? <Loader />
-      : <BrowserRouter basename="/admin">
+      : <BrowserRouter>
           <MuiThemeProvider>
             <div>
               <Switch>
@@ -94,8 +94,8 @@ class App extends Component {
                 />
                 <PrivateRoute
                   authed={this.state.authed}
-                  path="/home"
-                  component={Home}
+                  path="/wizard"
+                  component={Wizard}
                 />
                 <PrivateRoute
                   authed={this.state.authed}

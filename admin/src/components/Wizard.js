@@ -26,7 +26,7 @@ import {
   getUserName,
 } from '../helpers/read';
 
-export default class Home extends Component {
+export default class Wizard extends Component {
   state = {
     isLoaded: false,
     name: null,
@@ -77,17 +77,43 @@ export default class Home extends Component {
 
   render() {
     const { match } = this.props;
-    const { isLoaded } = this.state;
-    console.log(this.props);
+    const { isLoaded, username, name, who, shortDesc, contact } = this.state;
+    console.log('this.props', this.props);
+    console.log(
+      'this.state',
+      this.state.name,
+      this.state.who,
+      this.state.shortDesc,
+      this.state.contact
+    );
     return (
       <div>
         <div className="appHeader">
           <div className="container">
-            <span className="userEmail">
-              {getEmail()}
-            </span>
-            <span className="brand">Itsmybio.me</span>
+            <div>
+              <span className="brand">Itsmybio.me</span>
+              {username &&
+                <span>
+                  {name && who && shortDesc && contact
+                    ? <span className="domain live" title="Live">
+                        <FontAwesome name="circle" />
+                        <a
+                          href={`https://Itsmybio.me/${username}`}
+                          target="_blank"
+                        >
+                          Itsmybio.me/{username}
+                        </a>
+                      </span>
+                    : <span className="domain notLive" title="Not yet live">
+                        <FontAwesome name="circle" />
+                        <span>
+                          Itsmybio.me/{username}
+                        </span>
+                      </span>}
+                </span>}
+            </div>
             <span>
+              {getEmail()}
               <a onClick={logout}>
                 <FontAwesome name="power-off" />
               </a>
@@ -132,6 +158,8 @@ export default class Home extends Component {
           {/* <Redirect exact from="/home" to="/home/username" /> */}
           <div className="col-sm-8 col-md-6">
             <Paper zDepth={1} className="simpleFormWrapper">
+              {/* <Redirect from={`${match.url}`} to={`${match.url}/username`} /> */}
+
               <Route
                 exact
                 path={`${match.url}/username`}

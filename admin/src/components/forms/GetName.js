@@ -32,7 +32,7 @@ export default class GetName extends Component {
 
     saveName(this.state.name)
       .then(() => {
-        window.location.href = '/home/dp';
+        window.location.href = '/wizard/dp';
       })
       .catch(error => {
         const errorCode = error.code;

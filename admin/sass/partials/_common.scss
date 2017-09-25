@@ -36,6 +36,14 @@ body {
   }
 }
 
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-dark-color;
+  }
+}
+
 .nav.progressNav {
   margin-bottom: 25px;
 

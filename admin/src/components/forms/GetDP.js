@@ -96,7 +96,7 @@ export default class GetDP extends Component {
 
       getDP().then(url => {
         this.setState({ DPImage: url });
-        window.location.href = '/home/who';
+        window.location.href = '/wizard/who';
       });
     };
 
@@ -145,7 +145,7 @@ export default class GetDP extends Component {
           </div>}
 
         <RaisedButton
-          label={'Choose an Image'}
+          label={'Upload your profile photo'}
           labelPosition="before"
           fullWidth={true}
           style={styles.uploadButton}

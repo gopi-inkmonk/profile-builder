@@ -188,7 +188,7 @@ export default class GetContact extends Component {
       this.state.contact.google || null
     )
       .then(() => {
-        window.location.href = '/home/story';
+        window.location.href = '/wizard/story';
       })
       .catch(error => {
         const errorCode = error.code;

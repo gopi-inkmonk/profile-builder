@@ -66,7 +66,7 @@ export default class GetStory extends Component {
 
     saveStory(this.state.list)
       .then(() => {
-        window.location.href = '/home/theme';
+        window.location.href = '/wizard/theme';
       })
       .catch(error => {
         const errorCode = error.code;

@@ -34,7 +34,7 @@ export default class GetShortDesc extends Component {
 
     saveShortDesc(this.state.shortDesc)
       .then(() => {
-        window.location.href = '/home/contact';
+        window.location.href = '/wizard/contact';
       })
       .catch(error => {
         const errorCode = error.code;

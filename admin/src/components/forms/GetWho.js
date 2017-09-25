@@ -117,7 +117,7 @@ export default class GetWho extends Component {
           this.props.getGlobalWho();
         })
         .then(() => {
-          window.location.href = '/home/desc';
+          window.location.href = '/wizard/desc';
         })
         .catch(error => {
           const errorCode = error.code;
@@ -141,7 +141,8 @@ export default class GetWho extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <AutoComplete
-            floatingLabelText="Please enter your who"
+            floatingLabelText="Please enter your interests"
+            hintText="Ex: UI Designer, Avid traveller..,"
             filter={AutoComplete.fuzzyFilter}
             fullWidth={true}
             dataSource={this.state.whoList.filter(

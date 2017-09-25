@@ -109,10 +109,19 @@ body {
 }
 
 /* line 39, ../../sass/partials/_common.scss */
+a {
+  color: #eb3c3c;
+}
+/* line 42, ../../sass/partials/_common.scss */
+a:hover {
+  color: #ca2e2e;
+}
+
+/* line 47, ../../sass/partials/_common.scss */
 .nav.progressNav {
   margin-bottom: 25px;
 }
-/* line 42, ../../sass/partials/_common.scss */
+/* line 50, ../../sass/partials/_common.scss */
 .nav.progressNav a {
   font-size: 13px;
   font-weight: bold;
@@ -124,7 +133,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 52, ../../sass/partials/_common.scss */
+/* line 60, ../../sass/partials/_common.scss */
 .nav.progressNav a:after, .nav.progressNav a:before {
   content: "";
   position: absolute;
@@ -132,7 +141,7 @@ body {
   right: 0;
   margin: auto;
 }
-/* line 61, ../../sass/partials/_common.scss */
+/* line 69, ../../sass/partials/_common.scss */
 .nav.progressNav a:before {
   width: 10px;
   height: 10px;
@@ -142,44 +151,44 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 68, ../../sass/partials/_common.scss */
+/* line 76, ../../sass/partials/_common.scss */
 .nav.progressNav a:after {
   width: 100%;
   top: 4px;
   height: 1px;
   background: black;
 }
-/* line 75, ../../sass/partials/_common.scss */
+/* line 83, ../../sass/partials/_common.scss */
 .nav.progressNav a > .progressTitle {
   display: none;
   margin: 20px 0 0;
 }
-/* line 80, ../../sass/partials/_common.scss */
+/* line 88, ../../sass/partials/_common.scss */
 .nav.progressNav a:hover {
   color: #eb3c3c;
 }
-/* line 83, ../../sass/partials/_common.scss */
+/* line 91, ../../sass/partials/_common.scss */
 .nav.progressNav a.active {
   color: #eb3c3c;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 87, ../../sass/partials/_common.scss */
+/* line 95, ../../sass/partials/_common.scss */
 .nav.progressNav a.active:before {
   background: #eb3c3c;
 }
-/* line 91, ../../sass/partials/_common.scss */
+/* line 99, ../../sass/partials/_common.scss */
 .nav.progressNav a.active:after {
   width: 100%;
   height: 1px;
   background: #eb3c3c;
 }
-/* line 97, ../../sass/partials/_common.scss */
+/* line 105, ../../sass/partials/_common.scss */
 .nav.progressNav a.active > .progressTitle {
   display: block;
 }
 
-/* line 106, ../../sass/partials/_common.scss */
+/* line 114, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab {
   font-size: 13px;
   font-weight: bold;
@@ -191,22 +200,22 @@ body {
   cursor: pointer;
   border-bottom: 2px solid #fff;
 }
-/* line 117, ../../sass/partials/_common.scss */
+/* line 125, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab:hover {
   color: #eb3c3c;
 }
-/* line 121, ../../sass/partials/_common.scss */
+/* line 129, ../../sass/partials/_common.scss */
 .react-tabs ul.react-tabs__tab-list li.react-tabs__tab.react-tabs__tab--selected {
   color: #eb3c3c;
   border-bottom: 2px solid #eb3c3c;
 }
 
-/* line 134, ../../sass/partials/_common.scss */
+/* line 142, ../../sass/partials/_common.scss */
 .img-responsive {
   max-width: 100%;
 }
 
-/* line 138, ../../sass/partials/_common.scss */
+/* line 146, ../../sass/partials/_common.scss */
 .hide {
   display: none !important;
 }
@@ -331,42 +340,58 @@ h1 {
 .appHeader .container > span > a:hover {
   background: rgba(245, 247, 250, 0.5);
 }
-/* line 120, ../../sass/admin.scss */
+/* line 119, ../../sass/admin.scss */
+.appHeader .container .domain {
+  padding: 0 0 0 15px;
+}
+/* line 123, ../../sass/admin.scss */
+.appHeader .container .domain.live .fa {
+  color: #60da09;
+}
+/* line 129, ../../sass/admin.scss */
+.appHeader .container .domain.notLive .fa {
+  color: rgba(0, 0, 0, 0.2);
+}
+/* line 134, ../../sass/admin.scss */
+.appHeader .container .domain .fa {
+  font-size: 11px;
+  display: inline-block;
+  padding: 0 5px 0 0;
+}
+/* line 142, ../../sass/admin.scss */
 .appHeader .storyCTA {
   display: 'flex';
   align-items: 'flex-end';
 }
-/* line 125, ../../sass/admin.scss */
+/* line 147, ../../sass/admin.scss */
 .appHeader .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
   margin: 0;
   display: inline-block;
-  text-align: center;
 }
 
-/* line 134, ../../sass/admin.scss */
+/* line 155, ../../sass/admin.scss */
 .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
   margin: 0;
   display: inline-block;
-  text-align: center;
 }
 
-/* line 142, ../../sass/admin.scss */
+/* line 162, ../../sass/admin.scss */
 .storyCTA {
   align-items: center;
   display: flex;
 }
 
 @media (max-width: 768px) {
-  /* line 148, ../../sass/admin.scss */
+  /* line 168, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 153, ../../sass/admin.scss */
+  /* line 173, ../../sass/admin.scss */
   .appHeader .container {
     flex-direction: column;
   }
