@@ -7,7 +7,7 @@
         "destination": "/index.html"
       },
       {
-        "source": "admin/**",
+        "source": "/admin/**",
         "destination": "/admin/index.html"
       }
     ]

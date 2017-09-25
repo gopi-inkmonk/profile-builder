@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return this.state.loading === true
       ? <Loader />
-      : <BrowserRouter>
+      : <BrowserRouter basename="/admin">
           <MuiThemeProvider>
             <div>
               <Switch>

@@ -10,6 +10,10 @@
 /build
 /final-build
 
+# Design source
+.sketch
+.psd
+
 # misc
 .DS_Store
 .env.local

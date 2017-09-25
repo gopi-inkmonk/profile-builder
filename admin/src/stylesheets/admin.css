@@ -354,13 +354,19 @@ h1 {
   text-align: center;
 }
 
+/* line 142, ../../sass/admin.scss */
+.storyCTA {
+  align-items: center;
+  display: flex;
+}
+
 @media (max-width: 768px) {
-  /* line 143, ../../sass/admin.scss */
+  /* line 148, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 148, ../../sass/admin.scss */
+  /* line 153, ../../sass/admin.scss */
   .appHeader .container {
     flex-direction: column;
   }
