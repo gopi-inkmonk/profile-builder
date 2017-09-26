@@ -95,9 +95,18 @@ export default class GetWho extends Component {
         chipData: [...this.state.chipData, { label: value }],
       });
     } else {
-      this.setState({
-        whoField: value,
-      });
+      const valueHasCommas = value.includes(',')
+      if (valueHasCommas) {
+        const interests = value.split(',').map(x => x.trim()).filter(x => x).map(x => ({ label: x }));
+        this.setState({
+          whoField: '',
+          chipData: [...this.state.chipData, ...interests],
+        });
+      } else {
+        this.setState({
+          whoField: value,
+        });
+      }
     }
   };
 
