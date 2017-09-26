@@ -78,7 +78,12 @@ class App extends Component {
           {...rest}
           contact={data.contact}
         />
-        <ChildComponent {...rest} data={data} />
+        <ChildComponent
+          {...rest}
+          data={data}
+          DPImage={DPImage}
+          UserName={username}
+        />
       </div>
     );
   }

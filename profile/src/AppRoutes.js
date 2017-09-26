@@ -19,13 +19,6 @@ class AppRoutes extends Component {
       <Router>
         <div id="profile">
           <Switch>
-            <Redirect from="/admin" to="/admin" />
-            <Route
-              exact
-              path="/admin"
-              render={props =>
-                <App sidebarWidth={411} {...props} ChildComponent={Home} />}
-            />
             <Route
               exact
               path="/:username"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import FontAwesome from 'react-fontawesome';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { getProfileData } from '../helpers/read';
 import Contact from './Contact';
 
 class Home extends Component {
@@ -18,6 +18,22 @@ class Home extends Component {
     }
     return (
       <div className="contentWrapper home" style={this.props.style}>
+        <Helmet>
+          <title>
+            {data.name} - Itsmybio.me
+          </title>
+
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={data.name} />
+          <meta property="og:site_name" content={`${data.name}'s Online Bio`} />
+          <meta
+            property="og:url"
+            content={`https://itsmybio.me/${this.props.UserName}`}
+          />
+          <meta property="og:description" content={data.shortDesc} />
+          <meta property="og:image" content={this.props.DPImage} />
+        </Helmet>
+
         <div />
         <div className="content">
           <h1>

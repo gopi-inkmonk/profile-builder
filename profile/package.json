@@ -10,6 +10,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-fontawesome": "^1.6.1",
+    "react-helmet": "^5.2.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.11",
     "react-tabs": "^1.1.0",
@@ -25,6 +26,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy"
+    "deploy": "cp _redirects build/; netlify deploy"
   }
 }

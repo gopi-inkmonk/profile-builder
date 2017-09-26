@@ -158,7 +158,15 @@ export default class Wizard extends Component {
           {/* <Redirect exact from="/home" to="/home/username" /> */}
           <div className="col-sm-8 col-md-6">
             <Paper zDepth={1} className="simpleFormWrapper">
-              {/* <Redirect from={`${match.url}`} to={`${match.url}/username`} /> */}
+              <Route
+                exact
+                path={`${match.url}`}
+                render={() =>
+                  <Redirect
+                    from={`${match.url}`}
+                    to={`${match.url}/username`}
+                  />}
+              />
 
               <Route
                 exact

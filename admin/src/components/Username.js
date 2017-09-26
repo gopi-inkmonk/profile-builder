@@ -51,7 +51,7 @@ export default class Username extends Component {
 
     saveUsername(this.state.username)
       .then(() => {
-        window.location.href = '/home/name';
+        window.location.href = '/wizard/name';
       })
       .catch(error => {
         const errorCode = error.code;
