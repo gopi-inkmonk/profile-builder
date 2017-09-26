@@ -584,7 +584,7 @@ h1 {
   display: block;
   width: 224px;
   height: 144px;
-  background: url("../assets/notfound.jpg") no-repeat center center;
+  background: url("../images/notfound.jpg") no-repeat center center;
   margin: 0 0 25px;
 }
 /* line 494, ../../sass/partials/_common.scss */

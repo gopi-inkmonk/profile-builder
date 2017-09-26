@@ -12,6 +12,7 @@ import Sidebar from './components/Sidebar';
 import firebase from 'firebase';
 import { firebaseAuth } from './config/Fire';
 import App from './App';
+import LandingPage from './components/LandingPage';
 
 class AppRoutes extends Component {
   render() {
@@ -19,6 +20,7 @@ class AppRoutes extends Component {
       <Router>
         <div id="profile">
           <Switch>
+            <Route exact path="/" component={LandingPage} />
             <Route
               exact
               path="/:username"
