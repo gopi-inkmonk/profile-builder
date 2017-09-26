@@ -78,14 +78,6 @@ export default class Wizard extends Component {
   render() {
     const { match } = this.props;
     const { isLoaded, username, name, who, shortDesc, contact } = this.state;
-    console.log('this.props', this.props);
-    console.log(
-      'this.state',
-      this.state.name,
-      this.state.who,
-      this.state.shortDesc,
-      this.state.contact
-    );
     return (
       <div>
         <div className="appHeader">
@@ -155,7 +147,6 @@ export default class Wizard extends Component {
         </div>
 
         <div className="container simpleForm">
-          {/* <Redirect exact from="/home" to="/home/username" /> */}
           <div className="col-sm-8 col-md-6">
             <Paper zDepth={1} className="simpleFormWrapper">
               <Route

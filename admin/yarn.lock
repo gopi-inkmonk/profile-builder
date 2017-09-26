@@ -1994,6 +1994,14 @@ dotenv@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
+drag-helper@^1.3.3:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/drag-helper/-/drag-helper-1.3.6.tgz#6694fbc07fc8cdd9f6ca7136e20ea0c496be8858"
+  dependencies:
+    has-touch "^1.0.0"
+    object-assign "^4.1.0"
+    region-align "^2.1.3"
+
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -2900,6 +2908,10 @@ has-flag@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-2.0.0.tgz#e8207af1cc7b30d446cc70b734b5e8be18f88d51"
 
+has-touch@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/has-touch/-/has-touch-1.0.1.tgz#63ef34353b1c0c08bcaf8e804f95dee257ee9516"
+
 has-unicode@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/has-unicode/-/has-unicode-2.0.1.tgz#e0e6fe6a28cf51138855e086d1691e771de2a8b9"
@@ -2929,6 +2941,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
+
+hasown@~1.x.x:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/hasown/-/hasown-1.0.1.tgz#b64ff1570673ba06cc5d0183c0a4f0b5b1bd6459"
 
 hawk@~3.1.3:
   version "3.1.3"
@@ -4314,6 +4330,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+newify@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/newify/-/newify-1.1.9.tgz#3f599bd1d44a4c38851a1bd25bbb6f7c4d72d8ff"
+
 no-case@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"
@@ -4461,6 +4481,10 @@ number-is-nan@^1.0.0:
 oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
+
+object-assign@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-2.1.1.tgz#43c36e5d569ff8e4816c4efa8be02d26967c18aa"
 
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1, object-assign@4.1.1:
   version "4.1.1"
@@ -5222,6 +5246,24 @@ react, "react@^15 || ^16":
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
+react-class@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-class/-/react-class-3.2.2.tgz#768370cdf1b7478fb06d3ac0f385389aa6e7f178"
+  dependencies:
+    object-assign "^4.1.0"
+
+react-color-picker:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-color-picker/-/react-color-picker-4.0.2.tgz#35b965bff62a76dd8ce4bd440c0a08fe9951b62f"
+  dependencies:
+    drag-helper "^1.3.3"
+    object-assign "^4.1.0"
+    react "^15.3.0"
+    react-class "^3.2.2"
+    react-dom "^15.3.0"
+    region "^2.1.2"
+    tinycolor2 "^1.4.1"
+
 react-dev-utils@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.0.0.tgz#76467b380946197e738aab5683336b5439e979ba"
@@ -5248,6 +5290,15 @@ react-dev-utils@^4.0.0:
 react-dom, "react-dom@^15 || ^16":
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
+
+react-dom@^15.3.0:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
@@ -5378,6 +5429,16 @@ react-transition-group@^1.1.2:
     loose-envify "^1.3.1"
     prop-types "^15.5.6"
     warning "^3.0.0"
+
+react@^15.3.0:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
+  dependencies:
+    create-react-class "^15.6.0"
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -5528,6 +5589,21 @@ regexpu-core@^2.0.0:
     regenerate "^1.2.1"
     regjsgen "^0.2.0"
     regjsparser "^0.1.4"
+
+region-align@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/region-align/-/region-align-2.1.3.tgz#7a5ebb9deff3d29c33d23598c7a003d3bfde0a5e"
+  dependencies:
+    object-assign "^4.0.1"
+    region "^2.1.2"
+
+region@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/region/-/region-2.1.2.tgz#cfd95868afbc49e4c7a053b677bc5a0985c29afa"
+  dependencies:
+    hasown "~1.x.x"
+    newify "^1.1.9"
+    object-assign "^2.0.0"
 
 registry-auth-token@^3.0.1:
   version "3.3.1"
@@ -6226,6 +6302,10 @@ timers-browserify@^2.0.2:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.4.tgz#96ca53f4b794a5e7c0e1bd7cc88a372298fa01e6"
   dependencies:
     setimmediate "^1.0.4"
+
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
 
 tmp@^0.0.31:
   version "0.0.31"

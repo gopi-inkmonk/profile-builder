@@ -3,6 +3,8 @@ import firebase from 'firebase';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import ColorPicker from 'react-color-picker';
+import 'react-color-picker/index.css';
 import { saveTheme } from '../../helpers/auth';
 import Loader from '../Loader';
 
@@ -12,9 +14,16 @@ export default class GetTheme extends Component {
     errorTextforThemeColor: null,
   };
 
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     ThemeColor: null,
+  //   };
+  // }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.theme !== this.state.ThemeColor) {
-      this.setState({ ThemeColor: nextProps.contact });
+      this.setState({ ThemeColor: nextProps.theme });
     }
   }
 
@@ -25,10 +34,14 @@ export default class GetTheme extends Component {
   }
 
   handleChange = e => {
-    console.log('e', e.target.value);
-
     this.setState({ ThemeColor: e.target.value });
   };
+
+  onDrag(ThemeColor, c) {
+    this.setState({
+      ThemeColor,
+    });
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -77,13 +90,18 @@ export default class GetTheme extends Component {
           </RadioButtonGroup>
 
           <h3>Custom Color</h3>
-          <TextField
+          {/* <TextField
             type="color"
             fullWidth={true}
             value={this.state.ThemeColor}
             name="customColor"
             onChange={this.handleChange}
             errorText={this.state.errorTextforThemeColor}
+          /> */}
+
+          <ColorPicker
+            value={this.state.ThemeColor}
+            onDrag={this.onDrag.bind(this)}
           />
 
           <span

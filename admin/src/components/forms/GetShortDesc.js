@@ -47,12 +47,6 @@ export default class GetShortDesc extends Component {
   };
 
   render() {
-    console.log(
-      'props :',
-      this.props.shortDesc,
-      'state :',
-      this.state.shortDesc
-    );
     const { isLoaded } = this.props;
     if (isLoaded == false) {
       return <Loader />;

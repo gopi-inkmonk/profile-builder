@@ -11,8 +11,9 @@
 /final-build
 
 # Design source
-.sketch
+*.sketch
 .psd
+homepage.sketch
 
 # misc
 .DS_Store
@@ -26,3 +27,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .sass-cache
+
+*.sketch
