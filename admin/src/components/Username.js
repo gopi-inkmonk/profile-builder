@@ -77,27 +77,32 @@ export default class Username extends Component {
       return <Loader />;
     }
     return (
-      <form onSubmit={this.handleSubmit}>
-        <TextField
-          floatingLabelText="User Name"
-          fullWidth={true}
-          type="text"
-          value={this.state.username || ''}
-          errorText={this.state.errorTextforUsername}
-          onChange={e => this.setState({ username: e.target.value })}
-        />
-
-        <div className="formCTA">
-          <div className="submitCTA">
-            <RaisedButton
-              label="Save"
-              primary={true}
-              type="submit"
+      <div className="row">
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              floatingLabelText="User Name"
               fullWidth={true}
+              type="text"
+              value={this.state.username || ''}
+              errorText={this.state.errorTextforUsername}
+              onChange={e => this.setState({ username: e.target.value })}
             />
-          </div>
+
+            <div className="formCTA">
+              <div className="submitCTA">
+                <RaisedButton
+                  label="Save"
+                  primary={true}
+                  type="submit"
+                  fullWidth={true}
+                />
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+        <div className="col-md-6">abcd</div>
+      </div>
     );
   }
 }

@@ -95,9 +95,13 @@ export default class GetWho extends Component {
         chipData: [...this.state.chipData, { label: value }],
       });
     } else {
-      const valueHasCommas = value.includes(',')
+      const valueHasCommas = value.includes(',');
       if (valueHasCommas) {
-        const interests = value.split(',').map(x => x.trim()).filter(x => x).map(x => ({ label: x }));
+        const interests = value
+          .split(',')
+          .map(x => x.trim())
+          .filter(x => x)
+          .map(x => ({ label: x }));
         this.setState({
           whoField: '',
           chipData: [...this.state.chipData, ...interests],
@@ -147,30 +151,33 @@ export default class GetWho extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <AutoComplete
-            floatingLabelText="Please enter your interests"
-            hintText="Ex: UI Designer, Avid traveller..,"
-            filter={AutoComplete.fuzzyFilter}
-            fullWidth={true}
-            dataSource={this.state.whoList.filter(
-              x => !chipData.map(x => x.label).includes(x)
-            )}
-            searchText={this.state.whoField}
-            onUpdateInput={this.handleUpdateInput}
-          />
-          <div style={this.styles.wrapper}>
-            {this.state.chipData.map(this.renderChip, this)}
-          </div>
+      <div className="row">
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <AutoComplete
+              floatingLabelText="Please enter your interests"
+              hintText="Ex: UI Designer, Avid traveller..,"
+              filter={AutoComplete.fuzzyFilter}
+              fullWidth={true}
+              dataSource={this.state.whoList.filter(
+                x => !chipData.map(x => x.label).includes(x)
+              )}
+              searchText={this.state.whoField}
+              onUpdateInput={this.handleUpdateInput}
+            />
+            <div style={this.styles.wrapper}>
+              {this.state.chipData.map(this.renderChip, this)}
+            </div>
 
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
+        <div className="col-md-6">dfdf</div>
       </div>
     );
   }

@@ -50,23 +50,26 @@ export default class GetName extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            floatingLabelText="Please enter your name"
-            fullWidth={true}
-            type="text"
-            value={this.state.name}
-            errorText={this.state.errorTextforname}
-            onChange={e => this.setState({ name: e.target.value })}
-          />
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+      <div className="row">
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              floatingLabelText="Please enter your name"
+              fullWidth={true}
+              type="text"
+              value={this.state.name}
+              errorText={this.state.errorTextforname}
+              onChange={e => this.setState({ name: e.target.value })}
+            />
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
+        <div className="col-md-6">fdfdf</div>
       </div>
     );
   }

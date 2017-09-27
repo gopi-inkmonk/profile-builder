@@ -135,35 +135,38 @@ export default class GetDP extends Component {
       },
     };
     return (
-      <div>
-        {this.state.uploadStarted &&
-          <div>
-            <LinearProgress
-              mode="determinate"
-              value={this.state.uploadingStatus}
+      <div className="row">
+        <div className="col-md-6" style={{ paddingTop: 30 }}>
+          {this.state.uploadStarted &&
+            <div>
+              <LinearProgress
+                mode="determinate"
+                value={this.state.uploadingStatus}
+              />
+            </div>}
+
+          <RaisedButton
+            label={'Upload your profile photo'}
+            labelPosition="before"
+            fullWidth={true}
+            style={styles.uploadButton}
+            containerElement="label"
+          >
+            <input
+              type="file"
+              style={styles.uploadInput}
+              onChange={this.handleChange}
             />
-          </div>}
+          </RaisedButton>
 
-        <RaisedButton
-          label={'Upload your profile photo'}
-          labelPosition="before"
-          fullWidth={true}
-          style={styles.uploadButton}
-          containerElement="label"
-        >
-          <input
-            type="file"
-            style={styles.uploadInput}
-            onChange={this.handleChange}
-          />
-        </RaisedButton>
+          <p style={{ color: '#cccccc', marginTop: 10 }}>File size max 1MB</p>
 
-        <p style={{ color: '#cccccc', marginTop: 10 }}>File size max 1MB</p>
-
-        {this.state.DPImage &&
-          <div style={{ marginTop: 25 }}>
-            <img src={this.state.DPImage} className="img-responsive" />
-          </div>}
+          {this.state.DPImage &&
+            <div style={{ marginTop: 25 }}>
+              <img src={this.state.DPImage} className="img-responsive" />
+            </div>}
+        </div>
+        <div className="col-md-6">dfdf</div>
       </div>
     );
   }

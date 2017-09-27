@@ -52,25 +52,28 @@ export default class GetShortDesc extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            floatingLabelText="Please enter few lines about you"
-            fullWidth={true}
-            multiLine={true}
-            rows={4}
-            type="text"
-            value={this.state.shortDesc || ''}
-            errorText={this.state.errorTextforshortDesc}
-            onChange={e => this.setState({ shortDesc: e.target.value })}
-          />
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+      <div className="row">
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              floatingLabelText="Please enter few lines about you"
+              fullWidth={true}
+              multiLine={true}
+              rows={4}
+              type="text"
+              value={this.state.shortDesc || ''}
+              errorText={this.state.errorTextforshortDesc}
+              onChange={e => this.setState({ shortDesc: e.target.value })}
+            />
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
+        <div className="col-md-6">dfdf</div>
       </div>
     );
   }
