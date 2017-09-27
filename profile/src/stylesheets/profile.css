@@ -603,6 +603,252 @@ h1 {
   font-weight: bolder;
 }
 
+/* line 3, ../../sass/partials/_landingPage.scss */
+#landingPage {
+  background: #f4f4f4;
+  height: auto !important;
+  padding-bottom: 100px;
+}
+/* line 8, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper {
+  max-width: 1280px;
+  margin: auto;
+  flex: 1;
+  background: #f5f7fa;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+}
+/* line 15, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper h1, #landingPage .pageWrapper h2, #landingPage .pageWrapper h3 {
+  font-family: 'Volkhov', serif;
+}
+/* line 21, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper img {
+  max-width: 100%;
+}
+/* line 25, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner {
+  flex: 1;
+  background: url("../images/banner.png") no-repeat top center;
+  background-size: 1280px;
+}
+/* line 30, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+/* line 36, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container .topStrip {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* line 43, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container .topStrip a {
+  color: #fff;
+  display: inline-block;
+  padding: 30px 0;
+}
+/* line 49, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container .topStrip .brand {
+  font-family: "Yesteryear", cursive;
+  font-size: 24px;
+  min-width: 200px;
+  flex: 1;
+}
+/* line 55, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container .topStrip .signCTA {
+  min-width: 200px;
+  flex: 1;
+  text-align: right;
+}
+/* line 60, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container .topStrip .signCTA a {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 67, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container > h3 {
+  margin: 15px 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 73, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container > h1 {
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 61px;
+  margin: 0 0 30px;
+  text-align: center;
+}
+/* line 82, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container > p {
+  font-family: 'Volkhov', serif;
+  font-size: 16px;
+  margin: 0 0 30px;
+  line-height: 23px;
+  text-align: center;
+}
+/* line 91, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container > .btn.signup {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 15px 25px;
+  margin: 15px 0 45px;
+}
+/* line 97, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .banner .container > .btn.signup:hover {
+  background: #fff;
+  color: #007bff;
+}
+/* line 107, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #102350;
+  line-height: 36px;
+  text-align: center;
+}
+/* line 114, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper h5:after {
+  content: "";
+  height: 2px;
+  width: 30px;
+  background: #d0d6df;
+  display: block;
+  margin: 5px auto 10px;
+}
+/* line 124, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow {
+  display: flex;
+  align-items: center;
+}
+/* line 128, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow > div {
+  display: flex;
+}
+/* line 131, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow > div:first-child {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+/* line 135, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow > div:last-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 141, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow p {
+  max-width: 360px;
+}
+/* line 145, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow > * {
+  flex: 1;
+}
+/* line 148, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow.imgRight {
+  flex-direction: row-reverse;
+}
+/* line 152, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div:first-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 156, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div:last-child {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+/* line 161, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper .secRow.imgRight p {
+  text-align: right;
+}
+/* line 167, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper .homeContWrapper p {
+  font-family: 'Volkhov', serif;
+  font-size: 22px;
+  line-height: 30px;
+}
+/* line 174, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper > .footer {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: -60px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+/* line 182, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper > .footer .fa-heart {
+  color: #e74c3c;
+}
+/* line 186, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper > .footer > * {
+  min-width: 200px;
+  flex: 1;
+}
+/* line 190, ../../sass/partials/_landingPage.scss */
+#landingPage .pageWrapper > .footer > *:last-child {
+  text-align: right;
+}
+
+@media (max-width: 576px) {
+  /* line 199, ../../sass/partials/_landingPage.scss */
+  .brand {
+    text-align: center;
+  }
+
+  /* line 202, ../../sass/partials/_landingPage.scss */
+  .signCTA {
+    display: none;
+  }
+
+  /* line 206, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper > .footer > *,
+  #landingPage .pageWrapper > .footer > *:last-child {
+    text-align: center;
+    min-width: 500px;
+  }
+
+  /* line 212, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper > .footer > *:last-child {
+    margin-top: 15px;
+    margin-bottom: -15px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 219, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper .homeContWrapper .secRow,
+  #landingPage .pageWrapper .homeContWrapper .secRow.imgRight {
+    flex-direction: column;
+  }
+  /* line 223, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper .homeContWrapper .secRow > div,
+  #landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div {
+    align-items: center;
+  }
+  /* line 226, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper .homeContWrapper .secRow > div:first-child,
+  #landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div:first-child {
+    margin-bottom: -40px;
+  }
+  /* line 229, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper .homeContWrapper .secRow > div:last-child,
+  #landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div:last-child {
+    margin-bottom: 40px;
+  }
+  /* line 233, ../../sass/partials/_landingPage.scss */
+  #landingPage .pageWrapper .homeContWrapper .secRow > div p,
+  #landingPage .pageWrapper .homeContWrapper .secRow.imgRight > div p {
+    text-align: center;
+  }
+}
 @media (max-width: 768px) {
   /* line 12, ../../sass/partials/_responsive.scss */
   .btn {
