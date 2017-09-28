@@ -170,7 +170,6 @@ export default class GetStory extends Component {
             </div>
           </div>
         </form>
-        <div style={{ paddingTop: 30 }}>dfdfd</div>
       </div>
     );
   }

@@ -79,6 +79,17 @@ export default class Username extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../images/username.png')}
+            width="400"
+          />
+        </div>
+        <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
             <TextField
               floatingLabelText="User Name"
@@ -101,7 +112,6 @@ export default class Username extends Component {
             </div>
           </form>
         </div>
-        <div className="col-md-6">abcd</div>
       </div>
     );
   }

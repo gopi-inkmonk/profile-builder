@@ -55,6 +55,20 @@ h1 {
         padding-bottom: 30px;
       }
     }
+
+    & .row {
+      & .col-md-6 {
+        &:first-child {
+          padding-top: 30px;
+
+          & p {
+            @include opacity(.5);
+            margin: 0 0 15px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
   }
 }
 

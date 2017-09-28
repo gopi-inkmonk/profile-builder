@@ -153,6 +153,17 @@ export default class GetWho extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/define_you.png')}
+            width="400"
+          />
+        </div>
+        <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
             <AutoComplete
               floatingLabelText="Please enter your interests"
@@ -177,7 +188,6 @@ export default class GetWho extends Component {
             />
           </form>
         </div>
-        <div className="col-md-6">dfdf</div>
       </div>
     );
   }

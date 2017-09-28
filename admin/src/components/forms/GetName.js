@@ -52,6 +52,17 @@ export default class GetName extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/name.png')}
+            width="400"
+          />
+        </div>
+        <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
             <TextField
               floatingLabelText="Please enter your name"
@@ -69,7 +80,6 @@ export default class GetName extends Component {
             />
           </form>
         </div>
-        <div className="col-md-6">fdfdf</div>
       </div>
     );
   }

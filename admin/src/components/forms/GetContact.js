@@ -212,6 +212,17 @@ export default class GetContact extends Component {
 
     return (
       <div className="row">
+        <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/contact.png')}
+            width="400"
+          />
+        </div>
         <div className="col-md-6" style={{ paddingTop: 30 }}>
           <form onSubmit={this.handleSubmit}>
             <h3>Contact</h3>
@@ -898,7 +909,6 @@ export default class GetContact extends Component {
             />
           </form>
         </div>
-        <div className="col-md-6">dfdf</div>
       </div>
     );
   }

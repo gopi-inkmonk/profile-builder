@@ -54,6 +54,17 @@ export default class GetShortDesc extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/description.png')}
+            width="400"
+          />
+        </div>
+        <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
             <TextField
               floatingLabelText="Please enter few lines about you"
@@ -73,7 +84,6 @@ export default class GetShortDesc extends Component {
             />
           </form>
         </div>
-        <div className="col-md-6">dfdf</div>
       </div>
     );
   }
