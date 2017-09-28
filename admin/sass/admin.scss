@@ -33,6 +33,12 @@ h1 {
   // flex-direction: column;
   margin-bottom: 45px;
 
+  &.publicOnly {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   & .simpleFormWrapper {
     & hr {
       margin: 30px -30px;

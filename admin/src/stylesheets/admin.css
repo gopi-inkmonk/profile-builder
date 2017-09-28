@@ -197,33 +197,39 @@ h1 {
   display: flex;
   margin-bottom: 45px;
 }
-/* line 37, ../../sass/admin.scss */
+/* line 36, ../../sass/admin.scss */
+.simpleForm.publicOnly {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* line 43, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper hr {
   margin: 30px -30px;
 }
-/* line 41, ../../sass/admin.scss */
+/* line 47, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper h3 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
 }
-/* line 47, ../../sass/admin.scss */
+/* line 53, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > * {
   padding: 0 30px;
 }
-/* line 50, ../../sass/admin.scss */
+/* line 56, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > *:first-child {
   padding-top: 30px;
 }
-/* line 54, ../../sass/admin.scss */
+/* line 60, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper > *:last-child {
   padding-bottom: 30px;
 }
-/* line 61, ../../sass/admin.scss */
+/* line 67, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper .row .col-md-6:first-child {
   padding-top: 30px;
 }
-/* line 64, ../../sass/admin.scss */
+/* line 70, ../../sass/admin.scss */
 .simpleForm .simpleFormWrapper .row .col-md-6:first-child p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
@@ -231,16 +237,16 @@ h1 {
   font-size: 13px;
 }
 
-/* line 75, ../../sass/admin.scss */
+/* line 81, ../../sass/admin.scss */
 .colField {
   display: flex;
 }
-/* line 78, ../../sass/admin.scss */
+/* line 84, ../../sass/admin.scss */
 .colField li {
   flex: 1;
 }
 
-/* line 83, ../../sass/admin.scss */
+/* line 89, ../../sass/admin.scss */
 .loader {
   position: fixed;
   left: 0;
@@ -255,49 +261,49 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-/* line 97, ../../sass/admin.scss */
+/* line 103, ../../sass/admin.scss */
 .loader > .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
   margin-bottom: 15px;
 }
 
-/* line 104, ../../sass/admin.scss */
+/* line 110, ../../sass/admin.scss */
 .appHeader {
   margin-bottom: 25px;
 }
-/* line 107, ../../sass/admin.scss */
+/* line 113, ../../sass/admin.scss */
 .appHeader .container {
   align-items: center;
   display: flex;
 }
-/* line 111, ../../sass/admin.scss */
+/* line 117, ../../sass/admin.scss */
 .appHeader .container > span {
   flex: 1;
   padding: 15px;
 }
-/* line 115, ../../sass/admin.scss */
+/* line 121, ../../sass/admin.scss */
 .appHeader .container > span:last-child {
   text-align: right;
   padding: 0;
 }
-/* line 120, ../../sass/admin.scss */
+/* line 126, ../../sass/admin.scss */
 .appHeader .container > span > a {
   margin: 0;
   cursor: pointer;
   padding: 15px;
   display: inline-block;
 }
-/* line 126, ../../sass/admin.scss */
+/* line 132, ../../sass/admin.scss */
 .appHeader .container > span > a:hover {
   background: rgba(245, 247, 250, 0.5);
 }
-/* line 133, ../../sass/admin.scss */
+/* line 139, ../../sass/admin.scss */
 .appHeader .storyCTA {
   display: 'flex';
   align-items: 'flex-end';
 }
-/* line 138, ../../sass/admin.scss */
+/* line 144, ../../sass/admin.scss */
 .appHeader .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
@@ -305,38 +311,38 @@ h1 {
   display: inline-block;
 }
 
-/* line 146, ../../sass/admin.scss */
+/* line 152, ../../sass/admin.scss */
 .formTopStrip {
   padding-bottom: 15px !important;
   background: #f5f7fa;
 }
 
-/* line 151, ../../sass/admin.scss */
+/* line 157, ../../sass/admin.scss */
 .domain {
   padding: 0;
 }
-/* line 154, ../../sass/admin.scss */
+/* line 160, ../../sass/admin.scss */
 .domain .text {
   color: #a2a5a8;
   display: inline-block;
   padding-right: 15px;
 }
-/* line 161, ../../sass/admin.scss */
+/* line 167, ../../sass/admin.scss */
 .domain.live .fa {
   color: #60da09;
 }
-/* line 167, ../../sass/admin.scss */
+/* line 173, ../../sass/admin.scss */
 .domain.notLive .fa {
   color: rgba(0, 0, 0, 0.2);
 }
-/* line 172, ../../sass/admin.scss */
+/* line 178, ../../sass/admin.scss */
 .domain .fa {
   font-size: 11px;
   display: inline-block;
   padding: 0 5px 0 0;
 }
 
-/* line 179, ../../sass/admin.scss */
+/* line 185, ../../sass/admin.scss */
 .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
@@ -344,30 +350,30 @@ h1 {
   display: inline-block;
 }
 
-/* line 186, ../../sass/admin.scss */
+/* line 192, ../../sass/admin.scss */
 .storyCTA {
   align-items: center;
   display: flex;
 }
 
 @media (max-width: 768px) {
-  /* line 192, ../../sass/admin.scss */
+  /* line 198, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 197, ../../sass/admin.scss */
+  /* line 203, ../../sass/admin.scss */
   .appHeader .container {
     flex-direction: column;
   }
-  /* line 200, ../../sass/admin.scss */
+  /* line 206, ../../sass/admin.scss */
   .appHeader .container .domain, .appHeader .container .brand {
     display: inline-block;
     width: 100%;
     padding: 0;
     text-align: center;
   }
-  /* line 208, ../../sass/admin.scss */
+  /* line 214, ../../sass/admin.scss */
   .appHeader .container .brand {
     padding: 25px;
   }

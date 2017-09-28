@@ -53,14 +53,14 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="simpleForm">
+      <div className="simpleForm publicOnly">
         <div className="text-center" style={{ padding: 30 }}>
           <span className="brand">Itsmybio.me</span>
         </div>
         <div className="col-sm-4 col-sm-offset-4">
           <Paper zDepth={1} className="simpleFormWrapper">
             <div className="formTitle">
-              <h2>Create and claim your profile</h2>
+              <h2>Create an Account</h2>
             </div>
             <form onSubmit={this.handleSubmit}>
               <TextField

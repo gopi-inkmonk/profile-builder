@@ -74,7 +74,7 @@ export default class Login extends Component {
   render() {
     const { errorMessage } = this.state;
     return (
-      <div className="simpleForm">
+      <div className="simpleForm publicOnly">
         <Dialog
           actions={[
             <FlatButton
