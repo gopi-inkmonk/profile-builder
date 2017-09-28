@@ -52,25 +52,38 @@ export default class GetShortDesc extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            floatingLabelText="Please enter few lines about you"
-            fullWidth={true}
-            multiLine={true}
-            rows={4}
-            type="text"
-            value={this.state.shortDesc || ''}
-            errorText={this.state.errorTextforshortDesc}
-            onChange={e => this.setState({ shortDesc: e.target.value })}
+      <div className="row">
+        <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/description.png')}
+            width="400"
           />
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+        </div>
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              floatingLabelText="Please enter few lines about you"
+              fullWidth={true}
+              multiLine={true}
+              rows={4}
+              type="text"
+              value={this.state.shortDesc || ''}
+              errorText={this.state.errorTextforshortDesc}
+              onChange={e => this.setState({ shortDesc: e.target.value })}
+            />
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
       </div>
     );
   }

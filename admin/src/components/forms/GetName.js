@@ -50,23 +50,36 @@ export default class GetName extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            floatingLabelText="Please enter your name"
-            fullWidth={true}
-            type="text"
-            value={this.state.name}
-            errorText={this.state.errorTextforname}
-            onChange={e => this.setState({ name: e.target.value })}
+      <div className="row">
+        <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/name.png')}
+            width="400"
           />
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+        </div>
+        <div className="col-md-6">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              floatingLabelText="Please enter your name"
+              fullWidth={true}
+              type="text"
+              value={this.state.name}
+              errorText={this.state.errorTextforname}
+              onChange={e => this.setState({ name: e.target.value })}
+            />
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
       </div>
     );
   }

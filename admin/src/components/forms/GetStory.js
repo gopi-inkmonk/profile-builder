@@ -107,7 +107,7 @@ export default class GetStory extends Component {
               onChange={this.handleChange.bind(this, i, 'year')}
             />
           </div>
-          <div className="col-sm-6 col-md-2">
+          <div className="col-sm-6 col-md-3">
             <SelectField
               floatingLabelText="Select type"
               style={{ width: '100%' }}
@@ -121,7 +121,7 @@ export default class GetStory extends Component {
               <MenuItem value="Project" primaryText="Project" />
             </SelectField>
           </div>
-          <div className="col-sm-12 col-md-6">
+          <div className="col-sm-12 col-md-5">
             <TextField
               floatingLabelText="Story"
               fullWidth={true}
@@ -149,24 +149,28 @@ export default class GetStory extends Component {
     if (isLoaded == false) {
       return <Loader />;
     }
-    console.log(this.props.story);
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.createUI()}
-        <div style={{ display: 'flex' }}>
-          <div>
-            <RaisedButton label="add more" onClick={this.addClick.bind(this)} />
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          {this.createUI()}
+          <div style={{ display: 'flex' }}>
+            <div>
+              <RaisedButton
+                label="add more"
+                onClick={this.addClick.bind(this)}
+              />
+            </div>
+            <div style={{ flex: 1 }}>
+              <RaisedButton
+                label="Save"
+                primary={true}
+                type="submit"
+                fullWidth={true}
+              />
+            </div>
           </div>
-          <div style={{ flex: 1 }}>
-            <RaisedButton
-              label="Save"
-              primary={true}
-              type="submit"
-              fullWidth={true}
-            />
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }

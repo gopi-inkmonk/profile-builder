@@ -28,9 +28,9 @@ h1 {
 
 .simpleForm {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
   margin-bottom: 45px;
 
   & .simpleFormWrapper {
@@ -53,6 +53,20 @@ h1 {
 
       &:last-child {
         padding-bottom: 30px;
+      }
+    }
+
+    & .row {
+      & .col-md-6 {
+        &:first-child {
+          padding-top: 30px;
+
+          & p {
+            @include opacity(.5);
+            margin: 0 0 15px;
+            font-size: 13px;
+          }
+        }
       }
     }
   }
@@ -88,7 +102,6 @@ h1 {
 }
 
 .appHeader {
-  background: #fff;
   margin-bottom: 25px;
 
   & .container {
@@ -115,31 +128,9 @@ h1 {
         }
       }
     }
-
-    & .domain {
-      padding: 0 0 0 15px;
-
-      &.live {
-        & .fa {
-          color: #60da09;
-        }
-      }
-
-      &.notLive {
-        & .fa {
-          color: rgba(0, 0, 0, 0.2);
-        }
-      }
-
-      & .fa {
-        font-size: 11px;
-        display: inline-block;
-        padding: 0 5px 0 0;
-      }
-    }
   }
 
-  .storyCTA {
+  & .storyCTA {
     display: 'flex';
     align-items: 'flex-end';
   }
@@ -149,6 +140,39 @@ h1 {
     font-size: 30px;
     margin: 0;
     display: inline-block;
+  }
+}
+
+.formTopStrip {
+  padding-bottom: 15px !important;
+  background: #f5f7fa;
+}
+
+.domain {
+  padding: 0;
+
+  & .text {
+    color: #a2a5a8;
+    display: inline-block;
+    padding-right: 15px;
+  }
+
+  &.live {
+    & .fa {
+      color: #60da09;
+    }
+  }
+
+  &.notLive {
+    & .fa {
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  & .fa {
+    font-size: 11px;
+    display: inline-block;
+    padding: 0 5px 0 0;
   }
 }
 

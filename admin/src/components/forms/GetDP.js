@@ -135,35 +135,48 @@ export default class GetDP extends Component {
       },
     };
     return (
-      <div>
-        {this.state.uploadStarted &&
-          <div>
-            <LinearProgress
-              mode="determinate"
-              value={this.state.uploadingStatus}
-            />
-          </div>}
-
-        <RaisedButton
-          label={'Upload your profile photo'}
-          labelPosition="before"
-          fullWidth={true}
-          style={styles.uploadButton}
-          containerElement="label"
-        >
-          <input
-            type="file"
-            style={styles.uploadInput}
-            onChange={this.handleChange}
+      <div className="row">
+        <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/dp.png')}
+            width="400"
           />
-        </RaisedButton>
+        </div>
+        <div className="col-md-6" style={{ paddingTop: 30 }}>
+          {this.state.uploadStarted &&
+            <div>
+              <LinearProgress
+                mode="determinate"
+                value={this.state.uploadingStatus}
+              />
+            </div>}
 
-        <p style={{ color: '#cccccc', marginTop: 10 }}>File size max 1MB</p>
+          <RaisedButton
+            label={'Upload your profile photo'}
+            labelPosition="before"
+            fullWidth={true}
+            style={styles.uploadButton}
+            containerElement="label"
+          >
+            <input
+              type="file"
+              style={styles.uploadInput}
+              onChange={this.handleChange}
+            />
+          </RaisedButton>
 
-        {this.state.DPImage &&
-          <div style={{ marginTop: 25 }}>
-            <img src={this.state.DPImage} className="img-responsive" />
-          </div>}
+          <p style={{ color: '#cccccc', marginTop: 10 }}>File size max 1MB</p>
+
+          {this.state.DPImage &&
+            <div style={{ marginTop: 25 }}>
+              <img src={this.state.DPImage} className="img-responsive" />
+            </div>}
+        </div>
       </div>
     );
   }

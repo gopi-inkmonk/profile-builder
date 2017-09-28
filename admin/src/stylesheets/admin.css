@@ -110,16 +110,16 @@ body {
 
 /* line 39, ../../sass/partials/_common.scss */
 a {
-  color: #eb3c3c;
+  color: #07a6f9;
 }
 /* line 42, ../../sass/partials/_common.scss */
 a:hover {
-  color: #ca2e2e;
+  color: #0c83c1;
 }
 
 /* line 47, ../../sass/partials/_common.scss */
 .nav.progressNav {
-  margin-bottom: 25px;
+  flex-direction: column;
 }
 /* line 50, ../../sass/partials/_common.scss */
 .nav.progressNav a {
@@ -129,93 +129,38 @@ a:hover {
   flex: 1;
   text-transform: uppercase;
   position: relative;
-  padding: 0;
+  padding: 15px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
 /* line 60, ../../sass/partials/_common.scss */
-.nav.progressNav a:after, .nav.progressNav a:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+.nav.progressNav a > .bullet {
+  min-width: 15px;
+  text-align: left;
+  display: inline-block;
 }
-/* line 69, ../../sass/partials/_common.scss */
-.nav.progressNav a:before {
-  width: 10px;
-  height: 10px;
-  top: 0;
-  background: black;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-/* line 76, ../../sass/partials/_common.scss */
-.nav.progressNav a:after {
-  width: 100%;
-  top: 4px;
-  height: 1px;
-  background: black;
-}
-/* line 83, ../../sass/partials/_common.scss */
-.nav.progressNav a > .progressTitle {
-  display: none;
-  margin: 20px 0 0;
-}
-/* line 88, ../../sass/partials/_common.scss */
+/* line 66, ../../sass/partials/_common.scss */
 .nav.progressNav a:hover {
   color: #eb3c3c;
 }
-/* line 91, ../../sass/partials/_common.scss */
+/* line 70, ../../sass/partials/_common.scss */
 .nav.progressNav a.active {
   color: #eb3c3c;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 95, ../../sass/partials/_common.scss */
-.nav.progressNav a.active:before {
-  background: #eb3c3c;
-}
-/* line 99, ../../sass/partials/_common.scss */
-.nav.progressNav a.active:after {
-  width: 100%;
-  height: 1px;
-  background: #eb3c3c;
-}
-/* line 105, ../../sass/partials/_common.scss */
-.nav.progressNav a.active > .progressTitle {
-  display: block;
+
+/* line 77, ../../sass/partials/_common.scss */
+.row {
+  flex: 1;
 }
 
-/* line 114, ../../sass/partials/_common.scss */
-.react-tabs ul.react-tabs__tab-list li.react-tabs__tab {
-  font-size: 13px;
-  font-weight: bold;
-  color: #a2a5a8;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 10px 15px;
-  margin: 0 0 25px;
-  cursor: pointer;
-  border-bottom: 2px solid #fff;
-}
-/* line 125, ../../sass/partials/_common.scss */
-.react-tabs ul.react-tabs__tab-list li.react-tabs__tab:hover {
-  color: #eb3c3c;
-}
-/* line 129, ../../sass/partials/_common.scss */
-.react-tabs ul.react-tabs__tab-list li.react-tabs__tab.react-tabs__tab--selected {
-  color: #eb3c3c;
-  border-bottom: 2px solid #eb3c3c;
-}
-
-/* line 142, ../../sass/partials/_common.scss */
+/* line 81, ../../sass/partials/_common.scss */
 .img-responsive {
   max-width: 100%;
 }
 
-/* line 146, ../../sass/partials/_common.scss */
+/* line 85, ../../sass/partials/_common.scss */
 .hide {
   display: none !important;
 }
@@ -250,9 +195,6 @@ h1 {
 /* line 29, ../../sass/admin.scss */
 .simpleForm {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   margin-bottom: 45px;
 }
 /* line 37, ../../sass/admin.scss */
@@ -277,17 +219,28 @@ h1 {
 .simpleForm .simpleFormWrapper > *:last-child {
   padding-bottom: 30px;
 }
-
 /* line 61, ../../sass/admin.scss */
+.simpleForm .simpleFormWrapper .row .col-md-6:first-child {
+  padding-top: 30px;
+}
+/* line 64, ../../sass/admin.scss */
+.simpleForm .simpleFormWrapper .row .col-md-6:first-child p {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  margin: 0 0 15px;
+  font-size: 13px;
+}
+
+/* line 75, ../../sass/admin.scss */
 .colField {
   display: flex;
 }
-/* line 64, ../../sass/admin.scss */
+/* line 78, ../../sass/admin.scss */
 .colField li {
   flex: 1;
 }
 
-/* line 69, ../../sass/admin.scss */
+/* line 83, ../../sass/admin.scss */
 .loader {
   position: fixed;
   left: 0;
@@ -302,68 +255,49 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-/* line 83, ../../sass/admin.scss */
+/* line 97, ../../sass/admin.scss */
 .loader > .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
   margin-bottom: 15px;
 }
 
-/* line 90, ../../sass/admin.scss */
+/* line 104, ../../sass/admin.scss */
 .appHeader {
-  background: #fff;
   margin-bottom: 25px;
 }
-/* line 94, ../../sass/admin.scss */
+/* line 107, ../../sass/admin.scss */
 .appHeader .container {
   align-items: center;
   display: flex;
 }
-/* line 98, ../../sass/admin.scss */
+/* line 111, ../../sass/admin.scss */
 .appHeader .container > span {
   flex: 1;
   padding: 15px;
 }
-/* line 102, ../../sass/admin.scss */
+/* line 115, ../../sass/admin.scss */
 .appHeader .container > span:last-child {
   text-align: right;
   padding: 0;
 }
-/* line 107, ../../sass/admin.scss */
+/* line 120, ../../sass/admin.scss */
 .appHeader .container > span > a {
   margin: 0;
   cursor: pointer;
   padding: 15px;
   display: inline-block;
 }
-/* line 113, ../../sass/admin.scss */
+/* line 126, ../../sass/admin.scss */
 .appHeader .container > span > a:hover {
   background: rgba(245, 247, 250, 0.5);
 }
-/* line 119, ../../sass/admin.scss */
-.appHeader .container .domain {
-  padding: 0 0 0 15px;
-}
-/* line 123, ../../sass/admin.scss */
-.appHeader .container .domain.live .fa {
-  color: #60da09;
-}
-/* line 129, ../../sass/admin.scss */
-.appHeader .container .domain.notLive .fa {
-  color: rgba(0, 0, 0, 0.2);
-}
-/* line 134, ../../sass/admin.scss */
-.appHeader .container .domain .fa {
-  font-size: 11px;
-  display: inline-block;
-  padding: 0 5px 0 0;
-}
-/* line 142, ../../sass/admin.scss */
+/* line 133, ../../sass/admin.scss */
 .appHeader .storyCTA {
   display: 'flex';
   align-items: 'flex-end';
 }
-/* line 147, ../../sass/admin.scss */
+/* line 138, ../../sass/admin.scss */
 .appHeader .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
@@ -371,7 +305,38 @@ h1 {
   display: inline-block;
 }
 
-/* line 155, ../../sass/admin.scss */
+/* line 146, ../../sass/admin.scss */
+.formTopStrip {
+  padding-bottom: 15px !important;
+  background: #f5f7fa;
+}
+
+/* line 151, ../../sass/admin.scss */
+.domain {
+  padding: 0;
+}
+/* line 154, ../../sass/admin.scss */
+.domain .text {
+  color: #a2a5a8;
+  display: inline-block;
+  padding-right: 15px;
+}
+/* line 161, ../../sass/admin.scss */
+.domain.live .fa {
+  color: #60da09;
+}
+/* line 167, ../../sass/admin.scss */
+.domain.notLive .fa {
+  color: rgba(0, 0, 0, 0.2);
+}
+/* line 172, ../../sass/admin.scss */
+.domain .fa {
+  font-size: 11px;
+  display: inline-block;
+  padding: 0 5px 0 0;
+}
+
+/* line 179, ../../sass/admin.scss */
 .brand {
   font-family: "Yesteryear", cursive;
   font-size: 30px;
@@ -379,30 +344,30 @@ h1 {
   display: inline-block;
 }
 
-/* line 162, ../../sass/admin.scss */
+/* line 186, ../../sass/admin.scss */
 .storyCTA {
   align-items: center;
   display: flex;
 }
 
 @media (max-width: 768px) {
-  /* line 168, ../../sass/admin.scss */
+  /* line 192, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 173, ../../sass/admin.scss */
+  /* line 197, ../../sass/admin.scss */
   .appHeader .container {
     flex-direction: column;
   }
-  /* line 176, ../../sass/admin.scss */
+  /* line 200, ../../sass/admin.scss */
   .appHeader .container .domain, .appHeader .container .brand {
     display: inline-block;
     width: 100%;
     padding: 0;
     text-align: center;
   }
-  /* line 184, ../../sass/admin.scss */
+  /* line 208, ../../sass/admin.scss */
   .appHeader .container .brand {
     padding: 25px;
   }

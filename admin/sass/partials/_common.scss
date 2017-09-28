@@ -37,15 +37,15 @@ body {
 }
 
 a {
-  color: $primary-color;
+  color: #07a6f9;
 
   &:hover {
-    color: $primary-dark-color;
+    color: #0c83c1;
   }
 }
 
 .nav.progressNav {
-  margin-bottom: 25px;
+  flex-direction: column;
 
   & a {
     font-size: 13px;
@@ -54,89 +54,28 @@ a {
     flex: 1;
     text-transform: uppercase;
     position: relative;
-    padding: 0;
+    padding: 15px;
     @include opacity(0.3);
 
-    &:after,
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
-    }
-
-    &:before {
-      width: 10px;
-      height: 10px;
-      top: 0;
-      background: black;
-      @include border-radius(10px);
-    }
-    &:after {
-      width: 100%;
-      top: 4px;
-      height: 1px;
-      background: black;
-    }
-
-    & > .progressTitle {
-      display: none;
-      margin: 20px 0 0;
+    & > .bullet {
+      min-width: 15px;
+      text-align: left;
+      display: inline-block;
     }
 
     &:hover {
       color: $primary-color;
     }
+
     &.active {
       color: $primary-color;
       @include opacity(1);
-
-      &:before {
-        background: $primary-color;
-      }
-
-      &:after {
-        width: 100%;
-        height: 1px;
-        background: $primary-color;
-      }
-
-      & > .progressTitle {
-        display: block;
-      }
     }
   }
 }
 
-.react-tabs {
-  & ul.react-tabs__tab-list {
-    & li.react-tabs__tab {
-      font-size: 13px;
-      font-weight: bold;
-      color: #a2a5a8;
-      text-transform: uppercase;
-      display: inline-block;
-      padding: 10px 15px;
-      margin: 0 0 25px;
-      cursor: pointer;
-      border-bottom: 2px solid #fff;
-
-      &:hover {
-        color: $primary-color;
-      }
-
-      &.react-tabs__tab--selected {
-        color: $primary-color;
-        border-bottom: 2px solid $primary-color;
-      }
-    }
-  }
-
-  & .react-tabs__tab-panel {
-    & .react-tabs__tab-panel--selected {
-    }
-  }
+.row {
+  flex: 1;
 }
 
 .img-responsive {

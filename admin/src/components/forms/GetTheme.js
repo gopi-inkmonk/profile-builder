@@ -73,24 +73,36 @@ export default class GetTheme extends Component {
       return <Loader />;
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>Picked colors</h3>
-          <RadioButtonGroup name="color" onChange={this.handleChange}>
-            <RadioButton
-              value="#eb3c3c"
-              label="Red"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="#9966c3"
-              label="Violet"
-              style={styles.radioButton}
-            />
-          </RadioButtonGroup>
+      <div className="row">
+        <div className="col-md-6">
+          <p>
+            Below image is for representational purpose.<br />
+            Your input will take place where red is appear.
+          </p>
+          <img
+            className="img-responsive"
+            src={require('../../images/theme.png')}
+            width="400"
+          />
+        </div>
+        <div className="col-md-6" style={{ paddingTop: 30 }}>
+          <form onSubmit={this.handleSubmit}>
+            <h3>Picked colors</h3>
+            <RadioButtonGroup name="color" onChange={this.handleChange}>
+              <RadioButton
+                value="#eb3c3c"
+                label="Red"
+                style={styles.radioButton}
+              />
+              <RadioButton
+                value="#9966c3"
+                label="Violet"
+                style={styles.radioButton}
+              />
+            </RadioButtonGroup>
 
-          <h3>Custom Color</h3>
-          {/* <TextField
+            <h3>Custom Color</h3>
+            {/* <TextField
             type="color"
             fullWidth={true}
             value={this.state.ThemeColor}
@@ -99,27 +111,28 @@ export default class GetTheme extends Component {
             errorText={this.state.errorTextforThemeColor}
           /> */}
 
-          <ColorPicker
-            value={this.state.ThemeColor}
-            onDrag={this.onDrag.bind(this)}
-          />
+            <ColorPicker
+              value={this.state.ThemeColor}
+              onDrag={this.onDrag.bind(this)}
+            />
 
-          <span
-            style={{
-              width: 15,
-              height: 15,
-              display: 'inline-block',
-              background: `#${this.state.ThemeColor}`,
-            }}
-          />
+            <span
+              style={{
+                width: 15,
+                height: 15,
+                display: 'inline-block',
+                background: `#${this.state.ThemeColor}`,
+              }}
+            />
 
-          <RaisedButton
-            label="Save"
-            primary={true}
-            type="submit"
-            fullWidth={true}
-          />
-        </form>
+            <RaisedButton
+              label="Save"
+              primary={true}
+              type="submit"
+              fullWidth={true}
+            />
+          </form>
+        </div>
       </div>
     );
   }
