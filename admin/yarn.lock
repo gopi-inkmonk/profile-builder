@@ -5333,6 +5333,12 @@ react-fontawesome:
   dependencies:
     prop-types "^15.5.6"
 
+react-ga:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.3.4.tgz#2011c2bbcd99f19850816405a91e3ed6fba5da98"
+  dependencies:
+    object-assign "^4.1.1"
+
 react-helmet:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"

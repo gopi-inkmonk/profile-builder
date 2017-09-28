@@ -11,6 +11,13 @@ import Register from './components/Register';
 import Username from './components/Username';
 import Wizard from './components/Wizard';
 import Loader from './components/Loader';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-107210137-1');
+
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname + window.location.search });
+  ReactGA.pageview(window.location.pathname + window.location.search);
+};
 
 const PrivateRoute = ({ component: Component, authed, ...rest }) =>
   <Route
@@ -73,7 +80,7 @@ class App extends Component {
       : <BrowserRouter>
           <MuiThemeProvider>
             <div>
-              <Switch>
+              <Switch onUpdate={logPageView}>
                 <PublicOnlyRoute
                   path="/"
                   exact

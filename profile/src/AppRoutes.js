@@ -13,11 +13,18 @@ import firebase from 'firebase';
 import { firebaseAuth } from './config/Fire';
 import App from './App';
 import LandingPage from './components/LandingPage';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-107210137-1');
+
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname + window.location.search });
+  ReactGA.pageview(window.location.pathname + window.location.search);
+};
 
 class AppRoutes extends Component {
   render() {
     return (
-      <Router>
+      <Router onUpdate={logPageView}>
         <div id="profile">
           <Switch>
             <Route exact path="/" component={LandingPage} />
