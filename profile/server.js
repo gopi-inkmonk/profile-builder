@@ -1,7 +1,16 @@
+const fs = require('fs');
 const express = require('express');
 const firebase = require('firebase');
 const app = express();
 const getSite = require('./getSite');
+
+app.use(express.static('build/'));
+
+const manifestStr = fs.readFileSync('./build/asset-manifest.json', {
+  encoding: 'utf8',
+});
+
+const manifest = JSON.parse(manifestStr);
 
 const config = {
   apiKey: 'AIzaSyAdqqCE5ccr5Y6A2nfOE2zgSO3rseyyJhE',
@@ -42,14 +51,13 @@ const getProfileData = username => {
   });
 };
 
-getProfileData('gopiraja')
-  .then(value => {
-    const val = getSite(value);
-    console.log(val);
-  })
-  .catch(err => {
-    console.log('some error', err);
-  });
+// getProfileData('gopiraja')
+//   .then(value => {
+//     const val = getSite({ userData: value, manifest });
+//   })
+//   .catch(err => {
+//     console.log('some error', err);
+//   });
 
 app.get('/', function(req, res) {
   res.send('Hello World! gopi');
@@ -64,9 +72,8 @@ app.get('/:username', function(req, res) {
   getProfileData(username)
     .then(value => {
       const { name } = value;
-      console.log('got value', value);
-      const val = getSite(value);
-      res.send(`You have come to ${val} page`);
+      const val = getSite({ userData: value, username, manifest });
+      res.send(val);
     })
     .catch(err => {
       res.send('user not found');

@@ -1,11 +1,15 @@
 {
   "name": "profile-builder",
   "version": "0.1.0",
+  "main": "main.js",
   "private": true,
   "dependencies": {
     "animated": "^0.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.0.0-beta",
-    "firebase": "^4.3.0",
+    "express": "^4.15.5",
+    "firebase": "^4.4.0",
     "popper.js": "^1.12.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -26,6 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "cp _redirects build/; netlify deploy"
+    "deploy": "cp _redirects build/; netlify deploy",
+    "server": "babel-node server.js"
   }
 }
