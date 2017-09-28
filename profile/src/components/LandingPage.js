@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import FontAwesome from 'react-fontawesome';
+import TextLoop from 'react-text-loop';
 
 class LandingPage extends Component {
   render() {
@@ -44,7 +45,18 @@ class LandingPage extends Component {
               </div>
 
               <h3>How do we know</h3>
-              <h1>Morarji Desai lived 99 years?</h1>
+
+              <h1>
+                <TextLoop
+                  children={[
+                    'Morar ji Desai lived 99 years?',
+                    'Gandhi ji is an ambivert?',
+                    'Hitler is a vegetarian?',
+                  ]}
+                  speed={5000}
+                  springConfig={{ stiffness: 1000, damping: 50 }}
+                />
+              </h1>
 
               <p>
                 It is written in their Biography.<br />
