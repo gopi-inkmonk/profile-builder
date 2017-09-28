@@ -813,7 +813,7 @@ h1 {
   #landingPage .pageWrapper > .footer > *,
   #landingPage .pageWrapper > .footer > *:last-child {
     text-align: center;
-    min-width: 500px;
+    min-width: 300px;
   }
 
   /* line 212, ../../sass/partials/_landingPage.scss */
