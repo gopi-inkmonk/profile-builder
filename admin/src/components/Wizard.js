@@ -10,6 +10,13 @@ import {
 import { NavLink } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import Paper from 'material-ui/Paper';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import GetName from './forms/GetName';
 import GetWho from './forms/GetWho';
 import GetShortDesc from './forms/GetShortDesc';
@@ -38,6 +45,14 @@ export default class Wizard extends Component {
     email: null,
     username: null,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+  }
+
+  handleToggle = () => this.setState({ open: !this.state.open });
+  handleClose = () => this.setState({ open: false });
 
   componentWillMount() {
     getProfileData(this.getProfileData);
@@ -80,11 +95,75 @@ export default class Wizard extends Component {
     const { isLoaded, username, name, who, shortDesc, contact } = this.state;
     return (
       <div>
+        <div className="mobileHeader">
+          <AppBar
+            title="Itsmybio.me"
+            titleStyle={{ fontFamily: "'Yesteryear', cursive" }}
+            onLeftIconButtonTouchTap={this.handleToggle}
+          />
+          <Drawer docked={false} open={this.state.open}>
+            <AppBar
+              // showMenuIconButton={false}
+              iconElementLeft={
+                <IconButton>
+                  <NavigationClose />
+                </IconButton>
+              }
+              onLeftIconButtonTouchTap={this.handleToggle}
+            />
+            <MenuItem onClick={this.handleClose}>
+              <NavLink
+                to={`${match.url}/username`}
+                className="nav-link"
+                activeClassName="active"
+              >
+                User Name
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/name`} className="nav-link">
+                Your Name
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/dp`} className="nav-link">
+                Profile Picture
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/who`} className="nav-link">
+                Define you
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/desc`} className="nav-link">
+                Description
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/contact`} className="nav-link">
+                Contact
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/story`} className="nav-link">
+                Story
+              </NavLink>
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/theme`} className="nav-link">
+                Theme
+              </NavLink>
+            </MenuItem>
+          </Drawer>
+        </div>
+
         <div className="appHeader">
           <div className="container">
             <div>
               <span className="brand">Itsmybio.me</span>
             </div>
+
             <span>
               {getEmail()}
               <a onClick={logout}>
@@ -96,7 +175,7 @@ export default class Wizard extends Component {
 
         <div className="container simpleForm">
           <div className="row">
-            <div className="col-sm-3">
+            <div className="col-md-3 navWrapper">
               <nav className="nav progressNav">
                 <NavLink
                   to={`${match.url}/username`}
@@ -136,7 +215,7 @@ export default class Wizard extends Component {
                 </NavLink>
               </nav>
             </div>
-            <div className="col-sm-9">
+            <div className="col-md-9">
               <Paper zDepth={1} className="simpleFormWrapper">
                 {username &&
                   <div className="formTopStrip">

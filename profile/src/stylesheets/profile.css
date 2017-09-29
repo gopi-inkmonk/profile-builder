@@ -783,28 +783,29 @@ h1 {
   margin-bottom: -60px;
   margin-top: 60px;
   flex-wrap: wrap;
+  padding: 0 30px;
 }
-/* line 182, ../../sass/partials/_landingPage.scss */
+/* line 183, ../../sass/partials/_landingPage.scss */
 #landingPage .pageWrapper > .footer .fa-heart {
   color: #e74c3c;
 }
-/* line 186, ../../sass/partials/_landingPage.scss */
+/* line 187, ../../sass/partials/_landingPage.scss */
 #landingPage .pageWrapper > .footer > * {
   min-width: 200px;
   flex: 1;
 }
-/* line 190, ../../sass/partials/_landingPage.scss */
+/* line 191, ../../sass/partials/_landingPage.scss */
 #landingPage .pageWrapper > .footer > *:last-child {
   text-align: right;
 }
 
 @media (max-width: 576px) {
-  /* line 199, ../../sass/partials/_landingPage.scss */
+  /* line 200, ../../sass/partials/_landingPage.scss */
   .brand {
     text-align: center;
   }
 
-  /* line 202, ../../sass/partials/_landingPage.scss */
+  /* line 203, ../../sass/partials/_landingPage.scss */
   .signCTA {
     display: none;
   }
@@ -813,7 +814,7 @@ h1 {
   #landingPage .pageWrapper > .footer > *,
   #landingPage .pageWrapper > .footer > *:last-child {
     text-align: center;
-    min-width: 300px;
+    min-width: 250px;
   }
 
   /* line 212, ../../sass/partials/_landingPage.scss */

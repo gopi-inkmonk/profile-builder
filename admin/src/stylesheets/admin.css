@@ -356,25 +356,69 @@ h1 {
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   /* line 198, ../../sass/admin.scss */
+  .appHeader {
+    display: none;
+  }
+
+  /* line 201, ../../sass/admin.scss */
+  .mobileHeader {
+    display: block;
+    margin-bottom: 25px;
+  }
+  /* line 205, ../../sass/admin.scss */
+  .mobileHeader a.nav-link {
+    color: #000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    padding: 0;
+  }
+  /* line 210, ../../sass/admin.scss */
+  .mobileHeader a.nav-link.active {
+    color: #eb3c3c;
+  }
+}
+@media (min-width: 576px) {
+  /* line 217, ../../sass/admin.scss */
+  .appHeader {
+    display: block;
+  }
+
+  /* line 220, ../../sass/admin.scss */
+  .mobileHeader {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  /* line 226, ../../sass/admin.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 203, ../../sass/admin.scss */
+  /* line 231, ../../sass/admin.scss */
   .appHeader .container {
     flex-direction: column;
   }
-  /* line 206, ../../sass/admin.scss */
+  /* line 234, ../../sass/admin.scss */
   .appHeader .container .domain, .appHeader .container .brand {
     display: inline-block;
     width: 100%;
     padding: 0;
     text-align: center;
   }
-  /* line 214, ../../sass/admin.scss */
+  /* line 242, ../../sass/admin.scss */
   .appHeader .container .brand {
     padding: 25px;
+  }
+
+  /* line 247, ../../sass/admin.scss */
+  .simpleForm .simpleFormWrapper .row {
+    flex-wrap: wrap-reverse;
+  }
+
+  /* line 250, ../../sass/admin.scss */
+  .navWrapper {
+    display: none;
   }
 }

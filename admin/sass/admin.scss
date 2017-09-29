@@ -194,6 +194,34 @@ h1 {
   display: flex;
 }
 
+@media (max-width: 576px) {
+  .appHeader {
+    display: none;
+  }
+  .mobileHeader {
+    display: block;
+    margin-bottom: 25px;
+
+    & a.nav-link {
+      color: #000;
+      @include opacity(.8);
+      padding: 0;
+
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .appHeader {
+    display: block;
+  }
+  .mobileHeader {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .storyCTA {
     margin-bottom: 30px;
@@ -215,5 +243,11 @@ h1 {
         padding: 25px;
       }
     }
+  }
+  .simpleForm .simpleFormWrapper .row {
+    flex-wrap: wrap-reverse;
+  }
+  .navWrapper {
+    display: none;
   }
 }
