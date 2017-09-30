@@ -4,6 +4,7 @@ var ReactDOMServer = require('react-dom/server');
 class Site extends React.Component {
   render() {
     const { manifest, username, dpUrl, userData } = this.props;
+    console.log('userData', userData.DPUrl);
     return (
       <html lang="en">
         <head>
@@ -24,7 +25,7 @@ class Site extends React.Component {
           />
           <meta property="og:url" content={`https://itsmybio.me/${username}`} />
           <meta property="og:description" content={userData.shortDesc} />
-          <meta property="og:image" content={dpUrl} />
+          <meta property="og:image" content={userData.DPUrl} />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link
@@ -40,6 +41,17 @@ class Site extends React.Component {
           <div id="root" />
           <link rel="stylesheet" href={`/${manifest['main.css']}`} />
           <script src={`/${manifest['main.js']}`} />
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107210137-1"></script>
+          <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+
+          gtag('config', 'UA-107210137-1');
+          </script>
         </body>
       </html>
     );

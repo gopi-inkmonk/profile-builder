@@ -97,7 +97,8 @@ export default class Username extends Component {
               type="text"
               value={this.state.username || ''}
               errorText={this.state.errorTextforUsername}
-              onChange={e => this.setState({ username: e.target.value })}
+              onChange={e =>
+                this.setState({ username: e.target.value.toLowerCase() })}
             />
 
             <div className="formCTA">

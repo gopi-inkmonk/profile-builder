@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import LinearProgress from 'material-ui/LinearProgress';
-import { saveName } from '../../helpers/auth';
+import { saveDP } from '../../helpers/auth';
 import { getDP } from '../../helpers/read';
 import Loader from '../Loader';
 
@@ -31,13 +31,12 @@ export default class GetDP extends Component {
   }
 
   componentWillMount() {
-    console.log(this.state.DPImage);
-
     getDP()
       .then(url => {
         console.log(url.length);
         if (url.length > 0) {
           this.setState({ DPImage: url });
+          console.log(this.state.DPImage);
         }
       })
       .catch(() => {});
@@ -96,6 +95,15 @@ export default class GetDP extends Component {
 
       getDP().then(url => {
         this.setState({ DPImage: url });
+
+        saveDP(url)
+          .then(() => {
+            console.log('DB saved', url);
+          })
+          .catch(err => {
+            console.log('Errow while Image saving', err);
+          });
+
         window.location.href = '/wizard/who';
       });
     };

@@ -253,3 +253,14 @@ export function saveTheme(ThemeColor) {
     alert('Successfully saved');
   });
 }
+
+export function saveDP(DPUrl) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates[`profiles/${uid}/DPUrl`] = DPUrl;
+
+  return ref.child(`/`).update(updates).then(() => {
+    alert('Successfully saved');
+  });
+}
