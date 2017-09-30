@@ -42,6 +42,20 @@ class Site extends React.Component {
           <link rel="stylesheet" href={`/${manifest['main.css']}`} />
           <script src={`/${manifest['main.js']}`} />
 
+          <script>
+            window.fcSettings = {
+              token: "db46f4af-1e74-450d-bece-14bfee79b038",
+              host: "https://wchat.freshchat.com",
+              siteId: {`https://itsmybio.me/${username}`},              // OPTIONAL: id unique to your site
+              externalId: {username},     // user’s id unique to your system
+              firstName: {userData.name},              // user’s first name
+              email: {userData.contact.email},    // user’s email address
+              phone: {userData.contact.phone},            // phone number without country code
+              phoneCountryCode: "+1"          // phone’s country code
+            };
+          </script>
+          <script src="https://wchat.freshchat.com/js/widget.js" async></script>
+
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107210137-1"></script>
           <script>
           window.dataLayer = window.dataLayer || [];
