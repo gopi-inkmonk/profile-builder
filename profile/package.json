@@ -18,13 +18,11 @@
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.11",
-    "react-tabs": "^1.1.0",
-    "react-text-loop": "^1.1.0",
-    "react-transition-group": "^2.2.0",
+    "react-tabs": "^1.1.0"
   },
   "optionalDependencies": {
     "jquery": ">=3.0.0",
-    "popper.js": "^1.11.0",
+    "popper.js": "^1.11.0"
   },
   "scripts": {
     "static": "react-scripts start",
@@ -32,6 +30,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "cp _redirects build/; netlify deploy",
+    "deploy": "cp _redirects build/; netlify deploy"
   }
 }
