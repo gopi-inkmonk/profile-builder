@@ -5,6 +5,16 @@ class Site extends React.Component {
   render() {
     const { manifest, username, dpUrl, userData } = this.props;
     console.log('userData', userData.DPUrl);
+    const fcSettings = {
+      token: 'db46f4af-1e74-450d-bece-14bfee79b038',
+      host: 'https://wchat.freshchat.com',
+      siteId: `https://itsmybio.me/${username}`, // OPTIONAL: id unique to your site
+      externalId: username, // user’s id unique to your system
+      firstName: userData.name, // user’s first name
+      email: userData.contact.email, // user’s email address
+      phone: userData.contact.phone, // phone number without country code
+      phoneCountryCode: '+1', // phone’s country code
+    };
     return (
       <html lang="en">
         <head>
@@ -43,21 +53,16 @@ class Site extends React.Component {
           <script src={`/${manifest['main.js']}`} />
 
           <script>
-            window.fcSettings = {
-              token: "db46f4af-1e74-450d-bece-14bfee79b038",
-              host: "https://wchat.freshchat.com",
-              siteId: {`https://itsmybio.me/${username}`},              // OPTIONAL: id unique to your site
-              externalId: {username},     // user’s id unique to your system
-              firstName: {userData.name},              // user’s first name
-              email: {userData.contact.email},    // user’s email address
-              phone: {userData.contact.phone},            // phone number without country code
-              phoneCountryCode: "+1"          // phone’s country code
-            };
+            window.fcSettings = {JSON.stringify(fcSettings)}
           </script>
-          <script src="https://wchat.freshchat.com/js/widget.js" async></script>
+          <script src="https://wchat.freshchat.com/js/widget.js" async />
 
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107210137-1"></script>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-107210137-1"
+          />
           <script>
+            {```
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
@@ -65,6 +70,7 @@ class Site extends React.Component {
           gtag('js', new Date());
 
           gtag('config', 'UA-107210137-1');
+          ```}
           </script>
         </body>
       </html>
