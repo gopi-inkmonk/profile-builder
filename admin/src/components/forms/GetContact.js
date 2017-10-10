@@ -206,9 +206,9 @@ export default class GetContact extends Component {
       return <Loader />;
     }
 
-    console.log(this.state.contact);
+    const contact = this.state.contact || '';
 
-    const contact = this.state.contact;
+    console.log('contact', contact);
 
     return (
       <div className="row">
