@@ -48,14 +48,10 @@ a {
   flex-direction: column;
 
   & a {
-    font-size: 13px;
-    font-weight: bold;
     color: #a2a5a8;
     flex: 1;
-    text-transform: uppercase;
     position: relative;
     padding: 15px;
-    @include opacity(0.3);
 
     & > .bullet {
       min-width: 15px;
@@ -70,6 +66,7 @@ a {
     &.active {
       color: $primary-color;
       @include opacity(1);
+      font-weight: bold;
     }
   }
 }

@@ -195,6 +195,16 @@ h1 {
 }
 
 @media (max-width: 576px) {
+}
+@media (min-width: 576px) {
+  .appHeader {
+    display: block;
+  }
+  .mobileHeader {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
   .appHeader {
     display: none;
   }
@@ -213,15 +223,6 @@ h1 {
     }
   }
 }
-@media (min-width: 576px) {
-  .appHeader {
-    display: block;
-  }
-  .mobileHeader {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .storyCTA {
     margin-bottom: 30px;
