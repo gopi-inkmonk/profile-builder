@@ -2,6 +2,11 @@
 @import "partials/constants";
 
 @media (max-width: 576px) {
+  #SurveyFormContainer #ContentContainer .questionWrapper {
+    height: auto !important;
+    @include opacity(1);
+    margin-bottom: 30px;
+  }
 }
 @media (min-width: 576px) {
   .appHeader {

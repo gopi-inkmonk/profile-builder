@@ -387,73 +387,188 @@ h1 {
   color: #eb3c3c;
 }
 
+/* line 4, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer {
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* line 11, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer {
+  max-width: 650px;
+  flex: 1;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+/* line 17, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer.splashScreen {
+  text-align: center;
+}
+/* line 20, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer.splashScreen p {
+  font-size: 32px;
+  line-height: 35px;
+  margin: 0 0 15px;
+}
+/* line 26, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer.splashScreen .subHeading {
+  color: #e53935;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 15px;
+  display: inline-block;
+}
+/* line 35, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer.splashScreen .subQuestion {
+  margin: 15px 0 0;
+  display: inline-block;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.54);
+  font-style: italic;
+}
+/* line 44, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+/* line 50, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 54, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper > div {
+  flex: 1;
+  position: relative;
+}
+/* line 59, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .row {
+  margin-bottom: 15px;
+}
+/* line 63, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .card {
+  padding: 15px;
+  margin: 15px 0;
+}
+/* line 68, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .card ul li {
+  list-style: circle;
+  padding: 0 0 0;
+  margin: 0 0 10px 15px;
+}
+/* line 73, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .card ul li:last-child {
+  margin-bottom: 0;
+}
+/* line 80, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .helpText {
+  color: rgba(0, 0, 0, 0.54);
+  margin: 15px 0 0;
+  display: inline-block;
+}
+/* line 87, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .radioGroup > div {
+  padding: 25px 15px 0;
+}
+/* line 92, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer #ContentContainer .questionWrapper .question {
+  color: #000;
+  display: inline-block;
+  width: 100%;
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: lighter;
+}
+/* line 103, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer .primaryCTA {
+  margin: 15px;
+}
+/* line 106, ../../sass/partials/_survey-form.scss */
+#SurveyFormContainer .secondaryCTA {
+  margin: 15px;
+}
+
+@media (max-width: 576px) {
+  /* line 5, ../../sass/partials/_responsive.scss */
+  #SurveyFormContainer #ContentContainer .questionWrapper {
+    height: auto !important;
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    margin-bottom: 30px;
+  }
+}
 @media (min-width: 576px) {
-  /* line 7, ../../sass/partials/_responsive.scss */
+  /* line 12, ../../sass/partials/_responsive.scss */
   .appHeader {
     display: block;
   }
 
-  /* line 10, ../../sass/partials/_responsive.scss */
+  /* line 15, ../../sass/partials/_responsive.scss */
   .mobileHeader {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* line 15, ../../sass/partials/_responsive.scss */
+  /* line 20, ../../sass/partials/_responsive.scss */
   .appHeader {
     display: none;
   }
 
-  /* line 18, ../../sass/partials/_responsive.scss */
+  /* line 23, ../../sass/partials/_responsive.scss */
   .mobileHeader {
     display: block;
     margin-bottom: 25px;
   }
-  /* line 22, ../../sass/partials/_responsive.scss */
+  /* line 27, ../../sass/partials/_responsive.scss */
   .mobileHeader a.nav-link {
     color: #000;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
     opacity: 0.8;
     padding: 0;
   }
-  /* line 27, ../../sass/partials/_responsive.scss */
+  /* line 32, ../../sass/partials/_responsive.scss */
   .mobileHeader a.nav-link.active {
     color: #eb3c3c;
   }
 
-  /* line 32, ../../sass/partials/_responsive.scss */
+  /* line 37, ../../sass/partials/_responsive.scss */
   .Completed .clear {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* line 37, ../../sass/partials/_responsive.scss */
+  /* line 42, ../../sass/partials/_responsive.scss */
   .storyCTA {
     margin-bottom: 30px;
   }
 
-  /* line 42, ../../sass/partials/_responsive.scss */
+  /* line 47, ../../sass/partials/_responsive.scss */
   .appHeader .container {
     flex-direction: column;
   }
-  /* line 45, ../../sass/partials/_responsive.scss */
+  /* line 50, ../../sass/partials/_responsive.scss */
   .appHeader .container .domain, .appHeader .container .brand {
     display: inline-block;
     width: 100%;
     padding: 0;
     text-align: center;
   }
-  /* line 53, ../../sass/partials/_responsive.scss */
+  /* line 58, ../../sass/partials/_responsive.scss */
   .appHeader .container .brand {
     padding: 25px;
   }
 
-  /* line 58, ../../sass/partials/_responsive.scss */
+  /* line 63, ../../sass/partials/_responsive.scss */
   .simpleForm .simpleFormWrapper .row {
     flex-wrap: wrap-reverse;
   }
 
-  /* line 61, ../../sass/partials/_responsive.scss */
+  /* line 66, ../../sass/partials/_responsive.scss */
   .navWrapper {
     display: none;
   }
