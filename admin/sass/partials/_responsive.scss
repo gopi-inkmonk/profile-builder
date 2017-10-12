@@ -1,0 +1,64 @@
+@import "compass/css3";
+@import "partials/constants";
+
+@media (max-width: 576px) {
+}
+@media (min-width: 576px) {
+  .appHeader {
+    display: block;
+  }
+  .mobileHeader {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .appHeader {
+    display: none;
+  }
+  .mobileHeader {
+    display: block;
+    margin-bottom: 25px;
+
+    & a.nav-link {
+      color: #000;
+      @include opacity(.8);
+      padding: 0;
+
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+  .Completed .clear {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .storyCTA {
+    margin-bottom: 30px;
+  }
+
+  .appHeader {
+    & .container {
+      flex-direction: column;
+
+      & .domain,
+      & .brand {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+      }
+
+      & .brand {
+        padding: 25px;
+      }
+    }
+  }
+  .simpleForm .simpleFormWrapper .row {
+    flex-wrap: wrap-reverse;
+  }
+  .navWrapper {
+    display: none;
+  }
+}

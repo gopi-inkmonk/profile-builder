@@ -63,6 +63,15 @@ a {
       color: $primary-color;
     }
 
+    &.disable {
+      @include opacity(0.5);
+      cursor: default;
+
+      &:hover {
+        color: #a2a5a8;
+      }
+    }
+
     &.active {
       color: $primary-color;
       @include opacity(1);

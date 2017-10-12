@@ -25,6 +25,7 @@ import GetStory from './forms/GetStory';
 import GetDP from './forms/GetDP';
 import GetTheme from './forms/GetTheme';
 import Username from './Username';
+import Completed from './Completed';
 
 import {
   getProfileData,
@@ -155,6 +156,13 @@ export default class Wizard extends Component {
                 Theme
               </NavLink>
             </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              {username && name && who && shortDesc && contact
+                ? <NavLink to={`${match.url}/finish`} className="nav-link">
+                    Share your profile
+                  </NavLink>
+                : <a className="nav-link disable">Share your profile</a>}
+            </MenuItem>
           </Drawer>
         </div>
 
@@ -213,6 +221,15 @@ export default class Wizard extends Component {
                   <span className="bullet">8</span>
                   <span className="progressTitle">Theme</span>
                 </NavLink>
+                {username && name && who && shortDesc && contact
+                  ? <NavLink to={`${match.url}/finish`} className="nav-link">
+                      <span className="bullet">9</span>
+                      <span className="progressTitle">Share your profile</span>
+                    </NavLink>
+                  : <a className="nav-link disable">
+                      <span className="bullet">9</span>
+                      <span className="progressTitle">Share your profile</span>
+                    </a>}
               </nav>
             </div>
             <div className="col-md-9">
@@ -313,6 +330,25 @@ export default class Wizard extends Component {
                   path={`${match.url}/theme`}
                   render={() =>
                     <GetTheme theme={this.state.theme} isLoaded={isLoaded} />}
+                />
+                <Route
+                  exact
+                  path={`${match.url}/finish`}
+                  render={() =>
+                    <div
+                      style={
+                        username && {
+                          marginTop: -62,
+                          paddingTop: 30,
+                          background: '#ffffff',
+                          position: 'relative',
+                        }
+                      }
+                    >
+                      {username
+                        ? <Completed username={username} isLoaded={isLoaded} />
+                        : <div>Loading...</div>}
+                    </div>}
                 />
               </Paper>
             </div>

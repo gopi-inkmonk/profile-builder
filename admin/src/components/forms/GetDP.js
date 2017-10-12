@@ -145,10 +145,7 @@ export default class GetDP extends Component {
     return (
       <div className="row">
         <div className="col-md-6">
-          <p>
-            Below image is for representational purpose.<br />
-            Your input will take place where red is appear.
-          </p>
+          <p>Below image is for representational purpose.</p>
           <img
             className="img-responsive"
             src={require('../../images/dp.png')}
