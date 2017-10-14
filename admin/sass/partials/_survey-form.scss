@@ -1,20 +1,68 @@
 @import "compass/css3";
 @import "partials/constants";
 
+.longReadActive {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: flex-start;
+  max-height: 100%;
+  overflow: auto;
+
+  & .longDesc {
+    max-width: 650px;
+    margin: auto;
+
+    & p {
+      font-size: 18px;
+      line-height: 32px;
+      margin: 0 0 25px;
+    }
+  }
+}
+
+.secretBtn {
+  margin-right: 15px;
+  display: none;
+}
+
+.result {
+  & p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 15px;
+  }
+
+  & .people {
+    margin: 25px 0 0;
+  }
+}
+
 #SurveyFormContainer {
   display: flex;
   min-height: 100%;
-  // align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+
+  .secretBtn {
+    display: inline-block;
+  }
+
+  & .result {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
 
   & #ContentContainer {
     max-width: 650px;
     flex: 1;
-    margin-left: 30px;
-    margin-right: 30px;
 
     &.splashScreen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       text-align: center;
 
       & p {
@@ -39,6 +87,20 @@
         color: $darkgrey;
         font-style: italic;
       }
+
+      & .btnWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+
+        & > div {
+          min-width: 200px !important;
+
+          &:first-child {
+            flex: 1;
+          }
+        }
+      }
     }
 
     & .questionWrapper {
@@ -47,8 +109,25 @@
       align-items: center;
       @include opacity(.3);
 
+      & .Touchable {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        text-align: inherit;
+        outline: none;
+      }
+
       &.active {
         @include opacity(1);
+      }
+
+      & .row {
+        &:hover {
+          & .card {
+            @include opacity(0.5);
+          }
+        }
       }
 
       & > div {
@@ -63,17 +142,66 @@
       & .card {
         padding: 15px;
         margin: 15px 0;
+        overflow: hidden;
+
+        & > div {
+          margin: 0 0 15px;
+
+          & .fa {
+            @include opacity(0);
+            float: right;
+            color: #00695c;
+          }
+        }
 
         & ul {
+          margin: 0 0 10px;
+
           & li {
-            list-style: circle;
+            list-style: disc;
             padding: 0 0 0;
-            margin: 0 0 10px 15px;
+            font-size: 16px;
+            line-height: 21px;
+            margin: 0 10px 15px 25px;
+            color: rgba(0, 0, 0, 0.8);
 
             &:last-child {
               margin-bottom: 0;
             }
           }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 100%;
+          width: 5px;
+          background: #00695c;
+          @include transition-duration(.2s);
+        }
+
+        &.active {
+          border: 1px solid #00695c;
+
+          &:after {
+            bottom: 0;
+          }
+
+          & > div {
+            & .fa {
+              @include opacity(1);
+            }
+          }
+        }
+
+        &:hover,
+        &.active {
+          opacity: 1 !important;
+          -webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.15) !important;
+          -moz-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.15) !important;
         }
       }
 
@@ -105,5 +233,25 @@
   }
   .secondaryCTA {
     margin: 15px;
+  }
+}
+
+.picWrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0 -15px;
+  overflow: auto;
+
+  & > span {
+    margin: 0 15px;
+
+    & img {
+      margin: 0 0 15px;
+    }
+
+    & p {
+      font-size: 14px !important;
+      color: $darkgrey;
+    }
   }
 }

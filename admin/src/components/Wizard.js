@@ -25,13 +25,16 @@ import GetStory from './forms/GetStory';
 import GetDP from './forms/GetDP';
 import GetTheme from './forms/GetTheme';
 import Username from './Username';
+import Result from './mbti/Result';
 import Completed from './Completed';
+import PTSplash from './mbti/PTSplash';
 
 import {
   getProfileData,
   getGlobalWho,
   getEmail,
   getUserName,
+  getMBTIResult,
 } from '../helpers/read';
 
 export default class Wizard extends Component {
@@ -45,11 +48,12 @@ export default class Wizard extends Component {
     story: null,
     email: null,
     username: null,
+    MBTIResult: null,
   };
 
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    // this.state = { open: false };
   }
 
   handleToggle = () => this.setState({ open: !this.state.open });
@@ -71,6 +75,7 @@ export default class Wizard extends Component {
         contact: data.contact || '',
         story: data.story || '',
         theme: data.themeColor || '',
+        MBTIResult: data.MBTIResult || '',
       });
     } else {
       this.setState({
@@ -94,6 +99,7 @@ export default class Wizard extends Component {
   render() {
     const { match } = this.props;
     const { isLoaded, username, name, who, shortDesc, contact } = this.state;
+
     return (
       <div>
         <div className="mobileHeader">
@@ -230,6 +236,11 @@ export default class Wizard extends Component {
                       <span className="bullet">9</span>
                       <span className="progressTitle">Share your profile</span>
                     </a>}
+
+                <NavLink to={`${match.url}/PT`} className="nav-link">
+                  <span className="bullet">10</span>
+                  <span className="progressTitle">Personality Test</span>
+                </NavLink>
               </nav>
             </div>
             <div className="col-md-9">
@@ -349,6 +360,22 @@ export default class Wizard extends Component {
                         ? <Completed username={username} isLoaded={isLoaded} />
                         : <div>Loading...</div>}
                     </div>}
+                />
+
+                <Route
+                  exact
+                  path={`${match.url}/PT`}
+                  render={() => {
+                    const { MBTIResult } = this.state;
+
+                    return (
+                      <div style={{ paddingTop: 10 }}>
+                        {MBTIResult
+                          ? <Result Result={MBTIResult} isLoaded={isLoaded} />
+                          : <PTSplash />}
+                      </div>
+                    );
+                  }}
                 />
               </Paper>
             </div>

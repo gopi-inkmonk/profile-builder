@@ -264,3 +264,14 @@ export function saveDP(DPUrl) {
     alert('Successfully saved');
   });
 }
+
+export function saveMBTI(MBTI) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates[`profiles/${uid}/MBTIResult`] = MBTI;
+
+  return ref.child(`/`).update(updates).catch(() => {
+    console.log('error while saving data');
+  });
+}

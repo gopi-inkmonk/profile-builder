@@ -10,7 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Username from './components/Username';
 import Wizard from './components/Wizard';
-import SurveyForm from './components/SurveyForm';
+import PersonalityTest from './components/mbti/PersonalityTest';
 import Loader from './components/Loader';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107210137-1');
@@ -108,7 +108,7 @@ class App extends Component {
                 <PrivateRoute
                   authed={this.state.authed}
                   path="/mbti"
-                  component={SurveyForm}
+                  component={PersonalityTest}
                 />
                 <PrivateRoute
                   authed={this.state.authed}

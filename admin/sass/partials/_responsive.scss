@@ -7,6 +7,11 @@
     @include opacity(1);
     margin-bottom: 30px;
   }
+  #SurveyFormContainer #ContentContainer.splashScreen .btnWrapper {
+    & > div {
+      flex: 1;
+    }
+  }
 }
 @media (min-width: 576px) {
   .appHeader {

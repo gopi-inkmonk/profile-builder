@@ -16,8 +16,8 @@ export default class Completed extends Component {
           src={require('../images/checked.svg')}
           width="100"
         />
-        <h2>Your account created successfully.</h2>
-        <h3>You can access your webpage at</h3>
+        <h2>Your profile is LIVE now.</h2>
+        <h3>You can access at</h3>
         <RaisedButton
           label={`https://Itsmybio.me/${username}`}
           href={`https://Itsmybio.me/${username}`}
