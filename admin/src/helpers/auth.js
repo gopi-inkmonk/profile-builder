@@ -275,3 +275,14 @@ export function saveMBTI(MBTI) {
     console.log('error while saving data');
   });
 }
+
+export function ShowMBTIOnProfile(toggle) {
+  const uid = firebaseAuth().currentUser.uid;
+  const updates = {};
+
+  updates[`profiles/${uid}/ShowMBTIOnProfile`] = toggle;
+
+  return ref.child(`/`).update(updates).catch(() => {
+    console.log('error while saving data');
+  });
+}

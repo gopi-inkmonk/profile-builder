@@ -55,6 +55,7 @@ export default class GetTheme extends Component {
 
     saveTheme(this.state.ThemeColor).then(() => {
       console.log('Theme changed');
+      window.location.href = '/wizard/finish';
     });
   };
 

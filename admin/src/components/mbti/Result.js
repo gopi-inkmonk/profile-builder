@@ -2,14 +2,34 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Subheader from 'material-ui/Subheader';
+import Checkbox from 'material-ui/Checkbox';
 import PersonalityType from './PersonalityType';
-import Loader from '../Loader';
+import { ShowMBTIOnProfile } from '../../helpers/auth';
 
 export default class Result extends Component {
   state = {
     shortDesc: true,
     longDesc: null,
+    checked: false,
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isAddedtoProf !== this.state.checked) {
+      this.setState({ checked: nextProps.isAddedtoProf });
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.isAddedtoProf !== this.state.checked) {
+      this.setState({ checked: this.props.isAddedtoProf });
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.isAddedtoProf !== this.state.checked) {
+      this.setState({ checked: this.props.isAddedtoProf });
+    }
+  }
 
   showLongDesc = () => {
     this.setState({
@@ -23,9 +43,33 @@ export default class Result extends Component {
       longDesc: null,
     });
   };
+  updateCheck() {
+    this.setState(oldState => {
+      return {
+        checked: !oldState.checked,
+      };
+    });
+
+    const val = !this.state.checked;
+
+    ShowMBTIOnProfile(val)
+      .then(() => {
+        if (val === true) {
+          alert('Personality test result added to your profile');
+        } else {
+          alert('Personality test result removed from your profile');
+        }
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorCode, errorMessage);
+      });
+  }
 
   render() {
-    const { Result, isLoaded } = this.props;
+    const { Result } = this.props;
     const title = PersonalityType[Result].title;
     const shortDesc = PersonalityType[Result].shortDesc;
     const similarPeople = PersonalityType[Result].similar;
@@ -33,10 +77,6 @@ export default class Result extends Component {
 
     if (Result == null) {
       return <div>Please take the test</div>;
-    }
-
-    if (isLoaded == false) {
-      return <Loader />;
     }
 
     return (
@@ -65,28 +105,37 @@ export default class Result extends Component {
               })}
             </div>}
 
-          <div className="text-right">
-            <span className="secretBtn">
-              <RaisedButton label="Back to app" href="/wizard/PT" />
+          <div className="footerBTN">
+            <span>
+              <Checkbox
+                label="Show on your profile"
+                checked={this.state.checked}
+                onCheck={this.updateCheck.bind(this)}
+              />
             </span>
+            <span>
+              <span className="secretBtn">
+                <RaisedButton label="Back to app" href="/wizard/PT" />
+              </span>
 
-            <RaisedButton
-              label="Re-Take test"
-              href="/mbti"
-              style={{ marginRight: 15 }}
-            />
+              <RaisedButton
+                label="Re-Take test"
+                href="/mbti"
+                style={{ marginRight: 15 }}
+              />
 
-            {this.state.shortDesc
-              ? <RaisedButton
-                  label="Read detailed report"
-                  primary={true}
-                  onClick={this.showLongDesc}
-                />
-              : <RaisedButton
-                  primary={true}
-                  label="Hide detailed report"
-                  onClick={this.hideLongDesc}
-                />}
+              {this.state.shortDesc
+                ? <RaisedButton
+                    label="Read detailed report"
+                    primary={true}
+                    onClick={this.showLongDesc}
+                  />
+                : <RaisedButton
+                    primary={true}
+                    label="Hide detailed report"
+                    onClick={this.hideLongDesc}
+                  />}
+            </span>
           </div>
 
           {/* <div className="people">

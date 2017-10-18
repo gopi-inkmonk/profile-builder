@@ -28,6 +28,7 @@ import Username from './Username';
 import Result from './mbti/Result';
 import Completed from './Completed';
 import PTSplash from './mbti/PTSplash';
+import Loader from './Loader';
 
 import {
   getProfileData,
@@ -49,6 +50,7 @@ export default class Wizard extends Component {
     email: null,
     username: null,
     MBTIResult: null,
+    isAddedtoProf: false,
   };
 
   constructor(props) {
@@ -76,6 +78,7 @@ export default class Wizard extends Component {
         story: data.story || '',
         theme: data.themeColor || '',
         MBTIResult: data.MBTIResult || '',
+        isAddedtoProf: data.ShowMBTIOnProfile || false,
       });
     } else {
       this.setState({
@@ -168,6 +171,11 @@ export default class Wizard extends Component {
                     Share your profile
                   </NavLink>
                 : <a className="nav-link disable">Share your profile</a>}
+            </MenuItem>
+            <MenuItem onClick={this.handleClose}>
+              <NavLink to={`${match.url}/PT`} className="nav-link">
+                Personality Test
+              </NavLink>
             </MenuItem>
           </Drawer>
         </div>
@@ -366,12 +374,19 @@ export default class Wizard extends Component {
                   exact
                   path={`${match.url}/PT`}
                   render={() => {
-                    const { MBTIResult } = this.state;
+                    const { MBTIResult, isAddedtoProf } = this.state;
+
+                    if (isLoaded == false) {
+                      return <Loader />;
+                    }
 
                     return (
                       <div style={{ paddingTop: 10 }}>
                         {MBTIResult
-                          ? <Result Result={MBTIResult} isLoaded={isLoaded} />
+                          ? <Result
+                              Result={MBTIResult}
+                              isAddedtoProf={isAddedtoProf}
+                            />
                           : <PTSplash />}
                       </div>
                     );
