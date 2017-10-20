@@ -511,7 +511,7 @@ h1 {
 /* line 121, ../../sass/partials/_survey-form.scss */
 #SurveyFormContainer #ContentContainer .questionWrapper {
   display: flex;
-  height: 200px;
+  min-height: 200px;
   align-items: center;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;

@@ -33,22 +33,4 @@ export const ISTJ = {
 
     'In general, the ISTJ has a tremendous amount of potential. Capable, logical, reasonable, and effective individuals with a deeply driven desire to promote security and peaceful living, the ISTJ has what it takes to be highly effective at achieving their chosen goals - whatever they may be.',
   ],
-  similar: [
-    'Sting',
-    'Denzel Washington',
-    'Angela Merkel',
-    'Natalie Portman',
-    'Anthony Hopkins',
-    'George Washington',
-    'Condoleezza Rice',
-    'George H.W. Bush',
-    'Eddard Stark',
-    'Hermione Granger',
-    'Geralt of Rivia',
-    'Dana Scully',
-    'Jason Bourne',
-    'Thorin Oakenshield',
-    'Stannis Baratheon',
-    'Inspector Lestrade',
-  ],
 };

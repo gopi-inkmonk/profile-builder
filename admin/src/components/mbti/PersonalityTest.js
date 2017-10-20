@@ -153,7 +153,7 @@ class PersonalityTest extends Component {
           >
             <div
               className="questionWrapper active"
-              style={{ height: WinHeightQW }}
+              style={{ minHeight: WinHeightQW }}
             >
               <div>
                 <span className="question">
@@ -229,7 +229,7 @@ class PersonalityTest extends Component {
               </div>
             </div>
 
-            <div className="questionWrapper" style={{ height: WinHeightQW }}>
+            <div className="questionWrapper" style={{ minHeight: WinHeightQW }}>
               <div>
                 <span className="question">
                   2. How do you prefer to take in information?
@@ -306,7 +306,7 @@ class PersonalityTest extends Component {
               </div>
             </div>
 
-            <div className="questionWrapper" style={{ height: WinHeightQW }}>
+            <div className="questionWrapper" style={{ minHeight: WinHeightQW }}>
               <div>
                 <span className="question">
                   3. How do you prefer to make decisions?
@@ -386,7 +386,7 @@ class PersonalityTest extends Component {
               </div>
             </div>
 
-            <div className="questionWrapper" style={{ height: WinHeightQW }}>
+            <div className="questionWrapper" style={{ minHeight: WinHeightQW }}>
               <div>
                 <span className="question">
                   4. How do you prefer to live your outer life?
@@ -463,7 +463,7 @@ class PersonalityTest extends Component {
               </div>
             </div>
 
-            <div className="questionWrapper" style={{ height: WinHeightQW }}>
+            <div className="questionWrapper" style={{ minHeight: WinHeightQW }}>
               <RaisedButton
                 label="Show me the result"
                 primary={true}

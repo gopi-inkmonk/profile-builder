@@ -27,22 +27,4 @@ export const ISFJ = {
 
     'The ISFJ is warm, generous, and dependable. They have many special gifts to offer, in their sensitivity to others, and their strong ability to keep things running smoothly. They need to remember to not be overly critical of themselves, and to give themselves some of the warmth and love which they freely dispense to others.',
   ],
-  similar: [
-    'Halle Berry',
-    'Vin Diesel',
-    'Beyonce',
-    'Queen Elizabeth II',
-    'Kate Middleton',
-    'Anne Hathaway',
-    'Lance Reddick',
-    'Selena Gomez',
-    'Catelyn Stark',
-    'Samwise Gamgee',
-    'Dr Watson',
-    'Triss Merigold',
-    'Will Turner',
-    'Pam Beesly',
-    'Vito Corleone',
-    'Bree Van de Kamp',
-  ],
 };

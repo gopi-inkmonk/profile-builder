@@ -27,22 +27,4 @@ export const ENTP = {
 
     "In general, ENTPs are upbeat visionaries. They highly value knowledge, and spend much of their lives seeking a higher understanding. They live in the world of possibilities, and become excited about concepts, challenges and difficulties. When presented with a problem, they're good at improvising and quickly come up with a creative solution. Creative, clever, curious, and theoretical, ENTPs have a broad range of possibilities in their lives.",
   ],
-  similar: [
-    'Alfred “Weird Al” Yankovic',
-    'Adam Savage',
-    'Sarah Silverman',
-    'Mark Twain',
-    'Tom Hanks',
-    'Thomas Edison',
-    'Céline Dion',
-    'Sacha Baron Cohen',
-    'Captain Jack Sparrow',
-    'Jim Halpert',
-    'Irene Adler',
-    'The Joker',
-    'Tyrion Lannister',
-    'Julian Sark',
-    'Felicity Smoak',
-    'Dr. Emmett Brown',
-  ],
 };

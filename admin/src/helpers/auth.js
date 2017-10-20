@@ -15,8 +15,39 @@ export function login(email, pw) {
   return firebaseAuth().signInWithEmailAndPassword(email, pw);
 }
 
+export function SignInWithFB() {
+  const provider = new firebase.auth.FacebookAuthProvider();
+
+  return firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const token = result.credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    const provider = 'facebook';
+
+    console.log('sign in success', user);
+
+    saveUser(user, provider);
+  });
+}
+
 export function resetPassword(email) {
   return firebaseAuth().sendPasswordResetEmail(email);
+}
+
+export function saveUser(user, provider) {
+  const userAuth = firebaseAuth().currentUser;
+
+  const updates = {};
+
+  updates['email'] = user.email;
+  updates['uid'] = user.uid;
+  updates['emailVerified'] = user.emailVerified;
+  updates['provider'] = provider;
+
+  return ref.child(`users/${user.uid}/`).update(updates).then(() => {
+    console.log('data saved');
+  });
 }
 
 export function saveEmailUser(user) {
@@ -47,7 +78,7 @@ export function saveEmailUser(user) {
 // Forms for profile
 export function saveUsername(Username, user) {
   const uid = firebaseAuth().currentUser.uid;
-  console.log(uid);
+  console.log(uid, Username, user);
   const updates = {};
   const CurrentUserName = `users/${uid}/username`;
 
@@ -95,7 +126,7 @@ export function saveName(name) {
   updates['name'] = name;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
-    alert('Successfully saved');
+    alert('Name successfully saved');
   });
 }
 export function saveWho(who) {
@@ -116,7 +147,7 @@ export function saveShortDesc(shortDesc) {
   updates['shortDesc'] = shortDesc;
 
   return ref.child(`/profiles/${uid}/`).update(updates).then(() => {
-    alert('Successfully saved');
+    alert('Your interests successfully saved');
   });
 }
 export function saveContact(
@@ -228,7 +259,7 @@ export function saveContact(
   updates['google'] = google;
 
   return ref.child(`/profiles/${uid}/contact`).update(updates).then(() => {
-    alert('Successfully saved');
+    alert('You contact successfully saved');
   });
 }
 
@@ -250,7 +281,7 @@ export function saveTheme(ThemeColor) {
   updates[`profiles/${uid}/themeColor`] = ThemeColor;
 
   return ref.child(`/`).update(updates).then(() => {
-    alert('Successfully saved');
+    alert('Your story successfully saved');
   });
 }
 
@@ -261,7 +292,7 @@ export function saveDP(DPUrl) {
   updates[`profiles/${uid}/DPUrl`] = DPUrl;
 
   return ref.child(`/`).update(updates).then(() => {
-    alert('Successfully saved');
+    alert('Profile Picture successfully saved');
   });
 }
 
@@ -272,6 +303,16 @@ export function saveMBTI(MBTI) {
   updates[`profiles/${uid}/MBTIResult`] = MBTI;
 
   return ref.child(`/`).update(updates).catch(() => {
+    console.log('error while saving data');
+  });
+}
+
+export function savePersonalityTypes(data) {
+  const updates = {};
+
+  updates['personality-types'] = data;
+
+  return ref.child(`/global/`).update(updates).catch(() => {
     console.log('error while saving data');
   });
 }

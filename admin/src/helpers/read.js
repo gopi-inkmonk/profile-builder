@@ -20,6 +20,16 @@ export function getGlobalWho(fn) {
   });
 }
 
+export function getPersonalityType(type) {
+  const proRef = ref.child(`global/personality-types/${type}/`);
+
+  return proRef.once('value').then(function(Name) {
+    const NameVal = Name.val();
+    console.log(NameVal);
+    return NameVal;
+  });
+}
+
 export function getEmail(fn) {
   const email = firebaseAuth().currentUser.email;
 

@@ -27,21 +27,4 @@ export const ISTP = {
 
     'ISTPs are optimistic, full of good cheer, loyal to their equals, uncomplicated in their desires, generous, trusting and receptive people who want no part in confining commitments.',
   ],
-  similar: [
-    'Clint Eastwood',
-    'Milla Jovovich',
-    'Olivia Wilde',
-    'Bear Grylls',
-    'Tom Cruise',
-    'Michael Jordan',
-    'Daniel Craig',
-    'Michelle Rodriguez',
-    'Arya Stark',
-    'Michael Westen',
-    'Jack Bauer',
-    'Indiana Jones',
-    'John McClane',
-    'Angus MacGyver',
-    'Lisbeth Salander',
-  ],
 };

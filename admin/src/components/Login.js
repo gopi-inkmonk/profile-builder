@@ -6,7 +6,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
 
-import { login, resetPassword } from '../helpers/auth';
+import {
+  login,
+  resetPassword,
+  SignInWithFB,
+  // SignUpWithFB,
+} from '../helpers/auth';
 
 function setErrorMsg(error) {
   return {
@@ -22,6 +27,36 @@ export default class Login extends Component {
     errorMessage: null,
     errorTextforEmail: null,
     errorTextforPassword: null,
+  };
+
+  // SignUpWithFB = () => {
+  //   SignUpWithFB().catch(error => {
+  //     // Handle Errors here.
+  //     // var errorCode = error.code;
+  //     var errorMessage = error.message;
+  //     // The email of the user's account used.
+  //     // var email = error.email;
+  //     // // The firebase.auth.AuthCredential type that was used.
+  //     // var credential = error.credential;
+  //     // ...
+  //     // alert(errorMessage);
+  //     this.setState({ errorMessage });
+  //   });
+  // };
+
+  SignInWithFB = () => {
+    SignInWithFB().catch(error => {
+      // Handle Errors here.
+      // var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      // var email = error.email;
+      // // The firebase.auth.AuthCredential type that was used.
+      // var credential = error.credential;
+      // ...
+      // alert(errorMessage);
+      this.setState({ errorMessage });
+    });
   };
 
   handleSubmit = e => {
@@ -133,8 +168,16 @@ export default class Login extends Component {
                   />
                 </div>
 
-                <div>
-                  <FlatButton
+                <div style={{ marginTop: 15 }}>
+                  <RaisedButton
+                    label="Sign in with Facebook"
+                    fullWidth={true}
+                    icon={<FontAwesome name="facebook" />}
+                    onTouchTap={this.SignInWithFB}
+                  />
+                </div>
+                <div style={{ marginTop: 15 }}>
+                  <RaisedButton
                     label="Create an account"
                     fullWidth={true}
                     href="/register"

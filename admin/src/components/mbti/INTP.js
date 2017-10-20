@@ -23,22 +23,4 @@ export const INTP = {
 
     'The INTP is at his best when he can work on his theories independently. When given an environment which supports his creative genius and possible eccentricity, the INTP can accomplish truly remarkable things. These are the pioneers of new thoughts in our society.',
   ],
-  similar: [
-    'Bill Gates',
-    'Ellen Page',
-    'Kristen Stewart',
-    'Albert Einstein',
-    'Rene Descartes',
-    'Blaise Pascal',
-    'Isaac Newton',
-    'Stanley Crouch',
-    'Aemon Targaryen',
-    'Lord Varys',
-    'Neo',
-    'Alexander Mahone',
-    'Marshall Flinkman',
-    'Chloe O’Brian',
-    'Leslie Winkle',
-    'Abed Nadir',
-  ],
 };

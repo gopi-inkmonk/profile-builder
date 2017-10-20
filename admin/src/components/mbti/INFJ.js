@@ -23,22 +23,4 @@ export const INFJ = {
 
     'The INFJ individual is gifted in ways that other types are not. Life is not necessarily easy for the INFJ, but they are capable of great depth of feeling and personal achievement.',
   ],
-  similar: [
-    'Martin Luther King',
-    'Nelson Mandela',
-    'Mother Teresa',
-    'Alanis Morissette',
-    'Jimmy Carter',
-    'Nicole Kidman',
-    'Goethe',
-    'Morgan Freeman',
-    'Jon Snow',
-    'James Wilson',
-    'Aragorn',
-    'Galadriel',
-    'Michael Scofield',
-    'Rose Bukater',
-    'Desmond Hume',
-    'Aramis',
-  ],
 };

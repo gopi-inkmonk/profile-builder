@@ -31,22 +31,4 @@ export const ENFP = {
 
     'ENFPs are charming, ingenuous, risk-taking, sensitive, people-oriented individuals with capabilities ranging across a broad spectrum. They have many gifts which they will use to fulfill themselves and those near them, if they are able to remain centered and master the ability of following through.',
   ],
-  similar: [
-    'Robert Downey, Jr.',
-    'Will Smith',
-    'Robin Williams',
-    'Drew Barrymore',
-    'Russell Brand',
-    'Quentin Tarantino',
-    'Meg Ryan',
-    'Kelly Clarkson',
-    'Michael Scott',
-    'Phil Dunphy',
-    'Piper Chapman',
-    'Hoban Washburne',
-    'Peeta Mellark',
-    'Jennifer Keller',
-    'Carrie Bradshaw',
-    'Willy Wonka',
-  ],
 };

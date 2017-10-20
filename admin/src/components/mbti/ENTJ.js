@@ -25,22 +25,4 @@ export const ENTJ = {
 
     "The ENTJ has many gifts which make it possible for them to have a great deal of personal power, if they don't forget to remain balanced in their lives. They are assertive, innovative, long-range thinkers with an excellent ability to translate theories and possibilities into solid plans of action. They are usually tremendously forceful personalities, and have the tools to accomplish whatever goals they set out for.",
   ],
-  similar: [
-    'Steve Jobs',
-    'Gordon Ramsay',
-    'Harrison Ford',
-    'Margaret Thatcher',
-    'Whoopi Goldberg',
-    'Jim Carrey',
-    'Franklin D. Roosevelt',
-    'David Petraeus',
-    'Tony Soprano',
-    'David Palmer',
-    'Malcolm Merlyn',
-    'Mary Talbot',
-    'Francis J. Underwood',
-    'Jacqueline A. Sharp',
-    'River Tam',
-    'Milady de Winter',
-  ],
 };

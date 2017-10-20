@@ -29,22 +29,4 @@ export const ESFJ = {
 
     'ESFJs at their best are warm, sympathetic, helpful, cooperative, tactful, down-to-earth, practical, thorough, consistent, organized, enthusiastic, and energetic. They enjoy tradition and security, and will seek stable lives that are rich in contact with friends and family.',
   ],
-  similar: [
-    'Bill Clinton',
-    'Taylor Swift',
-    'Jennifer Garner',
-    'Steve Harvey',
-    'Danny Glover',
-    'Jennifer Lopez',
-    'Sally Field',
-    'Tyra Banks',
-    'Sansa Stark',
-    'Dean Winchester',
-    'Monica',
-    'Carmela Soprano',
-    'Cersei Lannister',
-    'Jack Shephard',
-    'Larry Bloom',
-    'Mrs. Hudson',
-  ],
 };

@@ -29,22 +29,4 @@ export const INTJ = {
 
     'INTJs have a tremendous amount of ability to accomplish great things. They have insight into the Big Picture, and are driven to synthesize their concepts into solid plans of action. Their reasoning skills gives them the means to accomplish that. INTJs are most always highly competent people, and will not have a problem meeting their career or education goals. They have the capability to make great strides in these arenas. On a personal level, the INTJ who practices tolerances and puts effort into effectively communicating their insights to others has everything in his or her power to lead a rich and rewarding life.',
   ],
-  similar: [
-    'Samantha Power',
-    'Christopher Nolan',
-    'Colin Powell',
-    'Elon Musk',
-    'Arnold Schwarzenegger',
-    'Vladimir Putin',
-    'Michelle Obama',
-    'Friedrich Nietzsche',
-    'Walter White (“Heisenberg”)',
-    'Petyr Baelish (“Littlefinger”)',
-    'Tywin Lannister',
-    'Gandalf the Grey',
-    'Yennefer of Vengerberg',
-    'Katniss Everdeen',
-    'Seven of Nine',
-    'Professor Moriarty',
-  ],
 };

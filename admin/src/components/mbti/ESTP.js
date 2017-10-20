@@ -21,22 +21,4 @@ export const ESTP = {
 
     "ESTPs are practical, observant, fun-loving, spontaneous risk-takers with an excellent ability to quickly improvise an innovative solution to a problem. They're enthusiastic and fun to be with, and are great motivators. If an ESTP recognizes their real talents and operates within those realms, they can accomplish truly exciting things.",
   ],
-  similar: [
-    'Ernest Hemingway',
-    'Jack Nicholson',
-    'Eddie Murphy',
-    'Madonna',
-    'Bruce Willis',
-    'Michael J. Fox',
-    'Nicolas Sarkozy',
-    'Samuel L. Jackson',
-    'Lincoln Burrows',
-    'Jaime Lannister',
-    'Hank Schrader',
-    'Seth Grayson',
-    'Gabrielle Solis',
-    'Fiona Glenanne',
-    'Philip Wenneck',
-    "D'Artagnan",
-  ],
 };

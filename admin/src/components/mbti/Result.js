@@ -3,14 +3,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Subheader from 'material-ui/Subheader';
 import Checkbox from 'material-ui/Checkbox';
-import PersonalityType from './PersonalityType';
+// import PersonalityType from './PersonalityType';
 import { ShowMBTIOnProfile } from '../../helpers/auth';
+import { getPersonalityType } from '../../helpers/read';
 
 export default class Result extends Component {
   state = {
     shortDesc: true,
     longDesc: null,
     checked: false,
+    PersonalityType: null,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -22,6 +24,13 @@ export default class Result extends Component {
   componentWillMount() {
     if (this.props.isAddedtoProf !== this.state.checked) {
       this.setState({ checked: this.props.isAddedtoProf });
+    }
+    if (this.props.Result !== this.state.PersonalityType) {
+      getPersonalityType(this.props.Result).then(data => {
+        this.setState({
+          PersonalityType: data || [],
+        });
+      });
     }
   }
 
@@ -70,10 +79,15 @@ export default class Result extends Component {
 
   render() {
     const { Result } = this.props;
-    const title = PersonalityType[Result].title;
-    const shortDesc = PersonalityType[Result].shortDesc;
-    const similarPeople = PersonalityType[Result].similar;
-    const longDesc = PersonalityType[Result].longDesc;
+    const PersonalityType = this.state.PersonalityType;
+
+    if (!PersonalityType) {
+      return <div>Loading</div>;
+    }
+    const title = PersonalityType.title;
+    const shortDesc = PersonalityType.shortDesc;
+    const similarPeople = PersonalityType.similar;
+    const longDesc = PersonalityType.longDesc;
 
     if (Result == null) {
       return <div>Please take the test</div>;
@@ -137,29 +151,6 @@ export default class Result extends Component {
                   />}
             </span>
           </div>
-
-          {/* <div className="people">
-            <Subheader style={{ padding: 0 }}>
-              Famous people have similar personality as yours
-            </Subheader>
-            <div className="picWrapper">
-              {similarPeople.map((item, i) => {
-                const fileName = item.replace(' ', '-');
-                return (
-                  <span key={i}>
-                    <img
-                      src={require(`../../images/people-mbti/${fileName}`)}
-                      width="200"
-                    />
-                    <img src={require(`../../images/blank.gif`)} width="200" />
-                    <p>
-                      {item}
-                    </p>
-                  </span>
-                );
-              })}
-            </div>
-          </div> */}
         </div>
       </div>
     );

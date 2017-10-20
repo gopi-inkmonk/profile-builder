@@ -25,22 +25,4 @@ export const ISFP = {
 
     'The ISFP has many special gifts for the world, especially in the areas of creating artistic sensation, and selflessly serving others. Life is not likely to be extremely easy for the ISFP, because they take life so seriously, but they have the tools to make their lives and the lives of those close to them richly rewarding experiences.',
   ],
-  similar: [
-    'Kevin Costner',
-    'Avril Lavigne',
-    'Michael Jackson',
-    'Britney Spears',
-    'Lana Del Rey',
-    'Jessica Alba',
-    'Joss Stone',
-    'Victoria Azarenka',
-    'Beatrix Kiddo',
-    'Kate Austen',
-    'Claire Littleton',
-    'Hugo Reyes (“Hurley”)',
-    'Thea Queen',
-    'Remy Hadley (“Thirteen”)',
-    'Jesse Pinkman',
-    'Eowyn',
-  ],
 };

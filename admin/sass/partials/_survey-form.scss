@@ -120,7 +120,7 @@
 
     & .questionWrapper {
       display: flex;
-      height: 200px;
+      min-height: 200px;
       align-items: center;
       @include opacity(.3);
 

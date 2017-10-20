@@ -27,22 +27,4 @@ export const INFP = {
 
     'INFPs who function in their well-developed sides can accomplish great and wonderful things, which they will rarely give themselves credit for. Some of the great, humanistic catalysts in the world have been INFPs.',
   ],
-  similar: [
-    'William Shakespeare',
-    'J.R.R. Tolkien',
-    'Bjork',
-    'Johnny Depp',
-    'Julia Roberts',
-    'Lisa Kudrow',
-    'Tom Hiddleston',
-    'Alicia Keys',
-    'Frodo Baggins',
-    'Anne',
-    'Fox Mulder',
-    'Amélie Poulain',
-    'Arwen',
-    'Sybil Branson',
-    'Lance Sweets',
-    'Konstantin Levin',
-  ],
 };

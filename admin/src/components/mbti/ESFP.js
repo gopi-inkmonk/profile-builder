@@ -29,22 +29,4 @@ export const ESFP = {
 
     "The ESFP has a tremendous love for life, and knows how to have fun. They like to bring others along on their fun-rides, and are typically a lot of fun to be with. They're flexible, adaptable, genuinely interested in people, and usually kind-hearted. They have a special ability to get a lot of fun out of life, but they need to watch out for the pitfalls associated with living entirely in the moment.",
   ],
-  similar: [
-    'Adele',
-    'Marilyn Monroe',
-    'Jamie Oliver',
-    'Jamie Foxx',
-    'Adam Levine',
-    'Miley Cyrus',
-    'Serena Williams',
-    'Steve Irwin',
-    'Dandelion',
-    'Ygritte',
-    'Penny',
-    'Angela Montenegro',
-    'Gob Bluth',
-    'Lindsay Bluth Fünke',
-    'Peregrin Took',
-    'Jack Dawson',
-  ],
 };

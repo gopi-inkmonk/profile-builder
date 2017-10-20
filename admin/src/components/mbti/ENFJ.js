@@ -35,22 +35,4 @@ export const ENFJ = {
 
     'In general, ENFJs are charming, warm, gracious, creative and diverse individuals with richly developed insights into what makes other people tick. This special ability to see growth potential in others combined with a genuine drive to help people makes the ENFJ a truly valued individual. As giving and caring as the ENFJ is, they need to remember to value their own needs as well as the needs of others.',
   ],
-  similar: [
-    'Barack Obama',
-    'Oprah Winfrey',
-    'John Cusack',
-    'Ben Affleck',
-    'Sean Connery',
-    'Jennifer Lawrence',
-    'Demi Lovato',
-    'Lucy Liu',
-    'Daenerys Targaryen',
-    'Morpheus',
-    'The Oracle',
-    'Skyler White',
-    'Laurel Lance',
-    'Isobel Crawley',
-    'Seeley Booth',
-    'Elizabeth Bennet',
-  ],
 };

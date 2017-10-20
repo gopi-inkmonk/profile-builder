@@ -21,22 +21,4 @@ export const ESTJ = {
 
     "The ESTJ puts forth a lot of effort in almost everything that they do. They will do everything that they think should be done in their job, marriage, and community with a good amount of energy. He or she is conscientious, practical, realistic, and dependable. While the ESTJ will dutifully do everything that is important to work towards a particular cause or goal, they might not naturally see or value the importance of goals which are outside of their practical scope. However, if the ESTJ is able to see the relevance of such goals to practical concerns, you can bet that they'll put every effort into understanding them and incorporating them into their quest for clarity and security.",
   ],
-  similar: [
-    'Sonia Sotomayor',
-    'John D. Rockefeller',
-    'Judge Judy',
-    'Frank Sinatra',
-    'James Monroe',
-    'Laura Linney',
-    'Lyndon B. Johnson',
-    'Sarah Michelle Gellar',
-    'Boromir',
-    'Dwight Schrute',
-    'Claire Dunphy',
-    'Ana Lucia Cortez',
-    'Violet Crawley',
-    'Robb Stark',
-    'Lisa Cuddy',
-    'Porthos',
-  ],
 };
