@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
-import { auth } from '../helpers/auth';
+import { auth, SignInWithFB } from '../helpers/auth';
 
 export default class Register extends Component {
   // handleSubmit = e => {
@@ -22,6 +22,22 @@ export default class Register extends Component {
     errorTextforEmail: null,
     errorTextforPassword: null,
   };
+
+  SignInWithFB = () => {
+    SignInWithFB().catch(error => {
+      // Handle Errors here.
+      // var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      // var email = error.email;
+      // // The firebase.auth.AuthCredential type that was used.
+      // var credential = error.credential;
+      // ...
+      // alert(errorMessage);
+      this.setState({ errorMessage });
+    });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -79,7 +95,7 @@ export default class Register extends Component {
               />
 
               <div className="formCTA">
-                <div className="submitCTA">
+                <div style={{ marginTop: 15 }} className="submitCTA">
                   <RaisedButton
                     label="Create"
                     primary={true}
@@ -88,11 +104,22 @@ export default class Register extends Component {
                   />
                 </div>
 
-                <FlatButton
-                  label="Already have an account?"
-                  fullWidth={true}
-                  href="/login"
-                />
+                <div style={{ marginTop: 15 }}>
+                  <RaisedButton
+                    label="Already have an account?"
+                    fullWidth={true}
+                    href="/login"
+                  />
+                </div>
+
+                <div style={{ marginTop: 15 }}>
+                  <RaisedButton
+                    label="Sign in with Facebook"
+                    fullWidth={true}
+                    icon={<FontAwesome name="facebook" />}
+                    onTouchTap={this.SignInWithFB}
+                  />
+                </div>
               </div>
             </form>
           </Paper>
